@@ -285,7 +285,40 @@ footer {
         flex-direction: column-reverse;
         text-align: center;
     }
+/* --- Coming Soon Section Styling --- */
+.coming-soon-card {
+    background-color: #1e293b;
+    border: 1px dashed #38bdf8;
+    border-radius: 8px;
+    padding: 40px 20px;
+    max-width: 650px;
+    margin: 20px auto 0 auto;
+    position: relative;
+}
 
+.coming-soon-badge {
+    background-color: #0284c7;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.coming-soon-card h3 {
+    color: #f1f5f9;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.coming-soon-card p {
+    color: #94a3b8;
+    font-size: 1rem;
+}
     .hero-buttons {
         justify-content: center;
     }
