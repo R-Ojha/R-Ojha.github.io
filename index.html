@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajeev Kumar Ojha | Senior Techno-Functional BA & Product Lead</title>
-    <!-- Fonts -->
+    <title>Rajeev Kumar Ojha | Senior Techno-Functional BA & Integration Lead</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Lucide / FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Stars / Particles Background Canvas -->
+    <!-- Particle / Star Dot Background -->
     <div class="stars-bg"></div>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-brand">
@@ -36,8 +36,9 @@
                 <a href="#contact" class="nav-item">Contact</a>
             </div>
             <div class="nav-actions">
-                <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
-                    <i class="fa-solid fa-moon"></i>
+                <!-- Working Dark / Light Mode Toggle Button -->
+                <button class="theme-toggle" id="themeToggle" title="Toggle Light / Dark Mode">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
                 </button>
             </div>
         </div>
@@ -46,25 +47,33 @@
     <!-- 1. HERO SECTION -->
     <section id="home" class="hero-section">
         <div class="container hero-container">
+            <!-- Left: Circular Profile Picture with Neon Glow -->
             <div class="hero-avatar-box">
                 <div class="avatar-glow-ring">
                     <img src="images/profile.jpg" alt="Rajeev Kumar Ojha" class="hero-img">
                 </div>
             </div>
+
+            <!-- Right: Text & Actions -->
             <div class="hero-text-box">
-                <span class="hero-subtitle">Hello, I'm</span>
-                <h1 class="hero-title">Rajeev Kumar Ojha</h1>
+                <span class="hero-greeting">Hello, I'm</span>
+                <h1 class="hero-name">Rajeev Kumar Ojha</h1>
+                
+                <!-- Dynamic Typewriter Animation -->
                 <div class="typewriter-wrap">
                     <span id="typewriter"></span><span class="cursor">|</span>
                 </div>
+
                 <p class="hero-desc">
-                    High-impact <strong>Techno-Functional Business Analyst & Product Lead</strong> with 4+ years in IT & 3 years CA Articleship. Proven track record managing <strong>10,000+ store POS integrations</strong>, zero-data-loss MinIO & AWS migrations, and end-to-end enterprise API rollouts.
+                    High-impact <strong>Techno-Functional Business Analyst & Product Lead</strong> with 4+ years in IT integration, QA, and infrastructure scaling, backed by a strong 3-year CA Articleship background. Specializing in <strong>2,000+ store POS integrations</strong> (PAR Brink, Aloha, NCR Silver, Toast), <strong>50% DB offloading via MinIO</strong>, automated n8n pipelines, and enterprise EDI ingestion.
                 </p>
+
                 <div class="hero-cta-group">
                     <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
-                    <!-- Downloadable Resume Feature -->
+                    <!-- Direct Resume Download -->
                     <a href="resume.pdf" download="Rajeev_Kumar_Ojha_Resume.pdf" class="btn btn-outline"><i class="fa-solid fa-download"></i> Download Resume</a>
                 </div>
+
                 <div class="hero-socials">
                     <a href="https://linkedin.com" target="_blank" class="social-circle" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="mailto:rajeevjee.ojha1@gmail.com" class="social-circle" title="Email"><i class="fa-solid fa-envelope"></i></a>
@@ -72,64 +81,64 @@
                 </div>
             </div>
         </div>
+
         <a href="#about" class="scroll-indicator">
             <div class="mouse-icon"><div class="wheel"></div></div>
             <span>Scroll Down</span>
         </a>
     </section>
 
-    <!-- 2. ABOUT & METRICS SECTION -->
+    <!-- 2. ABOUT & KPI SECTION -->
     <section id="about" class="section">
         <div class="container">
-            <div class="section-badge-wrap">
-                <span class="pill-badge">ABOUT ME</span>
-            </div>
+            <div class="section-badge-wrap"><span class="pill-badge">ABOUT ME</span></div>
             <h2 class="section-heading">Professional Summary</h2>
             <div class="heading-line"></div>
 
             <!-- 4 Top KPI Stat Cards -->
             <div class="kpi-grid">
                 <div class="kpi-card">
-                    <div class="kpi-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
-                    <div class="kpi-number">4+ Years</div>
-                    <div class="kpi-label">IT BA & QA Experience</div>
+                    <div class="kpi-icon-wrap"><i class="fa-solid fa-store"></i></div>
+                    <div class="kpi-number">2,000+</div>
+                    <div class="kpi-label">Active Store POS Integrations</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon-wrap"><i class="fa-solid fa-database"></i></div>
+                    <div class="kpi-number">50%</div>
+                    <div class="kpi-label">DB Load Reduction (MinIO)</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-icon-wrap"><i class="fa-solid fa-trophy"></i></div>
                     <div class="kpi-number">5x Honors</div>
-                    <div class="kpi-label">2 EOM & 3 Project Awards</div>
+                    <div class="kpi-label">2 EOM & 3 Project Recognitions</div>
                 </div>
                 <div class="kpi-card">
-                    <div class="kpi-icon-wrap"><i class="fa-solid fa-diagram-project"></i></div>
-                    <div class="kpi-number">15+ Apps</div>
-                    <div class="kpi-label">Enterprise Migrations Led</div>
-                </div>
-                <div class="kpi-card">
-                    <div class="kpi-icon-wrap"><i class="fa-solid fa-store"></i></div>
-                    <div class="kpi-number">10,000+</div>
-                    <div class="kpi-label">Store Locations Scaled</div>
+                    <div class="kpi-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="kpi-number">100%</div>
+                    <div class="kpi-label">Zero Data Loss in AWS & Hibernate</div>
                 </div>
             </div>
 
-            <!-- Summary Details Grid -->
+            <!-- About Details Grid -->
             <div class="about-content-grid">
                 <div class="about-text-card">
+                    <div class="card-subtitle"><i class="fa-solid fa-network-wired highlight-icon"></i> System Architecture & Integrations</div>
                     <p>
-                        I am a techno-functional strategist bridging deep financial acumen with rigorous technical software engineering. With a foundational background as a <strong>CA Intermediate qualified</strong> professional and 4 years driving enterprise product ecosystems, I specialize in architecting frictionless data workflows, REST API integrations, and cloud storage transitions.
+                        I specialize in multi-tenant QSR and retail integrations bridging complex financial reconciliation logic with distributed cloud microservices. From pull-based API pollers to on-premise EXE listeners, I own end-to-end data ingestion pipelines handling <strong>Cash & Sales, Menu Mix, Ideal Hours, Cash Office, and Timekeeping</strong>.
                     </p>
                     <p style="margin-top: 14px;">
-                        Recognized repeatedly for maintaining <strong>100% data integrity & zero-bug delivery</strong> during critical production migrations (including AWS, MinIO, and Hibernate upgrades) across thousands of active store environments.
+                        Trusted partner for top enterprise QSR brands including <strong>Inspire Brands, Chicken Salad Chick, Steak 'n Shake, Golden Chick, Rubio's, and TMAD</strong>, spearheading technical calls with US clients, schema splits, and automated off-peak data-pulling workflows via <strong>n8n</strong>.
                     </p>
                 </div>
                 <div class="about-objective-card">
-                    <div class="card-subtitle"><i class="fa-solid fa-bullseye highlight-icon"></i> Core Career Focus</div>
+                    <div class="card-subtitle"><i class="fa-solid fa-award highlight-icon"></i> Key Recognitions & Strengths</div>
                     <p>
-                        Driving large-scale fintech, enterprise SaaS, and POS data transformations. Passionate about translating complex business architectures into robust API specs, executable sprint backlogs, and reliable multi-tier enterprise systems.
+                        Dual-threat leader combining deep accounting rigor (<strong>CA Intermediate</strong>) with hands-on technical architecture (SQL/JPQL, Postman automated suites, Grafana monitoring, and Custom AI Agents).
                     </p>
                     <div class="honors-list">
-                        <div class="honor-tag"><i class="fa-solid fa-award"></i> 2x Employee of the Month</div>
-                        <div class="honor-tag"><i class="fa-solid fa-star"></i> Corporate Newsletter Appreciation (Aug '24 & May '25)</div>
-                        <div class="honor-tag"><i class="fa-solid fa-certificate"></i> Scrum & Project Management Certified</div>
+                        <div class="honor-tag"><i class="fa-solid fa-medal"></i> 2x Employee of the Month (AWS Transition & Zero-Bug Rollouts)</div>
+                        <div class="honor-tag"><i class="fa-solid fa-star"></i> Corporate Newsletter Appreciation (Aug 2024 & May 2025)</div>
+                        <div class="honor-tag"><i class="fa-solid fa-robot"></i> Built Internal Custom GPT & AI Assistant for Team Acceleration</div>
                     </div>
                 </div>
             </div>
@@ -137,11 +146,9 @@
     </section>
 
     <!-- 3. SKILLS WITH PROGRESS BARS -->
-    <section id="skills" class="section bg-card-alt">
+    <section id="skills" class="section bg-alt">
         <div class="container">
-            <div class="section-badge-wrap">
-                <span class="pill-badge">MY SKILLS</span>
-            </div>
+            <div class="section-badge-wrap"><span class="pill-badge">MY SKILLS</span></div>
             <h2 class="section-heading">Technical & Professional Expertise</h2>
             <div class="heading-line"></div>
 
@@ -150,64 +157,62 @@
                 <div class="skill-category-card">
                     <div class="category-header">
                         <div class="cat-icon"><i class="fa-solid fa-clipboard-list"></i></div>
-                        <h3>Business Analysis</h3>
+                        <h3>Business Analysis & Product Ownership</h3>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span>Requirement Elicitation & BRD/FRD</span><span>98%</span></div>
+                        <div class="skill-info"><span>Requirement Elicitation & BRD/FRD/SRS</span><span>98%</span></div>
                         <div class="progress-track"><div class="progress-fill" style="width: 98%;"></div></div>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span>Gap Analysis & As-Is / To-Be Flow</span><span>95%</span></div>
+                        <div class="skill-info"><span>As-Is / To-Be Flow & Schema Split Design</span><span>95%</span></div>
                         <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span>Root Cause Analysis & Six Sigma</span><span>90%</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <div class="skill-info"><span>Sprint Planning & Backlog Grooming</span><span>95%</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
-                    </div>
-                </div>
-
-                <!-- Right: Technical & Data Skills -->
-                <div class="skill-category-card">
-                    <div class="category-header">
-                        <div class="cat-icon"><i class="fa-solid fa-gears"></i></div>
-                        <h3>Technical & Functional Skills</h3>
-                    </div>
-                    <div class="skill-bar-item">
-                        <div class="skill-info"><span>REST API Mapping & Postman Suite</span><span>96%</span></div>
+                        <div class="skill-info"><span>Sprint Planning, User Stories & Acceptance Criteria</span><span>96%</span></div>
                         <div class="progress-track"><div class="progress-fill" style="width: 96%;"></div></div>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span>SQL Queries & Schema Splits</span><span>92%</span></div>
+                        <div class="skill-info"><span>Root Cause Analysis & Financial Reconciliation</span><span>94%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 94%;"></div></div>
+                    </div>
+                </div>
+
+                <!-- Right: Technical & Integration -->
+                <div class="skill-category-card">
+                    <div class="category-header">
+                        <div class="cat-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3>Technical & Integration Architecture</h3>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-info"><span>POS API Mapping (PAR Brink, Aloha, NCR, Toast)</span><span>98%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 98%;"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-info"><span>MinIO Object Storage & Cloud Migrations</span><span>96%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 96%;"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-info"><span>SQL / JPQL Queries & Performance Offloading</span><span>92%</span></div>
                         <div class="progress-track"><div class="progress-fill" style="width: 92%;"></div></div>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span>MinIO Object Storage & Cloud Migrations</span><span>94%</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 94%;"></div></div>
-                    </div>
-                    <div class="skill-bar-item">
-                        <div class="skill-info"><span>UAT Testing & Defect Tracking</span><span>95%</span></div>
-                        <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+                        <div class="skill-info"><span>Workflow Automation (n8n & Custom AI Agents)</span><span>90%</span></div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. EXPERIENCE SECTION -->
+    <!-- 4. EXPERIENCE TIMELINE -->
     <section id="experience" class="section">
         <div class="container">
-            <div class="section-badge-wrap">
-                <span class="pill-badge">EXPERIENCE</span>
-            </div>
+            <div class="section-badge-wrap"><span class="pill-badge">EXPERIENCE</span></div>
             <h2 class="section-heading">Professional Journey</h2>
             <div class="heading-line"></div>
 
             <div class="timeline-container">
-                <!-- Main IT Role -->
+                <!-- IT BA Role -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
@@ -215,7 +220,7 @@
                             <div class="role-company">
                                 <span class="comp-icon"><i class="fa-solid fa-building"></i></span>
                                 <div>
-                                    <h3 class="role-title">Techno-Functional Business Analyst & Project Lead</h3>
+                                    <h3 class="role-title">Techno-Functional Business Analyst & Integration Lead</h3>
                                     <span class="company-name">ANR Software Pvt. Ltd. | Noida, India</span>
                                 </div>
                             </div>
@@ -223,25 +228,29 @@
                         </div>
                         <div class="timeline-meta">
                             <span><i class="fa-solid fa-calendar"></i> 2022 – Present</span>
-                            <span><i class="fa-solid fa-location-dot"></i> Delhi NCR</span>
+                            <span><i class="fa-solid fa-location-dot"></i> Delhi NCR, India</span>
                         </div>
                         <div class="tag-row">
-                            <span class="pill-tag">10,000+ Stores</span>
-                            <span class="pill-tag">POS Integrations</span>
-                            <span class="pill-tag">MinIO Migration</span>
-                            <span class="pill-tag">Hibernate Upgrade</span>
-                            <span class="pill-tag">Zero Data Loss</span>
+                            <span class="pill-tag">Inspire Brands</span>
+                            <span class="pill-tag">Steak 'n Shake</span>
+                            <span class="pill-tag">Chicken Salad Chick</span>
+                            <span class="pill-tag">PAR Brink</span>
+                            <span class="pill-tag">Aloha</span>
+                            <span class="pill-tag">NCR Silver</span>
+                            <span class="pill-tag">MinIO S3</span>
+                            <span class="pill-tag">n8n Automation</span>
                         </div>
                         <ul class="timeline-bullets">
-                            <li>Led the end-to-end integration and rollout of customized POS API adapters (LUCAS, QUPOS, PAR Brink, NCR Silver) connecting central SaaS engines to <strong>10,000+ enterprise stores</strong>.</li>
-                            <li>Directed the database offloading and asset migration of <strong>10+ core enterprise applications</strong> to MinIO object storage servers with 100% uptime and <strong>0% data loss</strong>.</li>
-                            <li>Managed complete Hibernate migration across <strong>15 enterprise applications</strong> with zero post-deployment bugs, earning Corporate Newsletter Recognition.</li>
-                            <li>Orchestrated seamless server migration to AWS and back to in-house infrastructure, awarded <strong>Employee of the Month</strong> for operational resilience.</li>
+                            <li>Spearheaded integration and store onboarding across <strong>2,000+ store locations</strong> using pull-based APIs and on-premise EXE listeners for major enterprise brands.</li>
+                            <li>Architected and executed the company-wide <strong>MinIO object storage migration for 10+ core apps</strong>, officially achieving a <strong>50% reduction in primary database load</strong>.</li>
+                            <li>Engineered automated off-peak data-fetching pipelines with <strong>n8n</strong> to prevent server bottlenecks during high transaction peak hours.</li>
+                            <li>Led end-to-end <strong>Hibernate migration across 15 enterprise applications</strong> and managed AWS-to-inhouse server transitions with 100% data integrity and zero downtime.</li>
+                            <li>Developed and deployed custom internal <strong>GPT & AI assistant tools</strong> to accelerate task execution, knowledge sharing, and requirement validation across cross-functional teams.</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- CA Articleship Role -->
+                <!-- CA Articleship -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
@@ -256,12 +265,12 @@
                             <span class="status-badge prev">COMPLETED</span>
                         </div>
                         <div class="timeline-meta">
-                            <span><i class="fa-solid fa-calendar"></i> 3 Years</span>
-                            <span><i class="fa-solid fa-landmark"></i> Corporate Finance & Audit</span>
+                            <span><i class="fa-solid fa-calendar"></i> 3 Years Full-Time</span>
+                            <span><i class="fa-solid fa-landmark"></i> Corporate Audit & Financial Modeling</span>
                         </div>
                         <ul class="timeline-bullets">
-                            <li>Executed statutory, internal, and tax audits for high-volume corporate clients including Punjab National Bank, verifying internal controls and data consistency.</li>
-                            <li>Conducted financial modeling, ledger reconciliations, and compliance gap analysis that now powers robust fintech requirement mapping.</li>
+                            <li>Conducted rigorous statutory, internal, and tax audits for mid-to-large scale corporate clients, testing ledger data flows and compliance frameworks.</li>
+                            <li>Developed analytical financial models that now form the bedrock for my requirement mapping, ERP workflows, and enterprise data reconciliation.</li>
                         </ul>
                     </div>
                 </div>
@@ -269,107 +278,151 @@
         </div>
     </section>
 
-    <!-- 5. KEY PROJECTS SECTION WITH DOCUMENTATION ATTACHMENTS -->
-    <section id="projects" class="section bg-card-alt">
+    <!-- 5. PROJECTS SECTION -->
+    <section id="projects" class="section bg-alt">
         <div class="container">
-            <div class="section-badge-wrap">
-                <span class="pill-badge">PORTFOLIO</span>
-            </div>
-            <h2 class="section-heading">Key Featured Projects</h2>
+            <div class="section-badge-wrap"><span class="pill-badge">PORTFOLIO</span></div>
+            <h2 class="section-heading">Featured Enterprise Projects</h2>
             <div class="heading-line"></div>
 
             <div class="projects-grid">
-                <!-- Project 1: POS & API Integration -->
+                <!-- Project 1: Enterprise POS & Microservices Engine -->
                 <div class="project-item-card">
                     <div class="proj-header-box">
-                        <div class="proj-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <div class="proj-icon"><i class="fa-solid fa-cash-register"></i></div>
                         <span class="proj-status-tag live">PRODUCTION DEPLOYED</span>
                     </div>
-                    <h3 class="proj-title">Multi-Brand POS & Partner REST API Engine</h3>
-                    <div class="proj-role"><i class="fa-solid fa-user-tie"></i> Lead Integration Analyst</div>
+                    <h3 class="proj-title">Multi-Brand POS Integration & Event Engine</h3>
+                    <div class="proj-role"><i class="fa-solid fa-user-tie"></i> Technical Lead & Business Analyst</div>
                     
                     <div class="proj-block">
-                        <strong>Problem:</strong> Fragmented POS schemas across retail franchises leading to order sync drops and inventory mismatch across 10,000+ stores.
+                        <strong>Clients:</strong> Inspire Brands, Chicken Salad Chick (400 stores), Steak 'n Shake (250 stores), Golden Chick (50 stores), Rubio's, TMAD.
                     </div>
                     <div class="proj-block">
-                        <strong>Solution:</strong> Engineered standardized JSON payload mapping, schema validation splits, and automated webhook triggers via REST APIs.
+                        <strong>Integration Methods:</strong> Pull-Based REST APIs, On-Premise EXE Listeners, Webhooks, and Microservices.
                     </div>
-
-                    <div class="proj-responsibilities">
-                        <h4>Key Deliverables:</h4>
-                        <ul>
-                            <li>Designed end-to-end API specs and Swagger documentation.</li>
-                            <li>Integrated & validated 4+ major POS systems: <strong>LUCAS, QUPOS, PAR Brink, NCR Silver</strong>.</li>
-                            <li>Created comprehensive Postman test suites with automated assertion tests for UAT signoff.</li>
-                        </ul>
+                    <div class="proj-block">
+                        <strong>Events Transported:</strong> Cash & Sales, Menu Mix, Ideal Hours, Cash Office, TimeKeeping into Enterprise BI & Reporting.
                     </div>
 
                     <div class="proj-tags-wrap">
-                        <span class="tag">REST API</span>
-                        <span class="tag">Postman</span>
-                        <span class="tag">JSON</span>
-                        <span class="tag highlight">POS Integration</span>
-                        <span class="tag">Swagger</span>
-                        <span class="tag">SQL</span>
+                        <span class="tag highlight">PAR Brink</span>
+                        <span class="tag highlight">Aloha</span>
+                        <span class="tag highlight">NCR Silver</span>
+                        <span class="tag highlight">Toast</span>
+                        <span class="tag">Revel</span>
+                        <span class="tag">TaskPOS</span>
+                        <span class="tag">Postman Suite</span>
                     </div>
 
-                    <!-- Interactive Document / Workflow Link -->
                     <div class="proj-btn-footer">
-                        <button class="btn btn-proj" onclick="alert('Architecture Overview:\n- Schema mapping layer handles 10,000+ stores\n- Standardized payload parser with 99.99% uptime\n- End-to-end Postman collection with test assertions.')">
-                            <i class="fa-solid fa-file-lines"></i> View Architecture Details
+                        <button class="btn btn-proj" onclick="alert('Enterprise POS Architecture:\n- Pull & EXE Ingestion for 2,000+ stores\n- Automated sync for Cash, Sales & MenuMix\n- Zero data loss across active microservices.')">
+                            <i class="fa-solid fa-file-code"></i> View Architecture Breakdown
                         </button>
                     </div>
                 </div>
 
-                <!-- Project 2: MinIO & Cloud Storage Migration -->
+                <!-- Project 2: MinIO Storage & DB Offloading -->
                 <div class="project-item-card">
                     <div class="proj-header-box">
                         <div class="proj-icon"><i class="fa-solid fa-server"></i></div>
-                        <span class="proj-status-tag award">AWARD WINNING INITIATIVE</span>
+                        <span class="proj-status-tag award">50% DB LOAD REDUCTION</span>
                     </div>
-                    <h3 class="proj-title">MinIO Server Migration & Database Offloading</h3>
-                    <div class="proj-role"><i class="fa-solid fa-user-gear"></i> Technical Project Lead & Business Analyst</div>
+                    <h3 class="proj-title">MinIO Object Storage & Cloud Database Offloading</h3>
+                    <div class="proj-role"><i class="fa-solid fa-user-gear"></i> Lead Technical Analyst & Infrastructure Owner</div>
                     
                     <div class="proj-block">
-                        <strong>Problem:</strong> Primary database bloating caused by direct blob/document storage, slowing core application query response times.
+                        <strong>Problem:</strong> Massive SQL database bloating due to inline document/blob storage, degrading core transaction speeds.
                     </div>
                     <div class="proj-block">
-                        <strong>Solution:</strong> Managed migration of 10+ core applications to MinIO object storage with custom bucket policies and zero data loss.
+                        <strong>Solution:</strong> Managed end-to-end migration of 10+ core enterprise apps to MinIO object storage with zero data loss.
                     </div>
-
-                    <div class="proj-responsibilities">
-                        <h4>Key Deliverables:</h4>
-                        <ul>
-                            <li>Authored complete Technical Transition Plan & Data Mapping matrices.</li>
-                            <li>Offloaded terabytes of transactional attachments away from core SQL databases.</li>
-                            <li>Achieved 100% data integrity with zero downtime during cutover window.</li>
-                        </ul>
+                    <div class="proj-block">
+                        <strong>Result:</strong> Achieved an official 50% database load reduction and lightning-fast query execution across all reporting services.
                     </div>
 
                     <div class="proj-tags-wrap">
-                        <span class="tag">MinIO S3</span>
-                        <span class="tag">AWS Transition</span>
-                        <span class="tag">SQL Optimization</span>
+                        <span class="tag highlight">MinIO S3</span>
                         <span class="tag highlight">Zero Data Loss</span>
-                        <span class="tag">Disaster Recovery</span>
+                        <span class="tag">SQL / JPQL</span>
+                        <span class="tag">AWS Migration</span>
+                        <span class="tag">Hibernate 15 Apps</span>
                     </div>
 
                     <div class="proj-btn-footer">
-                        <button class="btn btn-proj" onclick="alert('Migration Highlights:\n- 10+ core apps migrated\n- 0 data loss verification\n- SQL table size reduced significantly\n- Recognized with Employee of the Month.')">
+                        <button class="btn btn-proj" onclick="alert('MinIO Case Study:\n- 10+ Core Applications Offloaded\n- 50% DB Load Reduction Confirmed\n- Recognized with Employee of the Month.')">
                             <i class="fa-solid fa-shield-halved"></i> View Migration Case Study
                         </button>
                     </div>
                 </div>
+
+                <!-- Project 3: Supply Chain EDI & Automated Fetching -->
+                <div class="project-item-card">
+                    <div class="proj-header-box">
+                        <div class="proj-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                        <span class="proj-status-tag live">EDI AUTOMATION</span>
+                    </div>
+                    <h3 class="proj-title">Supply Chain EDI Ingestion (GFS, PFS, GFS US)</h3>
+                    <div class="proj-role"><i class="fa-solid fa-cubes"></i> Integration Analyst & BA</div>
+                    
+                    <div class="proj-block">
+                        <strong>Partners:</strong> Gordon Food Service (GFS), Performance Foodservice (PFS), GFS US via SFTP & FileZilla.
+                    </div>
+                    <div class="proj-block">
+                        <strong>Events:</strong> Automated EDI File Fetching, Order Dispatch, Invoices, Catalog Calendars & BI Dashboard Feeds.
+                    </div>
+
+                    <div class="proj-tags-wrap">
+                        <span class="tag">EDI Files</span>
+                        <span class="tag">SFTP / FileZilla</span>
+                        <span class="tag">Order & Invoices</span>
+                        <span class="tag">BI Dashboards</span>
+                    </div>
+
+                    <div class="proj-btn-footer">
+                        <button class="btn btn-proj" onclick="alert('EDI Pipelines:\n- Automated SFTP ingestion for major food distributors\n- Schema validation for invoices & purchase orders\n- Direct feeds to enterprise BI reporting.')">
+                            <i class="fa-solid fa-diagram-project"></i> View EDI Data Flow
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: n8n Automation & Custom AI Chatbots -->
+                <div class="project-item-card">
+                    <div class="proj-header-box">
+                        <div class="proj-icon"><i class="fa-solid fa-robot"></i></div>
+                        <span class="proj-status-tag award">INNOVATION & AI</span>
+                    </div>
+                    <h3 class="proj-title">n8n Data Automation & Custom AI Knowledge Agents</h3>
+                    <div class="proj-role"><i class="fa-solid fa-brain"></i> Automation Developer & Team Mentor</div>
+                    
+                    <div class="proj-block">
+                        <strong>n8n Workflows:</strong> Built automated pipelines that fetch newly onboarded store data dynamically during low-traffic off-peak windows.
+                    </div>
+                    <div class="proj-block">
+                        <strong>Custom AI Assistants:</strong> Created custom GPT agents for internal teams to guide task execution, requirement specs, and onboarding.
+                    </div>
+
+                    <div class="proj-tags-wrap">
+                        <span class="tag highlight">n8n Workflows</span>
+                        <span class="tag highlight">Custom GPT</span>
+                        <span class="tag">LLM Agents</span>
+                        <span class="tag">Off-Peak Schedulers</span>
+                    </div>
+
+                    <div class="proj-btn-footer">
+                        <button class="btn btn-proj" onclick="alert('Automation Highlights:\n- Automated off-peak store data sync via n8n\n- Custom GPT for engineering requirement lookup\n- 40% reduction in manual onboarding tasks.')">
+                            <i class="fa-solid fa-microchip"></i> View Automation Flow
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. BUSINESS ANALYST EXPERTISE (6 CORE COMPETENCY CARDS) -->
+    <!-- 6. BUSINESS ANALYST EXPERTISE (6 CARDS) -->
     <section id="expertise" class="section">
         <div class="container">
-            <div class="section-badge-wrap">
-                <span class="pill-badge">CORE COMPETENCIES</span>
-            </div>
+            <div class="section-badge-wrap"><span class="pill-badge">CORE COMPETENCIES</span></div>
             <h2 class="section-heading">Business Analyst Expertise</h2>
             <div class="heading-line"></div>
 
@@ -377,104 +430,95 @@
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <h3>Requirement Gathering</h3>
-                    <p>Elicitation, analysis, and structured scoping of enterprise software requirements through client workshops, JAD sessions, and cross-team discovery.</p>
+                    <p>Direct technical requirement elicitation with US enterprise clients, structured JAD workshops, and cross-team specification alignment.</p>
                 </div>
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-file-invoice"></i></div>
-                    <h3>BRD, FRD & SRS</h3>
-                    <p>Comprehensive Business & Functional Requirement Documents with end-to-end Requirements Traceability Matrices (RTM) and compliance checks.</p>
+                    <h3>BRD, FRD & API Specs</h3>
+                    <p>Authoring comprehensive Business & Functional Requirement Documents with Swagger API mappings and end-to-end Traceability Matrices.</p>
                 </div>
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-layer-group"></i></div>
-                    <h3>User Stories & Backlog</h3>
-                    <p>INVEST-compliant user stories with crystal-clear Gherkin Given-When-Then acceptance criteria ready for instant development sprint pickup.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="exp-icon"><i class="fa-solid fa-square-check"></i></div>
-                    <h3>Acceptance Criteria & QA</h3>
-                    <p>Defining testable functional boundaries, edge-case analysis, defect triage, and managing complete User Acceptance Testing (UAT) cycles.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="exp-icon"><i class="fa-solid fa-diagram-successor"></i></div>
-                    <h3>Process & Workflow Mapping</h3>
-                    <p>Developing As-Is and To-Be BPMN process models, cross-functional swimlane diagrams, and API sequence diagrams for architectural clarity.</p>
+                    <h3>User Stories & Acceptance Criteria</h3>
+                    <p>Creating INVEST-compliant user stories equipped with rigorous Given-When-Then criteria ready for engineering sprint execution.</p>
                 </div>
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
-                    <h3>Gap & Financial Analysis</h3>
-                    <p>Leveraging CA background to pinpoint revenue leakage, data pipeline mismatches, and system optimization opportunities with high ROI.</p>
+                    <h3>Schema Splits & As-Is/To-Be</h3>
+                    <p>Designing BPMN process flows, API sequence diagrams, and schema partition strategies to isolate high-throughput microservices.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="exp-icon"><i class="fa-solid fa-square-check"></i></div>
+                    <h3>UAT & Defect Triage</h3>
+                    <p>Building automated Postman assertion test suites, coordinating pre-release QA frameworks, and ensuring zero defect leakages into production.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="exp-icon"><i class="fa-solid fa-people-group"></i></div>
+                    <h3>Team Mentorship & Alignment</h3>
+                    <p>Mentoring cross-functional team members, maintaining morale during tight release cycles, and leveraging AI tools for team speed.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. TOOLS & TECHNOLOGIES TOOLBOX -->
-    <section id="tools" class="section bg-card-alt">
+    <!-- 7. TOOLS & TECHNOLOGIES -->
+    <section id="tools" class="section bg-alt">
         <div class="container">
-            <div class="section-badge-wrap">
-                <span class="pill-badge">TOOLBOX</span>
-            </div>
+            <div class="section-badge-wrap"><span class="pill-badge">TOOLBOX</span></div>
             <h2 class="section-heading">Tools & Technologies</h2>
             <div class="heading-line"></div>
 
             <div class="tools-toolbox-grid">
                 <div class="tool-box"><i class="fa-brands fa-jira"></i><span>Jira</span></div>
                 <div class="tool-box"><i class="fa-brands fa-confluence"></i><span>Confluence</span></div>
-                <div class="tool-box"><i class="fa-solid fa-database"></i><span>SQL</span></div>
                 <div class="tool-box"><i class="fa-solid fa-paper-plane"></i><span>Postman</span></div>
-                <div class="tool-box"><i class="fa-solid fa-code"></i><span>Swagger</span></div>
-                <div class="tool-box"><i class="fa-solid fa-file-excel"></i><span>Advanced Excel</span></div>
-                <div class="tool-box"><i class="fa-solid fa-diagram-project"></i><span>Draw.io / Visio</span></div>
-                <div class="tool-box"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
-                <div class="tool-box"><i class="fa-solid fa-server"></i><span>MinIO</span></div>
+                <div class="tool-box"><i class="fa-solid fa-database"></i><span>SQL / JPQL</span></div>
+                <div class="tool-box"><i class="fa-solid fa-server"></i><span>MinIO S3</span></div>
                 <div class="tool-box"><i class="fa-brands fa-aws"></i><span>AWS</span></div>
+                <div class="tool-box"><i class="fa-solid fa-chart-line"></i><span>Grafana</span></div>
+                <div class="tool-box"><i class="fa-solid fa-code"></i><span>Swagger / APIs</span></div>
+                <div class="tool-box"><i class="fa-solid fa-network-wired"></i><span>n8n Workflows</span></div>
+                <div class="tool-box"><i class="fa-solid fa-folder-tree"></i><span>FileZilla / SFTP</span></div>
                 <div class="tool-box"><i class="fa-brands fa-git-alt"></i><span>Git & GitHub</span></div>
-                <div class="tool-box"><i class="fa-solid fa-robot"></i><span>Generative AI / Copilot</span></div>
+                <div class="tool-box"><i class="fa-solid fa-robot"></i><span>Custom GPT / AI</span></div>
             </div>
         </div>
     </section>
 
-    <!-- 8. EDUCATION & ACADEMIC BACKGROUND -->
+    <!-- 8. EDUCATION & HONORS -->
     <section id="education" class="section">
         <div class="container">
-            <div class="section-badge-wrap">
-                <span class="pill-badge">EDUCATION</span>
-            </div>
-            <h2 class="section-heading">Academic Background</h2>
+            <div class="section-badge-wrap"><span class="pill-badge">ACADEMICS & HONORS</span></div>
+            <h2 class="section-heading">Academic Background & Honors</h2>
             <div class="heading-line"></div>
 
             <div class="edu-grid">
-                <!-- CA Inter -->
                 <div class="edu-card">
                     <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                     <h3>CA Intermediate</h3>
                     <p class="institution">Institute of Chartered Accountants of India (ICAI)</p>
-                    <span class="edu-date"><i class="fa-solid fa-award"></i> Qualified</span>
+                    <span class="edu-date"><i class="fa-solid fa-check-circle"></i> Qualified (Group 1 & 2)</span>
                 </div>
-                <!-- Bachelor of Commerce -->
                 <div class="edu-card">
                     <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
                     <h3>Bachelor of Commerce (B.Com)</h3>
                     <p class="institution">Recognized University</p>
                     <span class="edu-date"><i class="fa-solid fa-calendar-days"></i> Completed</span>
                 </div>
-                <!-- Professional Certifications -->
                 <div class="edu-card">
-                    <div class="edu-icon"><i class="fa-solid fa-certificate"></i></div>
-                    <h3>Agile & Scrum Certified</h3>
-                    <p class="institution">Project Management & Six Sigma Foundations</p>
-                    <span class="edu-date"><i class="fa-solid fa-check-circle"></i> Certified Professional</span>
+                    <div class="edu-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h3>Corporate Honors</h3>
+                    <p class="institution">2x Employee of the Month & 2x Newsletter Recognitions</p>
+                    <span class="edu-date"><i class="fa-solid fa-star"></i> Top Performer</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 9. CONTACT ME SECTION -->
-    <section id="contact" class="section bg-card-alt">
+    <!-- 9. CONTACT SECTION -->
+    <section id="contact" class="section bg-alt">
         <div class="container">
-            <div class="section-badge-wrap">
-                <span class="pill-badge">GET IN TOUCH</span>
-            </div>
+            <div class="section-badge-wrap"><span class="pill-badge">GET IN TOUCH</span></div>
             <h2 class="section-heading">Contact Me</h2>
             <div class="heading-line"></div>
 
@@ -503,9 +547,9 @@
                     </div>
                 </div>
 
-                <!-- Contact Message Form -->
+                <!-- Interactive Message Form -->
                 <div class="contact-form-card">
-                    <form action="https://formspree.io/f/rajeevjee.ojha1@gmail.com" method="POST" class="contact-form" onsubmit="alert('Thank you Rajeev! Message simulated successfully.'); return false;">
+                    <form class="contact-form" onsubmit="alert('Thank you for reaching out! Your message has been simulated successfully.'); return false;">
                         <div class="form-group">
                             <label>Full Name</label>
                             <input type="text" placeholder="Your name" required>
@@ -533,19 +577,52 @@
     <footer>
         <div class="container footer-content">
             <p>&copy; 2026 Rajeev Kumar Ojha. All rights reserved.</p>
-            <p class="footer-tagline">Architecting Enterprise Data & High-Performance Business Solutions.</p>
+            <p class="footer-tagline">Architecting Enterprise Data & High-Performance POS Integrations.</p>
         </div>
     </footer>
 
-    <!-- Floating Scroll To Top Button -->
+    <!-- Floating Scroll To Top -->
     <button class="scroll-top-btn" id="scrollTopBtn" title="Back to Top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <!-- Interactive Scripts -->
     <script>
-        // Typewriter Effect
-        const words = ["Techno-Functional BA", "Data Driven Decision Maker", "POS Integration Specialist", "Agile Practitioner", "BFSI & QSR Domain Expertise"];
+        // 1. Dark / Light Theme Toggle with LocalStorage
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        // Check stored theme preference or default to dark
+        const currentTheme = localStorage.getItem('portfolio-theme') || 'dark';
+        htmlElement.setAttribute('data-theme', currentTheme);
+        updateThemeIcon(currentTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const activeTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('portfolio-theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'light') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // 2. Typewriter Effect
+        const words = [
+            "Techno-Functional BA & Product Lead",
+            "Enterprise POS Integration Specialist",
+            "MinIO & Cloud Migration Owner",
+            "Automation (n8n & AI Agents) Lead"
+        ];
         let i = 0, timer;
 
         function typingEffect() {
@@ -557,7 +634,7 @@
                     setTimeout(deletingEffect, 2000);
                     return false;
                 }
-                timer = setTimeout(loopTyping, 90);
+                timer = setTimeout(loopTyping, 85);
             };
             loopTyping();
         }
@@ -574,16 +651,16 @@
                     } else {
                         i = 0;
                     }
-                    setTimeout(typingEffect, 400);
+                    setTimeout(typingEffect, 350);
                     return false;
                 }
-                timer = setTimeout(loopDeleting, 40);
+                timer = setTimeout(loopDeleting, 35);
             };
             loopDeleting();
         }
         typingEffect();
 
-        // Scroll to Top
+        // 3. Scroll to Top Behavior
         const scrollTopBtn = document.getElementById("scrollTopBtn");
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
