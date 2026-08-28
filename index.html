@@ -26,6 +26,7 @@
             </a>
             <div class="nav-links">
                 <a href="#home" class="nav-item active">Home</a>
+                <a href="#search-section" class="nav-item">Search</a>
                 <a href="#about" class="nav-item">About</a>
                 <a href="#skills" class="nav-item">Skills</a>
                 <a href="#experience" class="nav-item">Experience</a>
@@ -36,7 +37,6 @@
                 <a href="#contact" class="nav-item">Contact</a>
             </div>
             <div class="nav-actions">
-                <!-- Working Theme Toggle (Moon/Sun) -->
                 <button class="theme-toggle" id="themeToggle" title="Toggle Light / Dark Mode">
                     <i class="fa-solid fa-moon" id="themeIcon"></i>
                 </button>
@@ -81,10 +81,44 @@
             </div>
         </div>
 
-        <a href="#about" class="scroll-indicator">
+        <a href="#search-section" class="scroll-indicator">
             <div class="mouse-icon"><div class="wheel"></div></div>
             <span>Scroll Down</span>
         </a>
+    </section>
+
+    <!-- ===================================================
+         1.5 INTERACTIVE PROFILE SEARCH & KNOWLEDGE EXPLORER
+         =================================================== -->
+    <section id="search-section" class="section search-section-wrap">
+        <div class="container">
+            <div class="section-badge-wrap"><span class="pill-badge">PROFILE EXPLORER</span></div>
+            <h2 class="section-heading">Search Entire Portfolio</h2>
+            <div class="heading-line"></div>
+
+            <div class="search-box-card">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="profileSearchInput" placeholder="Type any skill, POS partner, client brand, tool, or metric (e.g., MinIO, Inspire Brands, QUPOS, n8n, CA Inter)..." autocomplete="off">
+                    <button id="clearSearchBtn" class="clear-search-btn" title="Clear search">&times;</button>
+                </div>
+
+                <!-- Quick Suggested Search Chips -->
+                <div class="search-chips">
+                    <span class="chip-label">Quick Search:</span>
+                    <button class="search-chip" onclick="applySearchTag('Inspire Brands')">Inspire Brands</button>
+                    <button class="search-chip" onclick="applySearchTag('MinIO')">MinIO (50% DB Load)</button>
+                    <button class="search-chip" onclick="applySearchTag('PAR Brink')">PAR Brink</button>
+                    <button class="search-chip" onclick="applySearchTag('n8n')">n8n Automation</button>
+                    <button class="search-chip" onclick="applySearchTag('EDI')">EDI (GFS/PFS)</button>
+                    <button class="search-chip" onclick="applySearchTag('CA Inter')">CA Inter / ICAI</button>
+                    <button class="search-chip" onclick="applySearchTag('Awards')">Awards & Honors</button>
+                </div>
+
+                <!-- Live Search Results Container -->
+                <div id="searchResultsContainer" class="search-results-box"></div>
+            </div>
+        </div>
     </section>
 
     <!-- 2. ABOUT & KPI SECTION -->
@@ -807,7 +841,9 @@
         </div>
     </div>
 
-    <!-- Interactive Scripts -->
+    <!-- ===================================================
+         INTERACTIVE SCRIPTS (THEME, TYPEWRITER, SEARCH, MODALS)
+         =================================================== -->
     <script>
         // 1. Theme Toggle (Dark / Light)
         const themeToggleBtn = document.getElementById('themeToggle');
@@ -922,6 +958,162 @@
                 document.body.style.overflow = 'auto';
             }
         });
+
+        // ===================================================
+        // 5. LIVE PROFILE SEARCH ENGINE
+        // ===================================================
+        const profileKnowledgeBase = [
+            {
+                title: "Multi-Brand POS Integration Engine",
+                category: "Project / Architecture",
+                keywords: "pos qupos par brink aloha ncr silver toast revel taskpos pull exe queue configuration cash sales menumix timekeeping ideal hours 2000 stores",
+                snippet: "Pull-based API engine & on-premise EXE listeners serving 2,000+ stores across Inspire Brands, Chicken Salad Chick, Steak n Shake, etc.",
+                link: "#projects"
+            },
+            {
+                title: "MinIO Object Storage & 50% DB Load Reduction",
+                category: "Project / Infrastructure",
+                keywords: "minio s3 object storage database offloading 50% load sql aws zero data loss hibernate migration employee of the month award",
+                snippet: "Migrated 10+ core enterprise apps to MinIO object storage, cutting database disk load by 50% with zero data loss.",
+                link: "#projects"
+            },
+            {
+                title: "Supply Chain EDI Ingestion (GFS, PFS, GFS US)",
+                category: "Project / Integration",
+                keywords: "edi gfs pfs gfs us sftp filezilla purchase order 850 invoices 810 catalog calendar 832 supply chain bi reporting",
+                snippet: "Automated SFTP pipeline fetching supplier invoices, purchase orders, and daily pricing catalog syncs directly into BI.",
+                link: "#projects"
+            },
+            {
+                title: "n8n Data Automation & Custom AI Agents",
+                category: "Project / Innovation",
+                keywords: "n8n automation dynamic fetch off peak schedule low traffic window custom gpt ai agent team knowledge assistant",
+                snippet: "Engineered automated off-peak data sync pipelines using n8n and deployed custom GPT assistants for internal engineering acceleration.",
+                link: "#projects"
+            },
+            {
+                title: "Client Brands Portfolio (Inspire Brands, Steak 'n Shake, etc.)",
+                category: "Clients / Enterprise",
+                keywords: "inspire brands chicken salad chick 400 steak n shake 250 golden chick 50 rubios tmad qsr enterprise sme",
+                snippet: "Managed technical onboarding and continuous integration operations for Tier-1 enterprise QSR brands.",
+                link: "#experience"
+            },
+            {
+                title: "CA Intermediate & Accounting Acumen",
+                category: "Education / Qualifications",
+                keywords: "ca intermediate icai institute of chartered accountants of india financial audit reconciliation bcom b.com ledger compliance tax audit",
+                snippet: "CA Intermediate qualified through ICAI with 3 years full-time articleship in statutory, internal, and tax audits.",
+                link: "#education"
+            },
+            {
+                title: "Awards, Honors & Newsletter Recognitions",
+                category: "Honors & Achievements",
+                keywords: "awards employee of the month eom 2x newsletter appreciation recognition august 2024 may 2025 zero bugs",
+                snippet: "2x Employee of the Month award winner & 2x Corporate Newsletter recognition for zero-bug Hibernate & AWS rollouts.",
+                link: "#about"
+            },
+            {
+                title: "Technical & BA Toolbox (Jira, Postman, SQL, Grafana)",
+                category: "Tools & Skills",
+                keywords: "jira confluence postman sql jpql swagger drawio visio figma minio aws grafana filezilla sftp git github",
+                snippet: "Comprehensive proficiency across Jira, Confluence, Postman automated assertion testing, SQL/JPQL, and cloud monitoring.",
+                link: "#tools"
+            },
+            {
+                title: "Resume Download (Official PDF)",
+                category: "Document",
+                keywords: "resume cv download pdf profile rajeev kumar ojha techno functional ba",
+                snippet: "Download the complete, verified 1-page executive resume of Rajeev Kumar Ojha in PDF format.",
+                link: "resume.pdf"
+            }
+        ];
+
+        const searchInput = document.getElementById('profileSearchInput');
+        const searchResultsBox = document.getElementById('searchResultsContainer');
+        const clearSearchBtn = document.getElementById('clearSearchBtn');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+            if (query.length > 0) {
+                clearSearchBtn.style.display = 'block';
+                performSearch(query);
+            } else {
+                clearSearchBtn.style.display = 'none';
+                searchResultsBox.style.display = 'none';
+                searchResultsBox.innerHTML = '';
+            }
+        });
+
+        clearSearchBtn.addEventListener('click', function() {
+            searchInput.value = '';
+            clearSearchBtn.style.display = 'none';
+            searchResultsBox.style.display = 'none';
+            searchResultsBox.innerHTML = '';
+            searchInput.focus();
+        });
+
+        function applySearchTag(tagText) {
+            searchInput.value = tagText;
+            clearSearchBtn.style.display = 'block';
+            performSearch(tagText.toLowerCase());
+            searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function performSearch(query) {
+            const results = profileKnowledgeBase.filter(item => {
+                return item.title.toLowerCase().includes(query) ||
+                       item.keywords.toLowerCase().includes(query) ||
+                       item.category.toLowerCase().includes(query) ||
+                       item.snippet.toLowerCase().includes(query);
+            });
+
+            if (results.length === 0) {
+                searchResultsBox.innerHTML = `
+                    <div class="no-search-results">
+                        <i class="fa-regular fa-face-frown"></i>
+                        <p>No exact match found for "<strong>${escapeHtml(query)}</strong>". Try searching for <em>MinIO, POS, Inspire Brands, n8n, CA Inter, Postman</em>.</p>
+                    </div>
+                `;
+                searchResultsBox.style.display = 'block';
+                return;
+            }
+
+            let resultsHtml = `
+                <div class="search-results-header">
+                    <span>Found <strong>${results.length}</strong> matching sections for "<strong>${escapeHtml(query)}</strong>":</span>
+                </div>
+                <div class="search-cards-grid">
+            `;
+
+            results.forEach(res => {
+                resultsHtml += `
+                    <a href="${res.link}" class="search-result-card" onclick="highlightTarget('${res.link}')">
+                        <div class="res-category">${res.category}</div>
+                        <h4 class="res-title">${res.title}</h4>
+                        <p class="res-snippet">${res.snippet}</p>
+                        <div class="res-action"><i class="fa-solid fa-arrow-right"></i> View Details</div>
+                    </a>
+                `;
+            });
+
+            resultsHtml += `</div>`;
+            searchResultsBox.innerHTML = resultsHtml;
+            searchResultsBox.style.display = 'block';
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        function highlightTarget(link) {
+            if (link.startsWith('#')) {
+                const targetEl = document.querySelector(link);
+                if (targetEl) {
+                    targetEl.classList.add('section-highlight');
+                    setTimeout(() => targetEl.classList.remove('section-highlight'), 2000);
+                }
+            }
+        }
     </script>
 </body>
 </html>
