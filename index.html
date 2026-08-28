@@ -14,10 +14,10 @@
 </head>
 <body>
 
-    <!-- Particle Dot Background -->
+    <!-- Subtle Particle Background -->
     <div class="stars-bg"></div>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-brand">
@@ -25,7 +25,7 @@
                 <span class="brand-title">Technical<span class="highlight">BA</span></span>
             </a>
 
-            <!-- Nav Links (Desktop & Mobile Drawer) -->
+            <!-- Navigation Links -->
             <div class="nav-links" id="navLinks">
                 <a href="#home" class="nav-item active" onclick="closeMobileNav()">Home</a>
                 <a href="#search-section" class="nav-item" onclick="closeMobileNav()">Search</a>
@@ -44,8 +44,8 @@
                 <button class="theme-toggle" id="themeToggle" title="Toggle Light / Dark Mode">
                     <i class="fa-solid fa-moon" id="themeIcon"></i>
                 </button>
-                <!-- Mobile Hamburger Menu Button -->
-                <button class="mobile-menu-btn" id="mobileMenuBtn" title="Open Navigation Menu">
+                <!-- Hamburger Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" title="Toggle Menu">
                     <i class="fa-solid fa-bars" id="menuIcon"></i>
                 </button>
             </div>
@@ -55,25 +55,25 @@
     <!-- 1. HERO SECTION -->
     <section id="home" class="hero-section">
         <div class="container hero-container">
-            <!-- Avatar Box -->
+            <!-- Avatar Ring -->
             <div class="hero-avatar-box">
                 <div class="avatar-glow-ring">
                     <img src="images/profile.jpg" alt="Rajeev Kumar Ojha" class="hero-img">
                 </div>
             </div>
 
-            <!-- Content Box -->
+            <!-- Content Area -->
             <div class="hero-text-box">
                 <span class="hero-greeting">Hello, I'm</span>
                 <h1 class="hero-name">Rajeev Kumar Ojha</h1>
                 
-                <!-- Typewriter Container -->
+                <!-- Dynamic Typewriter -->
                 <div class="typewriter-wrap">
                     <span id="typewriter"></span><span class="cursor">|</span>
                 </div>
 
                 <p class="hero-desc">
-                    High-impact <strong>Techno-Functional Business Analyst & Product Lead</strong> with 4+ years in IT (QA/BA) & 3 years CA Articleship. Specializing in <strong>2,000+ store POS integrations</strong> (PAR Brink, Aloha, NCR Silver, Toast), <strong>50% DB offloading via MinIO</strong>, automated n8n pipelines, and enterprise EDI ingestion with zero data loss.
+                    High-impact <strong>Techno-Functional Business Analyst & Product Lead</strong> with 4+ years in IT (QA/BA) & 3 years CA Articleship. Managing enterprise POS pipelines across <strong>10,000+ active stores</strong>, leading <strong>2,000+ store QUPOS on-boardings</strong>, achieving a <strong>50% DB offload via MinIO</strong>, and orchestrating automated n8n & EDI ingestion with 100% zero data loss.
                 </p>
 
                 <div class="hero-cta-group">
@@ -105,15 +105,16 @@
             <div class="search-box-card">
                 <div class="search-input-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="profileSearchInput" placeholder="Search skills, brands, POS, tools (e.g. MinIO, Inspire Brands, n8n, CA)..." autocomplete="off">
+                    <input type="text" id="profileSearchInput" placeholder="Search skills, POS, brands, metrics (e.g. MinIO, QUPOS, Inspire Brands, n8n)..." autocomplete="off">
                     <button id="clearSearchBtn" class="clear-search-btn" title="Clear search">&times;</button>
                 </div>
 
                 <div class="search-chips">
                     <span class="chip-label">Quick:</span>
-                    <button class="search-chip" onclick="applySearchTag('Inspire Brands')">Inspire Brands</button>
+                    <button class="search-chip" onclick="applySearchTag('QUPOS')">QUPOS (2,000 Stores)</button>
+                    <button class="search-chip" onclick="applySearchTag('10,000+ Stores')">10,000+ Stores</button>
                     <button class="search-chip" onclick="applySearchTag('MinIO')">MinIO (50% DB Load)</button>
-                    <button class="search-chip" onclick="applySearchTag('PAR Brink')">PAR Brink</button>
+                    <button class="search-chip" onclick="applySearchTag('Inspire Brands')">Inspire Brands</button>
                     <button class="search-chip" onclick="applySearchTag('n8n')">n8n Automation</button>
                     <button class="search-chip" onclick="applySearchTag('EDI')">EDI</button>
                     <button class="search-chip" onclick="applySearchTag('CA Inter')">CA Inter</button>
@@ -135,8 +136,13 @@
             <div class="kpi-grid">
                 <div class="kpi-card">
                     <div class="kpi-icon-wrap"><i class="fa-solid fa-store"></i></div>
+                    <div class="kpi-number">10,000+</div>
+                    <div class="kpi-label">Active Store Scale Managed</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon-wrap"><i class="fa-solid fa-rocket"></i></div>
                     <div class="kpi-number">2,000+</div>
-                    <div class="kpi-label">Active Store POS Integrations</div>
+                    <div class="kpi-label">QUPOS Onboardings Led</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-icon-wrap"><i class="fa-solid fa-database"></i></div>
@@ -148,28 +154,23 @@
                     <div class="kpi-number">5x Honors</div>
                     <div class="kpi-label">2 EOM & 3 Recognitions</div>
                 </div>
-                <div class="kpi-card">
-                    <div class="kpi-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div class="kpi-number">100%</div>
-                    <div class="kpi-label">Zero Data Loss in Migrations</div>
-                </div>
             </div>
 
             <!-- Details Grid -->
             <div class="about-content-grid">
                 <div class="about-text-card">
-                    <div class="card-subtitle"><i class="fa-solid fa-network-wired highlight-icon"></i> System Architecture & Integrations</div>
+                    <div class="card-subtitle"><i class="fa-solid fa-network-wired highlight-icon"></i> System Architecture & Scale</div>
                     <p>
-                        I specialize in multi-tenant QSR and retail integrations bridging complex financial reconciliation logic with distributed cloud microservices. From pull-based API pollers to on-premise EXE listeners, I own end-to-end data ingestion pipelines handling <strong>Cash & Sales, Menu Mix, Ideal Hours, Cash Office, and Timekeeping</strong>.
+                        I specialize in multi-tenant QSR and retail integrations bridging complex financial reconciliation logic with distributed cloud microservices. From pull-based API pollers to on-premise EXE listeners, I own end-to-end data ingestion pipelines handling <strong>Cash & Sales, Menu Mix, Ideal Hours, Cash Office, and Timekeeping</strong> across <strong>10,000+ store environments</strong>.
                     </p>
                     <p style="margin-top: 14px;">
                         Trusted partner for top enterprise QSR brands including <strong>Inspire Brands, Chicken Salad Chick, Steak 'n Shake, Golden Chick, Rubio's, and TMAD</strong>, spearheading technical calls with US clients, schema splits, and automated off-peak data-pulling workflows via <strong>n8n</strong>.
                     </p>
                 </div>
                 <div class="about-objective-card">
-                    <div class="card-subtitle"><i class="fa-solid fa-award highlight-icon"></i> Key Recognitions & Strengths</div>
+                    <div class="card-subtitle"><i class="fa-solid fa-award highlight-icon"></i> Recognitions & Accounting Rigor</div>
                     <p>
-                        Dual-threat leader combining deep accounting rigor (<strong>CA Intermediate</strong>) with hands-on technical architecture (SQL/JPQL, Postman automated suites, Grafana monitoring, and Custom AI Agents).
+                        Dual-threat leader combining deep corporate finance and audit rigor (<strong>CA Intermediate</strong>) with hands-on technical architecture (SQL/JPQL, Postman automated suites, Grafana monitoring, and Custom AI Agents).
                     </p>
                     <div class="honors-list">
                         <div class="honor-tag"><i class="fa-solid fa-medal"></i> 2x Employee of the Month (AWS Transition & Zero-Bug Rollouts)</div>
@@ -220,7 +221,7 @@
                         <h3>Technical & Integration Architecture</h3>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span>POS API Mapping (PAR Brink, Aloha, NCR, Toast)</span><span>98%</span></div>
+                        <div class="skill-info"><span>POS API Mapping (QUPOS, PAR, Aloha, NCR, Toast)</span><span>98%</span></div>
                         <div class="progress-track"><div class="progress-fill" style="width: 98%;"></div></div>
                     </div>
                     <div class="skill-bar-item">
@@ -267,9 +268,9 @@
                             <span><i class="fa-solid fa-location-dot"></i> Delhi NCR, India</span>
                         </div>
                         <div class="tag-row">
+                            <span class="pill-tag">10,000+ Stores Managed</span>
+                            <span class="pill-tag">2,000+ QUPOS Onboarded</span>
                             <span class="pill-tag">Inspire Brands</span>
-                            <span class="pill-tag">Steak 'n Shake</span>
-                            <span class="pill-tag">Chicken Salad Chick</span>
                             <span class="pill-tag">PAR Brink</span>
                             <span class="pill-tag">Aloha</span>
                             <span class="pill-tag">NCR Silver</span>
@@ -277,7 +278,8 @@
                             <span class="pill-tag">n8n</span>
                         </div>
                         <ul class="timeline-bullets">
-                            <li>Spearheaded integration and store onboarding across <strong>2,000+ store locations</strong> using pull-based APIs and on-premise EXE listeners for major enterprise brands.</li>
+                            <li>Orchestrate POS, EDI, and inventory pipelines across an ecosystem of <strong>10,000+ store locations</strong>, ensuring 99.99% data ingestion reliability.</li>
+                            <li>Directly led the pull-based API integration and store onboarding for <strong>2,000+ QUPOS stores</strong> with customized rate-controlled queues.</li>
                             <li>Architected and executed the company-wide <strong>MinIO object storage migration for 10+ core apps</strong>, officially achieving a <strong>50% reduction in primary database load</strong>.</li>
                             <li>Engineered automated off-peak data-fetching pipelines with <strong>n8n</strong> to prevent server bottlenecks during high transaction peak hours.</li>
                             <li>Led end-to-end <strong>Hibernate migration across 15 enterprise applications</strong> and managed AWS-to-inhouse server transitions with 100% data integrity and zero downtime.</li>
@@ -332,21 +334,21 @@
                     <div class="proj-role"><i class="fa-solid fa-user-tie"></i> Technical Lead & Integration Analyst</div>
                     
                     <div class="proj-block">
-                        <strong>Clients:</strong> Inspire Brands, Chicken Salad Chick (400 stores), Steak 'n Shake (250 stores), Golden Chick, Rubio's, TMAD.
+                        <strong>Scale:</strong> 10,000+ total ecosystem stores; 2,000+ new QUPOS stores onboarded.
                     </div>
                     <div class="proj-block">
-                        <strong>Methods:</strong> Pull-based API engine & EXE listeners with queue management.
+                        <strong>Clients:</strong> Inspire Brands, Chicken Salad Chick, Steak 'n Shake, Golden Chick, Rubio's, TMAD.
                     </div>
                     <div class="proj-block">
                         <strong>Events:</strong> Cash & Sales, Menu Mix, Ideal Hours, Cash Office, TimeKeeping.
                     </div>
 
                     <div class="proj-tags-wrap">
+                        <span class="tag highlight">QUPOS (2,000 Stores)</span>
                         <span class="tag highlight">PAR Brink</span>
                         <span class="tag highlight">Aloha</span>
                         <span class="tag highlight">NCR Silver</span>
-                        <span class="tag highlight">Toast</span>
-                        <span class="tag">QUPOS</span>
+                        <span class="tag">Toast</span>
                     </div>
 
                     <div class="proj-btn-footer">
@@ -617,7 +619,7 @@
     </button>
 
     <!-- ===================================================
-         INTERACTIVE POPUP MODALS (TOUCH OPTIMIZED)
+         INTERACTIVE POPUP MODALS
          =================================================== -->
 
     <!-- MODAL 1: QUPOS -->
@@ -973,8 +975,8 @@
             {
                 title: "Multi-Brand POS Integration Engine",
                 category: "Project / Architecture",
-                keywords: "pos qupos par brink aloha ncr silver toast revel taskpos pull exe queue configuration cash sales menumix timekeeping ideal hours 2000 stores",
-                snippet: "Pull-based API engine & on-premise EXE listeners serving 2,000+ stores across Inspire Brands, Chicken Salad Chick, Steak n Shake, etc.",
+                keywords: "pos qupos par brink aloha ncr silver toast revel taskpos pull exe queue configuration cash sales menumix timekeeping ideal hours 10000 2000 stores",
+                snippet: "Pull-based API engine & on-premise EXE listeners serving 10,000+ total stores with 2,000+ new QUPOS onboardings.",
                 link: "#projects"
             },
             {
@@ -1001,8 +1003,8 @@
             {
                 title: "Client Brands (Inspire Brands, Steak 'n Shake, etc.)",
                 category: "Clients / Enterprise",
-                keywords: "inspire brands chicken salad chick 400 steak n shake 250 golden chick 50 rubios tmad qsr enterprise sme",
-                snippet: "Managed technical onboarding and continuous integration operations for Tier-1 enterprise QSR brands.",
+                keywords: "inspire brands chicken salad chick 400 steak n shake 250 golden chick 50 rubios tmad qsr enterprise sme 10000 stores",
+                snippet: "Managed technical onboarding and continuous integration operations for Tier-1 enterprise QSR brands across 10,000+ stores.",
                 link: "#experience"
             },
             {
@@ -1078,7 +1080,7 @@
                 searchResultsBox.innerHTML = `
                     <div class="no-search-results">
                         <i class="fa-regular fa-face-frown"></i>
-                        <p>No exact match found for "<strong>${escapeHtml(query)}</strong>". Try <em>MinIO, POS, Inspire Brands, n8n, CA Inter</em>.</p>
+                        <p>No exact match found for "<strong>${escapeHtml(query)}</strong>". Try <em>QUPOS, MinIO, Inspire Brands, n8n, CA Inter</em>.</p>
                     </div>
                 `;
                 searchResultsBox.style.display = 'block';
