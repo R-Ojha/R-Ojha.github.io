@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Rajeev Kumar Ojha | Senior Techno-Functional BA & Integration Lead</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <!-- Stars/Dot Particle Background -->
+    <!-- Particle Dot Background -->
     <div class="stars-bg"></div>
 
     <!-- Navigation Header -->
@@ -24,21 +24,29 @@
                 <div class="brand-badge">RO</div>
                 <span class="brand-title">Technical<span class="highlight">BA</span></span>
             </a>
-            <div class="nav-links">
-                <a href="#home" class="nav-item active">Home</a>
-                <a href="#search-section" class="nav-item">Search</a>
-                <a href="#about" class="nav-item">About</a>
-                <a href="#skills" class="nav-item">Skills</a>
-                <a href="#experience" class="nav-item">Experience</a>
-                <a href="#projects" class="nav-item">Projects</a>
-                <a href="#expertise" class="nav-item">Expertise</a>
-                <a href="#tools" class="nav-item">Tools</a>
-                <a href="#education" class="nav-item">Education</a>
-                <a href="#contact" class="nav-item">Contact</a>
+
+            <!-- Nav Links (Desktop & Mobile Drawer) -->
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-item active" onclick="closeMobileNav()">Home</a>
+                <a href="#search-section" class="nav-item" onclick="closeMobileNav()">Search</a>
+                <a href="#about" class="nav-item" onclick="closeMobileNav()">About</a>
+                <a href="#skills" class="nav-item" onclick="closeMobileNav()">Skills</a>
+                <a href="#experience" class="nav-item" onclick="closeMobileNav()">Experience</a>
+                <a href="#projects" class="nav-item" onclick="closeMobileNav()">Projects</a>
+                <a href="#expertise" class="nav-item" onclick="closeMobileNav()">Expertise</a>
+                <a href="#tools" class="nav-item" onclick="closeMobileNav()">Tools</a>
+                <a href="#education" class="nav-item" onclick="closeMobileNav()">Education</a>
+                <a href="#contact" class="nav-item" onclick="closeMobileNav()">Contact</a>
             </div>
+
             <div class="nav-actions">
+                <!-- Theme Toggle Button -->
                 <button class="theme-toggle" id="themeToggle" title="Toggle Light / Dark Mode">
                     <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+                <!-- Mobile Hamburger Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" title="Open Navigation Menu">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
                 </button>
             </div>
         </div>
@@ -47,19 +55,19 @@
     <!-- 1. HERO SECTION -->
     <section id="home" class="hero-section">
         <div class="container hero-container">
-            <!-- Left Avatar -->
+            <!-- Avatar Box -->
             <div class="hero-avatar-box">
                 <div class="avatar-glow-ring">
                     <img src="images/profile.jpg" alt="Rajeev Kumar Ojha" class="hero-img">
                 </div>
             </div>
 
-            <!-- Right Details -->
+            <!-- Content Box -->
             <div class="hero-text-box">
                 <span class="hero-greeting">Hello, I'm</span>
                 <h1 class="hero-name">Rajeev Kumar Ojha</h1>
                 
-                <!-- Dynamic Typewriter -->
+                <!-- Typewriter Container -->
                 <div class="typewriter-wrap">
                     <span id="typewriter"></span><span class="cursor">|</span>
                 </div>
@@ -87,9 +95,7 @@
         </a>
     </section>
 
-    <!-- ===================================================
-         1.5 INTERACTIVE PROFILE SEARCH & KNOWLEDGE EXPLORER
-         =================================================== -->
+    <!-- 1.5 INTERACTIVE SEARCH EXPLORER -->
     <section id="search-section" class="section search-section-wrap">
         <div class="container">
             <div class="section-badge-wrap"><span class="pill-badge">PROFILE EXPLORER</span></div>
@@ -99,23 +105,20 @@
             <div class="search-box-card">
                 <div class="search-input-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="profileSearchInput" placeholder="Type any skill, POS partner, client brand, tool, or metric (e.g., MinIO, Inspire Brands, QUPOS, n8n, CA Inter)..." autocomplete="off">
+                    <input type="text" id="profileSearchInput" placeholder="Search skills, brands, POS, tools (e.g. MinIO, Inspire Brands, n8n, CA)..." autocomplete="off">
                     <button id="clearSearchBtn" class="clear-search-btn" title="Clear search">&times;</button>
                 </div>
 
-                <!-- Quick Suggested Search Chips -->
                 <div class="search-chips">
-                    <span class="chip-label">Quick Search:</span>
+                    <span class="chip-label">Quick:</span>
                     <button class="search-chip" onclick="applySearchTag('Inspire Brands')">Inspire Brands</button>
                     <button class="search-chip" onclick="applySearchTag('MinIO')">MinIO (50% DB Load)</button>
                     <button class="search-chip" onclick="applySearchTag('PAR Brink')">PAR Brink</button>
                     <button class="search-chip" onclick="applySearchTag('n8n')">n8n Automation</button>
-                    <button class="search-chip" onclick="applySearchTag('EDI')">EDI (GFS/PFS)</button>
-                    <button class="search-chip" onclick="applySearchTag('CA Inter')">CA Inter / ICAI</button>
-                    <button class="search-chip" onclick="applySearchTag('Awards')">Awards & Honors</button>
+                    <button class="search-chip" onclick="applySearchTag('EDI')">EDI</button>
+                    <button class="search-chip" onclick="applySearchTag('CA Inter')">CA Inter</button>
                 </div>
 
-                <!-- Live Search Results Container -->
                 <div id="searchResultsContainer" class="search-results-box"></div>
             </div>
         </div>
@@ -128,7 +131,7 @@
             <h2 class="section-heading">Professional Summary</h2>
             <div class="heading-line"></div>
 
-            <!-- 4 Top KPI Stat Cards -->
+            <!-- KPI Cards -->
             <div class="kpi-grid">
                 <div class="kpi-card">
                     <div class="kpi-icon-wrap"><i class="fa-solid fa-store"></i></div>
@@ -143,16 +146,16 @@
                 <div class="kpi-card">
                     <div class="kpi-icon-wrap"><i class="fa-solid fa-trophy"></i></div>
                     <div class="kpi-number">5x Honors</div>
-                    <div class="kpi-label">2 EOM & 3 Project Recognitions</div>
+                    <div class="kpi-label">2 EOM & 3 Recognitions</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
                     <div class="kpi-number">100%</div>
-                    <div class="kpi-label">Zero Data Loss in AWS & Hibernate</div>
+                    <div class="kpi-label">Zero Data Loss in Migrations</div>
                 </div>
             </div>
 
-            <!-- About Details Grid -->
+            <!-- Details Grid -->
             <div class="about-content-grid">
                 <div class="about-text-card">
                     <div class="card-subtitle"><i class="fa-solid fa-network-wired highlight-icon"></i> System Architecture & Integrations</div>
@@ -186,7 +189,7 @@
             <div class="heading-line"></div>
 
             <div class="skills-columns-grid">
-                <!-- Left: Business Analysis -->
+                <!-- BA Column -->
                 <div class="skill-category-card">
                     <div class="category-header">
                         <div class="cat-icon"><i class="fa-solid fa-clipboard-list"></i></div>
@@ -210,7 +213,7 @@
                     </div>
                 </div>
 
-                <!-- Right: Technical & Integration -->
+                <!-- Tech Column -->
                 <div class="skill-category-card">
                     <div class="category-header">
                         <div class="cat-icon"><i class="fa-solid fa-gears"></i></div>
@@ -245,7 +248,7 @@
             <div class="heading-line"></div>
 
             <div class="timeline-container">
-                <!-- IT Role -->
+                <!-- Role 1 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
@@ -271,7 +274,7 @@
                             <span class="pill-tag">Aloha</span>
                             <span class="pill-tag">NCR Silver</span>
                             <span class="pill-tag">MinIO S3</span>
-                            <span class="pill-tag">n8n Automation</span>
+                            <span class="pill-tag">n8n</span>
                         </div>
                         <ul class="timeline-bullets">
                             <li>Spearheaded integration and store onboarding across <strong>2,000+ store locations</strong> using pull-based APIs and on-premise EXE listeners for major enterprise brands.</li>
@@ -283,7 +286,7 @@
                     </div>
                 </div>
 
-                <!-- CA Articleship -->
+                <!-- Role 2 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
@@ -302,7 +305,7 @@
                             <span><i class="fa-solid fa-landmark"></i> Corporate Audit & Financial Modeling</span>
                         </div>
                         <ul class="timeline-bullets">
-                            <li>Conducted rigorous statutory, internal, and tax audits for mid-to-large scale corporate clients, testing ledger data flows and compliance frameworks.</li>
+                            <li>Conducted rigorous statutory, internal, and tax audits for corporate clients, testing ledger data flows and compliance frameworks.</li>
                             <li>Developed analytical financial models that now form the bedrock for my requirement mapping, ERP workflows, and enterprise data reconciliation.</li>
                         </ul>
                     </div>
@@ -311,7 +314,7 @@
         </div>
     </section>
 
-    <!-- 5. FEATURED PROJECTS WITH POPUP DIAGRAM BUTTONS -->
+    <!-- 5. FEATURED PROJECTS -->
     <section id="projects" class="section bg-alt">
         <div class="container">
             <div class="section-badge-wrap"><span class="pill-badge">PORTFOLIO</span></div>
@@ -323,19 +326,19 @@
                 <div class="project-item-card">
                     <div class="proj-header-box">
                         <div class="proj-icon"><i class="fa-solid fa-cash-register"></i></div>
-                        <span class="proj-status-tag live">PRODUCTION DEPLOYED</span>
+                        <span class="proj-status-tag live">DEPLOYED</span>
                     </div>
-                    <h3 class="proj-title">Multi-Brand POS Integration & Event Engine</h3>
+                    <h3 class="proj-title">Multi-Brand POS Integration Engine</h3>
                     <div class="proj-role"><i class="fa-solid fa-user-tie"></i> Technical Lead & Integration Analyst</div>
                     
                     <div class="proj-block">
                         <strong>Clients:</strong> Inspire Brands, Chicken Salad Chick (400 stores), Steak 'n Shake (250 stores), Golden Chick, Rubio's, TMAD.
                     </div>
                     <div class="proj-block">
-                        <strong>Integration Architecture:</strong> Pull-based API engine & on-premise EXE listeners with custom queue management.
+                        <strong>Methods:</strong> Pull-based API engine & EXE listeners with queue management.
                     </div>
                     <div class="proj-block">
-                        <strong>Events Transported:</strong> Cash & Sales, Menu Mix, Ideal Hours, Cash Office, TimeKeeping into Enterprise BI.
+                        <strong>Events:</strong> Cash & Sales, Menu Mix, Ideal Hours, Cash Office, TimeKeeping.
                     </div>
 
                     <div class="proj-tags-wrap">
@@ -343,8 +346,7 @@
                         <span class="tag highlight">Aloha</span>
                         <span class="tag highlight">NCR Silver</span>
                         <span class="tag highlight">Toast</span>
-                        <span class="tag">QUPOS Pull</span>
-                        <span class="tag">Postman Suite</span>
+                        <span class="tag">QUPOS</span>
                     </div>
 
                     <div class="proj-btn-footer">
@@ -358,27 +360,26 @@
                 <div class="project-item-card">
                     <div class="proj-header-box">
                         <div class="proj-icon"><i class="fa-solid fa-server"></i></div>
-                        <span class="proj-status-tag award">50% DB LOAD REDUCTION</span>
+                        <span class="proj-status-tag award">50% DB REDUCTION</span>
                     </div>
-                    <h3 class="proj-title">MinIO Object Storage & Cloud Database Offloading</h3>
+                    <h3 class="proj-title">MinIO Storage & DB Offloading</h3>
                     <div class="proj-role"><i class="fa-solid fa-user-gear"></i> Lead Technical Analyst & Infrastructure Owner</div>
                     
                     <div class="proj-block">
-                        <strong>Problem:</strong> SQL database bloated with document/blob attachments, causing severe query latencies.
+                        <strong>Problem:</strong> SQL database bloated with document/blob attachments slowing queries.
                     </div>
                     <div class="proj-block">
-                        <strong>Solution:</strong> Managed migration of 10+ core enterprise apps to MinIO object storage with zero data loss.
+                        <strong>Solution:</strong> Migrated 10+ core apps to MinIO object storage with 0% data loss.
                     </div>
                     <div class="proj-block">
-                        <strong>Impact:</strong> Official 50% database load reduction and sub-second report generation speeds.
+                        <strong>Impact:</strong> Cut database disk load by 50% with sub-second reporting.
                     </div>
 
                     <div class="proj-tags-wrap">
                         <span class="tag highlight">MinIO S3</span>
                         <span class="tag highlight">Zero Data Loss</span>
                         <span class="tag">SQL / JPQL</span>
-                        <span class="tag">AWS Migration</span>
-                        <span class="tag">Hibernate 15 Apps</span>
+                        <span class="tag">Hibernate</span>
                     </div>
 
                     <div class="proj-btn-footer">
@@ -394,21 +395,21 @@
                         <div class="proj-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
                         <span class="proj-status-tag live">EDI AUTOMATION</span>
                     </div>
-                    <h3 class="proj-title">Supply Chain EDI Ingestion (GFS, PFS, GFS US)</h3>
+                    <h3 class="proj-title">Supply Chain EDI Ingestion</h3>
                     <div class="proj-role"><i class="fa-solid fa-cubes"></i> Integration Analyst & BA</div>
                     
                     <div class="proj-block">
-                        <strong>Partners:</strong> Gordon Food Service (GFS), Performance Foodservice (PFS), GFS US via SFTP & FileZilla.
+                        <strong>Partners:</strong> Gordon Food Service (GFS), Performance Foodservice (PFS), GFS US via SFTP.
                     </div>
                     <div class="proj-block">
-                        <strong>Events:</strong> Automated EDI File Fetching, Order Dispatch, Invoices, Catalog Calendars & BI Feeds.
+                        <strong>Events:</strong> Automated EDI File Fetching, Orders, Invoices, Catalog Calendars.
                     </div>
 
                     <div class="proj-tags-wrap">
                         <span class="tag highlight">EDI Ingestion</span>
-                        <span class="tag">SFTP / FileZilla</span>
-                        <span class="tag">Order & Invoices</span>
-                        <span class="tag">BI Dashboards</span>
+                        <span class="tag">SFTP</span>
+                        <span class="tag">850 / 810 / 832</span>
+                        <span class="tag">BI Feeds</span>
                     </div>
 
                     <div class="proj-btn-footer">
@@ -424,21 +425,20 @@
                         <div class="proj-icon"><i class="fa-solid fa-robot"></i></div>
                         <span class="proj-status-tag award">INNOVATION & AI</span>
                     </div>
-                    <h3 class="proj-title">n8n Data Automation & Custom AI Knowledge Agents</h3>
+                    <h3 class="proj-title">n8n Automation & Custom AI Agents</h3>
                     <div class="proj-role"><i class="fa-solid fa-brain"></i> Automation Developer & Team Mentor</div>
                     
                     <div class="proj-block">
-                        <strong>n8n Workflows:</strong> Automated off-peak dynamic polling for newly onboarded stores during low-traffic windows.
+                        <strong>n8n:</strong> Automated off-peak dynamic polling for newly onboarded stores during low-traffic windows.
                     </div>
                     <div class="proj-block">
-                        <strong>Custom AI Assistants:</strong> Deployed custom GPT agents for internal teams to guide task execution and onboarding.
+                        <strong>AI:</strong> Deployed custom GPT agents for internal teams to guide task execution.
                     </div>
 
                     <div class="proj-tags-wrap">
                         <span class="tag highlight">n8n Workflows</span>
                         <span class="tag highlight">Custom GPT</span>
-                        <span class="tag">LLM Agents</span>
-                        <span class="tag">Off-Peak Schedulers</span>
+                        <span class="tag">Off-Peak Poller</span>
                     </div>
 
                     <div class="proj-btn-footer">
@@ -462,32 +462,32 @@
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <h3>Requirement Gathering</h3>
-                    <p>Direct technical requirement elicitation with US enterprise clients, structured JAD workshops, and cross-team specification alignment.</p>
+                    <p>Technical requirement elicitation with US enterprise clients, structured JAD workshops, and alignment.</p>
                 </div>
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-file-invoice"></i></div>
                     <h3>BRD, FRD & API Specs</h3>
-                    <p>Authoring comprehensive Business & Functional Requirement Documents with Swagger API mappings and end-to-end Traceability Matrices.</p>
+                    <p>Authoring detailed BRD/FRDs with Swagger API mappings and end-to-end Traceability Matrices.</p>
                 </div>
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-layer-group"></i></div>
-                    <h3>User Stories & Acceptance Criteria</h3>
-                    <p>Creating INVEST-compliant user stories equipped with rigorous Given-When-Then criteria ready for engineering sprint execution.</p>
+                    <h3>User Stories & Backlog</h3>
+                    <p>Creating INVEST-compliant user stories equipped with Given-When-Then acceptance criteria.</p>
                 </div>
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-arrows-split-up-and-left"></i></div>
-                    <h3>Schema Splits & As-Is/To-Be</h3>
-                    <p>Designing BPMN process flows, API sequence diagrams, and schema partition strategies to isolate high-throughput microservices.</p>
+                    <h3>Schema Splits & Workflows</h3>
+                    <p>Designing BPMN process flows, API sequence diagrams, and schema partitioning for microservices.</p>
                 </div>
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-square-check"></i></div>
                     <h3>UAT & Defect Triage</h3>
-                    <p>Building automated Postman assertion test suites, coordinating pre-release QA frameworks, and ensuring zero defect leakages into production.</p>
+                    <p>Building automated Postman assertion test suites and ensuring zero defect leakages into production.</p>
                 </div>
                 <div class="expertise-card">
                     <div class="exp-icon"><i class="fa-solid fa-people-group"></i></div>
                     <h3>Team Mentorship & Alignment</h3>
-                    <p>Mentoring cross-functional team members, maintaining morale during tight release cycles, and leveraging AI tools for team speed.</p>
+                    <p>Mentoring cross-functional team members and leveraging AI tools to accelerate delivery speed.</p>
                 </div>
             </div>
         </div>
@@ -508,11 +508,11 @@
                 <div class="tool-box"><i class="fa-solid fa-server"></i><span>MinIO S3</span></div>
                 <div class="tool-box"><i class="fa-brands fa-aws"></i><span>AWS</span></div>
                 <div class="tool-box"><i class="fa-solid fa-chart-line"></i><span>Grafana</span></div>
-                <div class="tool-box"><i class="fa-solid fa-code"></i><span>Swagger / APIs</span></div>
-                <div class="tool-box"><i class="fa-solid fa-network-wired"></i><span>n8n Workflows</span></div>
-                <div class="tool-box"><i class="fa-solid fa-folder-tree"></i><span>FileZilla / SFTP</span></div>
+                <div class="tool-box"><i class="fa-solid fa-code"></i><span>Swagger</span></div>
+                <div class="tool-box"><i class="fa-solid fa-network-wired"></i><span>n8n</span></div>
+                <div class="tool-box"><i class="fa-solid fa-folder-tree"></i><span>SFTP</span></div>
                 <div class="tool-box"><i class="fa-brands fa-git-alt"></i><span>Git & GitHub</span></div>
-                <div class="tool-box"><i class="fa-solid fa-robot"></i><span>Custom GPT / AI</span></div>
+                <div class="tool-box"><i class="fa-solid fa-robot"></i><span>AI / GPT</span></div>
             </div>
         </div>
     </section>
@@ -529,7 +529,7 @@
                     <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                     <h3>CA Intermediate</h3>
                     <p class="institution">Institute of Chartered Accountants of India (ICAI)</p>
-                    <span class="edu-date"><i class="fa-solid fa-check-circle"></i> Qualified (Group 1 & 2)</span>
+                    <span class="edu-date"><i class="fa-solid fa-check-circle"></i> Qualified</span>
                 </div>
                 <div class="edu-card">
                     <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
@@ -555,7 +555,6 @@
             <div class="heading-line"></div>
 
             <div class="contact-main-grid">
-                <!-- Info Column -->
                 <div class="contact-info-column">
                     <div class="info-card">
                         <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
@@ -579,9 +578,8 @@
                     </div>
                 </div>
 
-                <!-- Form Card -->
                 <div class="contact-form-card">
-                    <form class="contact-form" onsubmit="alert('Thank you for reaching out! Your message has been simulated successfully.'); return false;">
+                    <form class="contact-form" onsubmit="alert('Thank you for reaching out! Your message has been received.'); return false;">
                         <div class="form-group">
                             <label>Full Name</label>
                             <input type="text" placeholder="Your name" required>
@@ -619,18 +617,16 @@
     </button>
 
     <!-- ===================================================
-         INTERACTIVE DATA FLOW DIAGRAM POPUPS (MODALS)
+         INTERACTIVE POPUP MODALS (TOUCH OPTIMIZED)
          =================================================== -->
 
-    <!-- MODAL 1: QUPOS & POS PULL ARCHITECTURE -->
+    <!-- MODAL 1: QUPOS -->
     <div id="modal-qupos" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-qupos')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-qupos')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-diagram-project"></i> ARCHITECTURE SPECIFICATION</div>
-            <h3 class="modal-title">QUPOS Pull-Based Onboarding & Data Flow Architecture</h3>
-            <p class="modal-desc">
-                Full lifecycle covering API analysis, key mapping, queue throttling, and phased rollout across 2,000+ restaurant stores.
-            </p>
+            <div class="modal-badge"><i class="fa-solid fa-diagram-project"></i> ARCHITECTURE SPEC</div>
+            <h3 class="modal-title">QUPOS Pull-Based Onboarding & Data Flow</h3>
+            <p class="modal-desc">Full lifecycle covering API analysis, key mapping, queue throttling, and phased rollout across 2,000+ stores.</p>
 
             <div class="diagram-wrapper">
                 <svg viewBox="0 0 900 240" class="modal-svg">
@@ -669,7 +665,7 @@
 
                     <rect x="530" y="130" width="170" height="90" rx="8" class="svg-node yellow-border"/>
                     <text x="615" y="155" class="svg-text-title">3B. BI & ANALYTICS</text>
-                    <text x="615" y="178" class="svg-text-sub">• Cash Office Reconciliation</text>
+                    <text x="615" y="178" class="svg-text-sub">• Cash Office Audit</text>
                     <text x="615" y="198" class="svg-text-sub">• Real-Time KPI Dashboards</text>
 
                     <path d="M 700 120 L 750 120" class="svg-arrow green"/>
@@ -685,32 +681,30 @@
             </div>
 
             <div class="modal-steps-list">
-                <div class="m-step"><strong>1. API Analysis:</strong> Response schema verification, token auth handshake & rate-limit benchmarking.</div>
-                <div class="m-step"><strong>2. Key Mapping:</strong> Dual-layer key alignment for Enterprise Core DB and BI KPI cubes.</div>
-                <div class="m-step"><strong>3. Queue Control:</strong> Configurable off-peak cron triggers preventing production server choke.</div>
-                <div class="m-step"><strong>4. Phased Rollout:</strong> 5-store pilot deployment followed by 2,000+ store production cutover.</div>
+                <div class="m-step"><strong>1. API Analysis:</strong> Response schema verification & token auth handshakes.</div>
+                <div class="m-step"><strong>2. Key Mapping:</strong> Dual-layer key alignment for Core DB and BI KPI cubes.</div>
+                <div class="m-step"><strong>3. Queue Control:</strong> Configurable off-peak cron triggers preventing bottlenecks.</div>
+                <div class="m-step"><strong>4. Phased Rollout:</strong> 5-store pilot deployment followed by full cutover.</div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 2: MINIO STORAGE MIGRATION -->
+    <!-- MODAL 2: MINIO -->
     <div id="modal-minio" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-minio')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-minio')">&times;</button>
             <div class="modal-badge"><i class="fa-solid fa-server"></i> INFRASTRUCTURE CASE STUDY</div>
-            <h3 class="modal-title">MinIO Object Storage & 50% DB Load Reduction Architecture</h3>
-            <p class="modal-desc">
-                Architectural decoupling of relational transactional databases from document blobs, cutting SQL storage overhead by 50% with zero data loss.
-            </p>
+            <h3 class="modal-title">MinIO Object Storage & 50% DB Load Reduction</h3>
+            <p class="modal-desc">Decoupling relational databases from document blobs, cutting SQL overhead by 50% with zero data loss.</p>
 
             <div class="diagram-wrapper">
                 <svg viewBox="0 0 900 220" class="modal-svg">
                     <rect x="20" y="30" width="220" height="160" rx="10" class="svg-node danger-border"/>
                     <text x="130" y="60" class="svg-text-title">LEGACY ARCHITECTURE</text>
                     <text x="130" y="85" class="svg-text-sub">• SQL DB holding Invoices & Blobs</text>
-                    <text x="130" y="105" class="svg-text-sub">• High CPU & Slow Query Latency</text>
+                    <text x="130" y="105" class="svg-text-sub">• High CPU & Slow Latency</text>
                     <text x="130" y="125" class="svg-text-sub">• Backup Chokepoints</text>
-                    <text x="130" y="155" fill="#ef4444" font-size="11" font-weight="700" text-anchor="middle">❌ 100% DB Load & Slowdown</text>
+                    <text x="130" y="155" fill="#ef4444" font-size="11" font-weight="700" text-anchor="middle">❌ 100% DB Load</text>
 
                     <path d="M 240 110 L 320 110" class="svg-arrow"/>
                     <polygon points="320,110 310,105 310,115" fill="#38bdf8"/>
@@ -719,9 +713,9 @@
                     <rect x="320" y="30" width="240" height="160" rx="10" class="svg-node indigo-border"/>
                     <text x="440" y="60" class="svg-text-title">MINIO MIGRATION LAYER</text>
                     <text x="440" y="85" class="svg-text-sub">• Asset Pointer Extraction</text>
-                    <text x="440" y="105" class="svg-text-sub">• Multi-Bucket S3 API Policies</text>
-                    <text x="440" y="125" class="svg-text-sub">• Hash-Based Integrity Validation</text>
-                    <text x="440" y="155" fill="#818cf8" font-size="11" font-weight="700" text-anchor="middle">⚡ 10+ Enterprise Apps Migrated</text>
+                    <text x="440" y="105" class="svg-text-sub">• Multi-Bucket S3 Policies</text>
+                    <text x="440" y="125" class="svg-text-sub">• Hash-Based Verification</text>
+                    <text x="440" y="155" fill="#818cf8" font-size="11" font-weight="700" text-anchor="middle">⚡ 10+ Apps Migrated</text>
 
                     <path d="M 560 75 L 630 60" class="svg-arrow"/>
                     <polygon points="630,60 620,56 623,65" fill="#38bdf8"/>
@@ -730,7 +724,7 @@
                     <polygon points="630,160 623,154 620,163" fill="#10b981"/>
 
                     <rect x="630" y="20" width="250" height="80" rx="8" class="svg-node primary-border"/>
-                    <text x="755" y="45" class="svg-text-title">OPTIMIZED LEAN SQL DB</text>
+                    <text x="755" y="45" class="svg-text-title">OPTIMIZED SQL DB</text>
                     <text x="755" y="68" class="svg-text-sub">Holds pure relational metadata & IDs</text>
 
                     <rect x="630" y="120" width="250" height="80" rx="8" class="svg-node green-border"/>
@@ -740,22 +734,19 @@
             </div>
 
             <div class="modal-steps-list">
-                <div class="m-step"><strong>Key Achievement:</strong> Successfully reduced primary database disk I/O and server load by <strong>50%</strong>.</div>
-                <div class="m-step"><strong>Zero Data Loss:</strong> Validated millions of historical records with automated hash comparison before cutover.</div>
-                <div class="m-step"><strong>Award:</strong> Recognized with <strong>Employee of the Month</strong> for seamless enterprise execution.</div>
+                <div class="m-step"><strong>Key Impact:</strong> Reduced primary database disk I/O and server load by <strong>50%</strong>.</div>
+                <div class="m-step"><strong>Zero Data Loss:</strong> Validated millions of historical records with hash checks.</div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 3: EDI SUPPLY CHAIN DATA FLOW -->
+    <!-- MODAL 3: EDI -->
     <div id="modal-edi" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-edi')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-edi')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-truck-ramp-box"></i> SUPPLY CHAIN SPECIFICATION</div>
-            <h3 class="modal-title">EDI Ingestion & Transport Data Flow (GFS, PFS, GFS US)</h3>
-            <p class="modal-desc">
-                Automated multi-vendor EDI pipeline fetching orders, vendor invoices, and catalog calendar synchronization via SFTP.
-            </p>
+            <div class="modal-badge"><i class="fa-solid fa-truck-ramp-box"></i> SUPPLY CHAIN SPEC</div>
+            <h3 class="modal-title">EDI Ingestion & Transport Data Flow</h3>
+            <p class="modal-desc">Automated multi-vendor EDI pipeline fetching orders, invoices, and catalog calendar data via SFTP.</p>
 
             <div class="diagram-wrapper">
                 <svg viewBox="0 0 900 200" class="modal-svg">
@@ -772,7 +763,7 @@
                     <rect x="280" y="30" width="210" height="140" rx="10" class="svg-node indigo-border"/>
                     <text x="385" y="60" class="svg-text-title">EDI PARSER & TRANSFORM</text>
                     <text x="385" y="85" class="svg-text-sub">• 850 Purchase Orders</text>
-                    <text x="385" y="105" class="svg-text-sub">• 810 Invoices & Quantities</text>
+                    <text x="385" y="105" class="svg-text-sub">• 810 Invoices</text>
                     <text x="385" y="125" class="svg-text-sub">• 832 Price Catalog Sync</text>
 
                     <path d="M 490 100 L 570 100" class="svg-arrow"/>
@@ -781,71 +772,89 @@
 
                     <rect x="570" y="30" width="300" height="140" rx="10" class="svg-node green-border"/>
                     <text x="720" y="60" class="svg-text-title">ENTERPRISE INVENTORY & BI</text>
-                    <text x="720" y="85" class="svg-text-sub">• Automated Purchase Order Reconciliation</text>
-                    <text x="720" y="105" class="svg-text-sub">• Real-Time Store Margin & Food Cost KPI</text>
-                    <text x="720" y="125" class="svg-text-sub">• Supplier Discrepancy Alerts</text>
+                    <text x="720" y="85" class="svg-text-sub">• Automated Purchase Reconciliation</text>
+                    <text x="720" y="105" class="svg-text-sub">• Real-Time Food Cost KPI</text>
+                    <text x="720" y="125" class="svg-text-sub">• Margin Analytics</text>
                 </svg>
             </div>
 
             <div class="modal-steps-list">
-                <div class="m-step"><strong>Automated Ingestion:</strong> Eliminated manual invoice entry across enterprise QSR supply chains.</div>
-                <div class="m-step"><strong>Catalog Sync:</strong> Ensured daily synchronized pricing between food distributors and store inventories.</div>
+                <div class="m-step"><strong>Automated Ingestion:</strong> Zero manual invoice entry across enterprise supply chain.</div>
+                <div class="m-step"><strong>Catalog Sync:</strong> Synchronized daily pricing between food distributors and inventory.</div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL 4: N8N AUTOMATION & CUSTOM AI AGENTS -->
+    <!-- MODAL 4: AUTOMATION -->
     <div id="modal-automation" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-automation')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-automation')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-robot"></i> AUTOMATION & AI PIPELINE</div>
-            <h3 class="modal-title">n8n Dynamic Off-Peak Ingestion & Custom AI GPT Assistant</h3>
-            <p class="modal-desc">
-                Intelligent traffic-aware store synchronization and custom internal GPT assistants for rapid team delivery.
-            </p>
+            <div class="modal-badge"><i class="fa-solid fa-robot"></i> AUTOMATION & AI</div>
+            <h3 class="modal-title">n8n Off-Peak Polling & Custom GPT Assistant</h3>
+            <p class="modal-desc">Intelligent traffic-aware store synchronization and custom internal GPT assistants for rapid team delivery.</p>
 
             <div class="diagram-wrapper">
                 <svg viewBox="0 0 900 200" class="modal-svg">
                     <rect x="20" y="30" width="220" height="140" rx="10" class="svg-node primary-border"/>
-                    <text x="130" y="60" class="svg-text-title">NEW STORE ONBOARDING</text>
+                    <text x="130" y="60" class="svg-text-title">STORE ONBOARDING</text>
                     <text x="130" y="85" class="svg-text-sub">• Store Added to Registry</text>
                     <text x="130" y="105" class="svg-text-sub">• Low-Traffic Window Detector</text>
-                    <text x="130" y="125" class="svg-text-sub">• Webhook Event Trigger</text>
+                    <text x="130" y="125" class="svg-text-sub">• Webhook Trigger</text>
 
                     <path d="M 240 100 L 320 100" class="svg-arrow"/>
                     <polygon points="320,100 310,95 310,105" fill="#38bdf8"/>
                     <text x="280" y="90" class="svg-arrow-label">n8n Event</text>
 
                     <rect x="320" y="30" width="230" height="140" rx="10" class="svg-node indigo-border"/>
-                    <text x="435" y="60" class="svg-text-title">n8n ORCHESTRATION ENGINE</text>
-                    <text x="435" y="85" class="svg-text-sub">• Off-Peak Cron Scheduling</text>
+                    <text x="435" y="60" class="svg-text-title">n8n ORCHESTRATION</text>
+                    <text x="435" y="85" class="svg-text-sub">• Off-Peak Scheduling</text>
                     <text x="435" y="105" class="svg-text-sub">• Dynamic Batch Data Fetch</text>
-                    <text x="435" y="125" class="svg-text-sub">• Error Notifications via Slack</text>
+                    <text x="435" y="125" class="svg-text-sub">• Error Alerts</text>
 
                     <path d="M 550 100 L 630 100" class="svg-arrow green"/>
                     <polygon points="630,100 620,95 620,105" fill="#10b981"/>
-                    <text x="590" y="90" class="svg-arrow-label">Direct Feed</text>
+                    <text x="590" y="90" class="svg-arrow-label">Feed</text>
 
                     <rect x="630" y="30" width="240" height="140" rx="10" class="svg-node green-border"/>
                     <text x="750" y="60" class="svg-text-title">CUSTOM INTERNAL GPT</text>
                     <text x="750" y="85" class="svg-text-sub">• Instant API Spec Lookup</text>
-                    <text x="750" y="105" class="svg-text-sub">• Automated User Story Helper</text>
+                    <text x="750" y="105" class="svg-text-sub">• User Story Generator</text>
                     <text x="750" y="125" class="svg-text-sub">• 40% Onboarding Speedup</text>
                 </svg>
             </div>
 
             <div class="modal-steps-list">
-                <div class="m-step"><strong>Traffic-Aware Sync:</strong> Automatically schedules data extraction when store transactional traffic is lowest.</div>
-                <div class="m-step"><strong>Internal GPT:</strong> Accelerates engineering knowledge transfer and requirement drafting.</div>
+                <div class="m-step"><strong>Traffic-Aware Sync:</strong> Automatically runs queries when transactional traffic is lowest.</div>
+                <div class="m-step"><strong>Internal GPT:</strong> Accelerates engineering knowledge transfer and user story drafting.</div>
             </div>
         </div>
     </div>
 
-    <!-- ===================================================
-         INTERACTIVE SCRIPTS (THEME, TYPEWRITER, SEARCH, MODALS)
-         =================================================== -->
+    <!-- JavaScript Execution -->
     <script>
-        // 1. Theme Toggle (Dark / Light)
+        // 1. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const menuIcon = document.getElementById('menuIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
+            if (navLinks.classList.contains('mobile-open')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        function closeMobileNav() {
+            navLinks.classList.remove('mobile-open');
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+        }
+
+        // 2. Theme Toggle (Dark / Light)
         const themeToggleBtn = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         const htmlElement = document.documentElement;
@@ -872,7 +881,7 @@
             }
         }
 
-        // 2. Typewriter Effect
+        // 3. Typewriter
         const words = [
             "Techno-Functional BA & Product Lead",
             "Enterprise POS Integration Specialist",
@@ -916,7 +925,7 @@
         }
         typingEffect();
 
-        // 3. Scroll to Top
+        // 4. Scroll To Top
         const scrollTopBtn = document.getElementById("scrollTopBtn");
         window.onscroll = function() {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -929,7 +938,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         };
 
-        // 4. Modal Open/Close Logic
+        // 5. Modal Popup Logic
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
@@ -959,9 +968,7 @@
             }
         });
 
-        // ===================================================
-        // 5. LIVE PROFILE SEARCH ENGINE
-        // ===================================================
+        // 6. Profile Search Engine
         const profileKnowledgeBase = [
             {
                 title: "Multi-Brand POS Integration Engine",
@@ -992,14 +999,14 @@
                 link: "#projects"
             },
             {
-                title: "Client Brands Portfolio (Inspire Brands, Steak 'n Shake, etc.)",
+                title: "Client Brands (Inspire Brands, Steak 'n Shake, etc.)",
                 category: "Clients / Enterprise",
                 keywords: "inspire brands chicken salad chick 400 steak n shake 250 golden chick 50 rubios tmad qsr enterprise sme",
                 snippet: "Managed technical onboarding and continuous integration operations for Tier-1 enterprise QSR brands.",
                 link: "#experience"
             },
             {
-                title: "CA Intermediate & Accounting Acumen",
+                title: "CA Intermediate & Financial Acumen",
                 category: "Education / Qualifications",
                 keywords: "ca intermediate icai institute of chartered accountants of india financial audit reconciliation bcom b.com ledger compliance tax audit",
                 snippet: "CA Intermediate qualified through ICAI with 3 years full-time articleship in statutory, internal, and tax audits.",
@@ -1013,7 +1020,7 @@
                 link: "#about"
             },
             {
-                title: "Technical & BA Toolbox (Jira, Postman, SQL, Grafana)",
+                title: "Technical & BA Toolbox (Jira, Postman, SQL)",
                 category: "Tools & Skills",
                 keywords: "jira confluence postman sql jpql swagger drawio visio figma minio aws grafana filezilla sftp git github",
                 snippet: "Comprehensive proficiency across Jira, Confluence, Postman automated assertion testing, SQL/JPQL, and cloud monitoring.",
@@ -1071,7 +1078,7 @@
                 searchResultsBox.innerHTML = `
                     <div class="no-search-results">
                         <i class="fa-regular fa-face-frown"></i>
-                        <p>No exact match found for "<strong>${escapeHtml(query)}</strong>". Try searching for <em>MinIO, POS, Inspire Brands, n8n, CA Inter, Postman</em>.</p>
+                        <p>No exact match found for "<strong>${escapeHtml(query)}</strong>". Try <em>MinIO, POS, Inspire Brands, n8n, CA Inter</em>.</p>
                     </div>
                 `;
                 searchResultsBox.style.display = 'block';
@@ -1080,7 +1087,7 @@
 
             let resultsHtml = `
                 <div class="search-results-header">
-                    <span>Found <strong>${results.length}</strong> matching sections for "<strong>${escapeHtml(query)}</strong>":</span>
+                    <span>Found <strong>${results.length}</strong> matching sections:</span>
                 </div>
                 <div class="search-cards-grid">
             `;
@@ -1091,7 +1098,7 @@
                         <div class="res-category">${res.category}</div>
                         <h4 class="res-title">${res.title}</h4>
                         <p class="res-snippet">${res.snippet}</p>
-                        <div class="res-action"><i class="fa-solid fa-arrow-right"></i> View Details</div>
+                        <div class="res-action"><i class="fa-solid fa-arrow-right"></i> Jump To Section</div>
                     </a>
                 `;
             });
