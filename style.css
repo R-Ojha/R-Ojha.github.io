@@ -1324,7 +1324,7 @@ footer {
     font-size: clamp(0.82rem, 1.1vw, 0.92rem);
 }
 
-/* MERMAID LIVE DIAGRAM CONTAINER */
+/* MERMAID CONTAINER */
 .mermaid-diagram-wrap {
     background-color: #070a13;
     border: 1.2px solid #1e293b;
