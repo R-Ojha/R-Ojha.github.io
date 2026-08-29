@@ -1,5 +1,5 @@
 /* ===================================================
-   RAJEEV KUMAR OJHA - FLUID RESPONSIVE SYSTEM
+   RAJEEV KUMAR OJHA - DUAL THEME & RESPONSIVE SYSTEM
    =================================================== */
 
 /* DARK THEME (DEFAULT) */
@@ -24,6 +24,7 @@
     --hero-gradient: radial-gradient(circle at 80% 20%, #17153a 0%, #070a13 65%);
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
 }
 
 /* LIGHT THEME */
@@ -108,9 +109,7 @@ ul {
     list-style: none;
 }
 
-/* ===================================================
-   NAVBAR
-   =================================================== */
+/* NAVBAR */
 .navbar {
     position: sticky;
     top: 0;
@@ -207,9 +206,7 @@ ul {
     display: none;
 }
 
-/* ===================================================
-   HERO SECTION (FLUID RESPONSIVE)
-   =================================================== */
+/* HERO SECTION */
 .hero-section {
     position: relative;
     padding: 70px 0 40px;
@@ -261,7 +258,6 @@ ul {
     font-weight: 600;
 }
 
-/* Fluid Hero Name: Scales smoothly without awkward breaks */
 .hero-name {
     font-family: var(--font-heading);
     font-size: clamp(2.1rem, 4.2vw, 3.5rem);
@@ -270,7 +266,6 @@ ul {
     margin: 4px 0 8px 0;
     line-height: 1.15;
     word-break: keep-all;
-    overflow-wrap: normal;
 }
 
 .typewriter-wrap {
@@ -374,7 +369,7 @@ ul {
     transform: translateY(-2px);
 }
 
-/* Mouse Indicator */
+/* Mouse Scroll */
 .scroll-indicator {
     display: flex;
     flex-direction: column;
@@ -410,9 +405,7 @@ ul {
     100% { opacity: 0; top: 16px; }
 }
 
-/* ===================================================
-   PROFILE SEARCH
-   =================================================== */
+/* PROFILE SEARCH */
 .search-section-wrap {
     padding: 60px 0;
     background-color: var(--bg-alt);
@@ -576,9 +569,7 @@ ul {
     margin-bottom: 8px;
 }
 
-/* ===================================================
-   SHARED SECTIONS & HEADINGS
-   =================================================== */
+/* SHARED SECTIONS */
 .section {
     padding: clamp(50px, 7vw, 85px) 0;
     position: relative;
@@ -1246,7 +1237,7 @@ footer {
 }
 
 /* ===================================================
-   MODALS (POPUPS)
+   7-STAGE SDLC & TECHNO-FUNCTIONAL MODALS
    =================================================== */
 .modal-overlay {
     position: fixed;
@@ -1254,8 +1245,8 @@ footer {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(3, 7, 18, 0.85);
-    backdrop-filter: blur(8px);
+    background-color: rgba(3, 7, 18, 0.88);
+    backdrop-filter: blur(10px);
     z-index: 2000;
     display: none;
     align-items: center;
@@ -1273,26 +1264,31 @@ footer {
 .modal-content {
     background-color: var(--bg-card);
     border: 1px solid var(--border-subtle);
-    border-radius: 14px;
-    max-width: 900px;
+    border-radius: 16px;
+    max-width: 1050px;
     width: 100%;
-    max-height: 90vh;
+    max-height: 92vh;
     overflow-y: auto;
-    padding: clamp(16px, 3vw, 28px);
+    padding: clamp(18px, 3vw, 32px);
     position: relative;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
 }
 
 .modal-close {
     position: absolute;
-    top: 12px;
-    right: 16px;
+    top: 14px;
+    right: 18px;
     font-size: 1.8rem;
     color: var(--text-muted);
     background: transparent;
     border: none;
     cursor: pointer;
     line-height: 1;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--primary-blue);
 }
 
 .modal-badge {
@@ -1310,74 +1306,108 @@ footer {
 
 .modal-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-size: clamp(1.3rem, 2.2vw, 1.75rem);
     color: var(--text-pure);
     margin-bottom: 6px;
 }
 
 .modal-desc {
     color: var(--text-secondary);
-    font-size: 0.85rem;
-    margin-bottom: 16px;
-    line-height: 1.5;
+    font-size: 0.88rem;
+    margin-bottom: 22px;
+    line-height: 1.55;
 }
 
-.diagram-wrapper {
-    background-color: var(--bg-alt);
-    border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    padding: 12px;
-    margin-bottom: 16px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.modal-svg {
-    width: 100%;
-    min-width: 680px;
-    height: auto;
-    display: block;
-}
-
-.svg-node { fill: var(--bg-card); stroke-width: 1.5; }
-.primary-border { stroke: #38bdf8; }
-.indigo-border { stroke: #818cf8; }
-.yellow-border { stroke: #f59e0b; }
-.green-border { stroke: #10b981; }
-.danger-border { stroke: #ef4444; }
-
-.svg-text-title { fill: var(--text-pure); font-size: 11px; font-weight: 700; text-anchor: middle; }
-.svg-text-sub { fill: var(--text-secondary); font-size: 9.5px; text-anchor: middle; }
-.svg-pill-box { fill: var(--bg-alt); stroke: #38bdf8; stroke-width: 0.8; }
-.svg-pill-box.indigo { stroke: #818cf8; }
-.svg-pill-text { fill: var(--primary-blue); font-size: 9px; font-weight: 600; text-anchor: middle; }
-.svg-arrow { fill: none; stroke: #38bdf8; stroke-width: 2; }
-.svg-arrow.yellow { stroke: #f59e0b; }
-.svg-arrow.green { stroke: #10b981; }
-.svg-arrow-label { fill: var(--text-muted); font-size: 8.5px; font-weight: 600; text-anchor: middle; }
-
-.modal-steps-list {
+/* 7-STAGE FLOW GRID */
+.sdlc-flow-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px;
 }
 
-.m-step {
+.sdlc-stage-card {
     background-color: var(--bg-alt);
     border: 1px solid var(--border-subtle);
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 0.8rem;
-    color: var(--text-primary);
+    border-radius: 12px;
+    padding: 16px;
+    position: relative;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.m-step strong {
+.sdlc-stage-card:hover {
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+}
+
+.sdlc-stage-card.highlight-recon {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(56, 189, 248, 0.08));
+    border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.sdlc-stage-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 10px;
+}
+
+.stage-num {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0284c7, #38bdf8);
+    padding: 4px 8px;
+    border-radius: 6px;
+    line-height: 1;
+}
+
+.stage-title-box h4 {
+    font-size: 0.95rem;
+    color: var(--text-pure);
+    margin-bottom: 2px;
+}
+
+.stage-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--primary-indigo);
+    text-transform: uppercase;
+}
+
+.sdlc-list {
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sdlc-list li {
+    font-size: 0.82rem;
+    color: var(--text-primary);
+    line-height: 1.45;
+    position: relative;
+    padding-left: 14px;
+}
+
+.sdlc-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
     color: var(--primary-blue);
 }
 
-/* ===================================================
-   RESPONSIVE LAYOUT RULES (TABLET & MOBILE)
-   =================================================== */
+.sdlc-list li strong {
+    color: var(--text-pure);
+}
+
+/* RESPONSIVE */
 @media (max-width: 992px) {
     .mobile-menu-btn {
         display: flex;
@@ -1439,12 +1469,11 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .modal-steps-list {
+    .sdlc-flow-container {
         grid-template-columns: 1fr;
     }
 }
 
-/* Precise Mobile Overrides */
 @media (max-width: 580px) {
     .container {
         padding: 0 14px;
@@ -1482,5 +1511,9 @@ footer {
 
     .timeline-dot {
         left: -25px;
+    }
+
+    .modal-content {
+        padding: 20px 14px;
     }
 }
