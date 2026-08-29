@@ -7,9 +7,20 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Mermaid.js for Live Architectural Rendering -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: false, 
+            theme: 'dark',
+            securityLevel: 'loose',
+            fontFamily: 'Plus Jakarta Sans, sans-serif'
+        });
+        window.mermaid = mermaid;
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,7 +36,6 @@
                 <span class="brand-title">Technical<span class="highlight">BA</span></span>
             </a>
 
-            <!-- Navigation Links -->
             <div class="nav-links" id="navLinks">
                 <a href="#home" class="nav-item active" onclick="closeMobileNav()">Home</a>
                 <a href="#search-section" class="nav-item" onclick="closeMobileNav()">Search</a>
@@ -90,7 +100,7 @@
         </a>
     </section>
 
-    <!-- 1.5 INTERACTIVE SEARCH EXPLORER -->
+    <!-- 1.5 SEARCH EXPLORER -->
     <section id="search-section" class="section search-section-wrap">
         <div class="container">
             <div class="section-badge-wrap"><span class="pill-badge">PROFILE EXPLORER</span></div>
@@ -100,18 +110,17 @@
             <div class="search-box-card">
                 <div class="search-input-wrapper">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="profileSearchInput" placeholder="Search skills, POS, brands, metrics (e.g. MinIO, QUPOS, Inspire Brands, n8n)..." autocomplete="off">
+                    <input type="text" id="profileSearchInput" placeholder="Search skills, POS, brands, metrics (e.g. MinIO, QUPOS, Jack in the Box, n8n)..." autocomplete="off">
                     <button id="clearSearchBtn" class="clear-search-btn" title="Clear search">&times;</button>
                 </div>
 
                 <div class="search-chips">
                     <span class="chip-label">Quick:</span>
-                    <button class="search-chip" onclick="applySearchTag('QUPOS')">QUPOS (2,500 Stores)</button>
+                    <button class="search-chip" onclick="applySearchTag('QUPOS')">QUPOS (Jack in the Box)</button>
                     <button class="search-chip" onclick="applySearchTag('10,000+ Stores')">10,000+ Stores</button>
                     <button class="search-chip" onclick="applySearchTag('MinIO')">MinIO (50% DB Load)</button>
-                    <button class="search-chip" onclick="applySearchTag('Inspire Brands')">Inspire Brands</button>
-                    <button class="search-chip" onclick="applySearchTag('n8n')">n8n Automation</button>
-                    <button class="search-chip" onclick="applySearchTag('EDI')">EDI</button>
+                    <button class="search-chip" onclick="applySearchTag('EDI')">EDI (GFS/PFS)</button>
+                    <button class="search-chip" onclick="applySearchTag('n8n')">n8n (LUCAS Historical)</button>
                     <button class="search-chip" onclick="applySearchTag('CA Inter')">CA Inter</button>
                 </div>
 
@@ -136,7 +145,7 @@
                 <div class="kpi-card">
                     <div class="kpi-icon-wrap"><i class="fa-solid fa-rocket"></i></div>
                     <div class="kpi-number">2,500+</div>
-                    <div class="kpi-label">QUPOS Onboardings Led</div>
+                    <div class="kpi-label">Unified Stores Onboarded</div>
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-icon-wrap"><i class="fa-solid fa-database"></i></div>
@@ -154,19 +163,19 @@
                 <div class="about-text-card">
                     <div class="card-subtitle"><i class="fa-solid fa-network-wired highlight-icon"></i> System Architecture & Scale</div>
                     <p>
-                        I specialize in multi-tenant QSR and retail integrations bridging complex financial reconciliation logic with distributed cloud microservices. From pull-based API pollers to on-premise EXE listeners, I own end-to-end data ingestion pipelines handling <strong>Cash & Sales, Menu Mix, Ideal Hours, Cash Office, and Timekeeping</strong> across <strong>10,000+ store environments</strong>.
+                        Specialized in multi-tenant QSR and retail integrations bridging complex financial reconciliation logic with distributed cloud microservices. I own end-to-end data ingestion pipelines handling <strong>Check-Level Items, Discounts, Voids, Surcharges, Payments, and Timekeeping</strong> across <strong>10,000+ active store environments</strong>.
                     </p>
                     <p style="margin-top: 14px;">
-                        Trusted partner for top enterprise QSR brands including <strong>Inspire Brands, Chicken Salad Chick, Steak 'n Shake, Golden Chick, Rubio's, and TMAD</strong>, spearheading technical calls with US clients, schema splits, and automated off-peak data-pulling workflows via <strong>n8n</strong>.
+                        Trusted partner for top enterprise QSR brands including <strong>Jack in the Box, Denny's, Bojangles, Inspire Brands, Steak 'n Shake, and Chicken Salad Chick</strong>, spearheading technical calls with US clients, schema splits, and automated off-peak data-pulling workflows.
                     </p>
                 </div>
                 <div class="about-objective-card">
                     <div class="card-subtitle"><i class="fa-solid fa-award highlight-icon"></i> Recognitions & Accounting Rigor</div>
                     <p>
-                        Dual-threat leader combining deep corporate finance and audit rigor (<strong>CA Intermediate</strong>, statutory audits including <strong>Punjab National Bank</strong>) with hands-on technical architecture (SQL/JPQL, Postman automated suites, Grafana monitoring, and Custom AI Agents).
+                        Dual-threat leader combining deep corporate finance and audit rigor (<strong>CA Intermediate</strong>, statutory audits including <strong>Punjab National Bank</strong>) with hands-on technical architecture (SQL/JPQL, Postman assertion suites, Grafana monitoring, and Custom AI Agents).
                     </p>
                     <div class="honors-list">
-                        <div class="honor-tag"><i class="fa-solid fa-medal"></i> 2x Employee of the Month (AWS Transition & Zero-Bug Rollouts)</div>
+                        <div class="honor-tag"><i class="fa-solid fa-medal"></i> 2x Employee of the Month (AWS Transition & MinIO Rollout)</div>
                         <div class="honor-tag"><i class="fa-solid fa-star"></i> Corporate Newsletter Appreciation (Aug 2024 & May 2025)</div>
                         <div class="honor-tag"><i class="fa-solid fa-robot"></i> Built Internal Custom GPT & AI Assistant for Team Acceleration</div>
                     </div>
@@ -212,7 +221,7 @@
                         <h3>Technical & Integration Architecture</h3>
                     </div>
                     <div class="skill-bar-item">
-                        <div class="skill-info"><span>POS API Mapping (QUPOS, PAR, Aloha, NCR, Toast)</span><span>98%</span></div>
+                        <div class="skill-info"><span>POS API Mapping (QUPOS, XENIAL, LUCAS, PAR, Aloha)</span><span>98%</span></div>
                         <div class="progress-track"><div class="progress-fill" style="width: 98%;"></div></div>
                     </div>
                     <div class="skill-bar-item">
@@ -259,21 +268,18 @@
                         </div>
                         <div class="tag-row">
                             <span class="pill-tag">10,000+ Stores Managed</span>
-                            <span class="pill-tag">2,500+ QUPOS Onboarded</span>
-                            <span class="pill-tag">Inspire Brands</span>
-                            <span class="pill-tag">PAR Brink</span>
-                            <span class="pill-tag">Aloha</span>
-                            <span class="pill-tag">NCR Silver</span>
+                            <span class="pill-tag">QUPOS (Jack in the Box)</span>
+                            <span class="pill-tag">XENIAL (Denny's)</span>
+                            <span class="pill-tag">LUCAS (Bojangles)</span>
                             <span class="pill-tag">MinIO S3</span>
                             <span class="pill-tag">n8n</span>
                         </div>
                         <ul class="timeline-bullets">
                             <li>Orchestrate POS, EDI, and inventory data pipelines across an enterprise network of <strong>10,000+ active store locations</strong>, ensuring 99.99% data ingestion reliability.</li>
-                            <li>Directly led the pull-based API integration and store onboarding for <strong>2,500+ QUPOS stores</strong> with customized rate-controlled queues.</li>
-                            <li>Architected and executed the company-wide <strong>MinIO object storage migration for 10+ core apps</strong>, officially achieving a <strong>50% reduction in primary database load</strong>.</li>
-                            <li>Engineered automated off-peak data-fetching pipelines with <strong>n8n</strong> to prevent server bottlenecks during high transaction peak hours.</li>
-                            <li>Led end-to-end <strong>Hibernate migration across 15 enterprise applications</strong> and managed AWS-to-inhouse server transitions with 100% data integrity and zero downtime.</li>
-                            <li>Developed and deployed custom internal <strong>GPT & AI assistant tools</strong> to accelerate task execution, knowledge sharing, and requirement validation across cross-functional teams.</li>
+                            <li>Directly led pull-based API integration & application consolidation for <strong>2,500+ stores</strong> across QUPOS (Jack in the Box 2k+), XENIAL (Denny's 300), and LUCAS (Bojangles 200).</li>
+                            <li>Architected company-wide <strong>MinIO object storage migration for 15+ core enterprise apps</strong>, cutting SQL disk load by <strong>50%</strong> with zero data loss.</li>
+                            <li>Engineered automated off-peak historical data-fetching pipelines with <strong>n8n</strong> (syncing 13 months of historical data with strict 60s rate-limiting).</li>
+                            <li>Led end-to-end <strong>Hibernate migration across 15 enterprise applications</strong> and managed AWS server transitions, awarded <strong>2x Employee of the Month</strong> and <strong>2x Corporate Newsletter Appreciation</strong>.</li>
                         </ul>
                     </div>
                 </div>
@@ -297,7 +303,7 @@
                         </div>
                         <ul class="timeline-bullets">
                             <li>Conducted rigorous statutory, internal, and tax audits for corporate clients including <strong>Punjab National Bank</strong>, testing ledger data flows and compliance frameworks.</li>
-                            <li>Developed analytical financial models that now form the bedrock for my requirement mapping, ERP workflows, and enterprise 3-way data reconciliation.</li>
+                            <li>Developed analytical financial models that now form the bedrock for requirement mapping, ERP workflows, and enterprise 3-way data reconciliation.</li>
                         </ul>
                     </div>
                 </div>
@@ -305,7 +311,7 @@
         </div>
     </section>
 
-    <!-- 5. FEATURED PROJECTS (INTERACTIVE DATA FLOW DIAGRAM MODALS) -->
+    <!-- 5. FEATURED PROJECTS -->
     <section id="projects" class="section bg-alt">
         <div class="container">
             <div class="section-badge-wrap"><span class="pill-badge">PORTFOLIO</span></div>
@@ -319,31 +325,30 @@
                         <div class="proj-icon"><i class="fa-solid fa-cash-register"></i></div>
                         <span class="proj-status-tag live">DEPLOYED</span>
                     </div>
-                    <h3 class="proj-title">Multi-Brand POS Integration Engine</h3>
+                    <h3 class="proj-title">Multi-Tenant POS Pull Engine (2,500+ Stores)</h3>
                     <div class="proj-role"><i class="fa-solid fa-user-tie"></i> Technical Lead & Integration Analyst</div>
                     
                     <div class="proj-block">
-                        <strong>Scale:</strong> 10,000+ total ecosystem stores; 2,500+ new QUPOS stores onboarded.
+                        <strong>Scale:</strong> QUPOS (Jack in the Box 2k+), XENIAL (Denny's 300), LUCAS (Bojangles 200).
                     </div>
                     <div class="proj-block">
-                        <strong>Clients:</strong> Inspire Brands, Chicken Salad Chick, Steak 'n Shake, Golden Chick, Rubio's, TMAD.
+                        <strong>Pipeline:</strong> 2-Consumer Architecture (Receiver DB ➔ Connector Child Tables ➔ Day Rollup ➔ Enterprise & BI).
                     </div>
                     <div class="proj-block">
-                        <strong>Events:</strong> Cash & Sales, Menu Mix, Ideal Hours, Cash Office, TimeKeeping.
+                        <strong>Controls:</strong> Tri-Tier Alerts (Fetch, Process, Transport) & IP Whitelisting.
                     </div>
 
                     <div class="proj-tags-wrap">
-                        <span class="tag highlight">QUPOS (2,500 Stores)</span>
-                        <span class="tag highlight">PAR Brink</span>
-                        <span class="tag highlight">Aloha</span>
-                        <span class="tag highlight">NCR Silver</span>
-                        <span class="tag">Toast</span>
-                        <span class="tag">TASKPOS</span>
+                        <span class="tag highlight">QUPOS (2,000+)</span>
+                        <span class="tag highlight">XENIAL (300)</span>
+                        <span class="tag highlight">LUCAS (200)</span>
+                        <span class="tag">Receiver DB</span>
+                        <span class="tag">Connector DB</span>
                     </div>
 
                     <div class="proj-btn-footer">
                         <button class="btn btn-proj" onclick="openModal('modal-qupos')">
-                            <i class="fa-solid fa-diagram-project"></i> View Architecture & Data Flow Diagram
+                            <i class="fa-solid fa-diagram-project"></i> View Architecture Diagram
                         </button>
                     </div>
                 </div>
@@ -354,30 +359,29 @@
                         <div class="proj-icon"><i class="fa-solid fa-server"></i></div>
                         <span class="proj-status-tag award">50% DB REDUCTION</span>
                     </div>
-                    <h3 class="proj-title">MinIO Storage & DB Offloading</h3>
-                    <div class="proj-role"><i class="fa-solid fa-user-gear"></i> Lead Technical Analyst & Infrastructure Owner</div>
+                    <h3 class="proj-title">MinIO Storage Offloading (15+ Apps)</h3>
+                    <div class="proj-role"><i class="fa-solid fa-user-gear"></i> Project Lead & Product Owner</div>
                     
                     <div class="proj-block">
-                        <strong>Problem:</strong> SQL database bloated with document/blob attachments slowing queries.
+                        <strong>Problem:</strong> SQL database bloated with invoice/image BLOB & TOAST data.
                     </div>
                     <div class="proj-block">
-                        <strong>Solution:</strong> Migrated 10+ core apps to MinIO object storage with 0% data loss.
+                        <strong>Architecture:</strong> 3-Layer Security (MinIO Primary + Replica + DB Fallback Flag).
                     </div>
                     <div class="proj-block">
-                        <strong>Impact:</strong> Cut database disk load by 50% with sub-second reporting.
+                        <strong>Impact:</strong> Cut database disk load by 50%; backup time reduced from 4h to 20m.
                     </div>
 
                     <div class="proj-tags-wrap">
                         <span class="tag highlight">MinIO S3</span>
-                        <span class="tag highlight">Zero Data Loss</span>
-                        <span class="tag">SQL / JPQL</span>
-                        <span class="tag">AWS Migration</span>
-                        <span class="tag">Hibernate 15 Apps</span>
+                        <span class="tag highlight">15+ Core Apps</span>
+                        <span class="tag">HA Replica</span>
+                        <span class="tag">Zero Data Loss</span>
                     </div>
 
                     <div class="proj-btn-footer">
                         <button class="btn btn-proj" onclick="openModal('modal-minio')">
-                            <i class="fa-solid fa-shield-halved"></i> View Migration Flow & Hash Logic
+                            <i class="fa-solid fa-shield-halved"></i> View Architecture Diagram
                         </button>
                     </div>
                 </div>
@@ -388,26 +392,26 @@
                         <div class="proj-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
                         <span class="proj-status-tag live">EDI AUTOMATION</span>
                     </div>
-                    <h3 class="proj-title">Supply Chain EDI Ingestion</h3>
+                    <h3 class="proj-title">Supply Chain EDI Ingestion & ACK Engine</h3>
                     <div class="proj-role"><i class="fa-solid fa-cubes"></i> Integration Analyst & BA</div>
                     
                     <div class="proj-block">
                         <strong>Partners:</strong> Gordon Food Service (GFS), Performance Foodservice (PFS), GFS US via SFTP.
                     </div>
                     <div class="proj-block">
-                        <strong>Events:</strong> Automated EDI File Fetching, Orders, Invoices, Catalog Calendars.
+                        <strong>Bidirectional:</strong> 15-min Scheduled Handler ➔ Receiver ➔ Connector ➔ Return ACK (997) Dispatch.
                     </div>
 
                     <div class="proj-tags-wrap">
-                        <span class="tag highlight">EDI Ingestion</span>
-                        <span class="tag">SFTP / FileZilla</span>
-                        <span class="tag">EDI 850 / 810 / 832</span>
-                        <span class="tag">BI Feeds</span>
+                        <span class="tag highlight">EDI 850 / 810 / 832</span>
+                        <span class="tag highlight">ACK 997 Return</span>
+                        <span class="tag">SFTP Watcher</span>
+                        <span class="tag">Catch-Weight</span>
                     </div>
 
                     <div class="proj-btn-footer">
                         <button class="btn btn-proj" onclick="openModal('modal-edi')">
-                            <i class="fa-solid fa-network-wired"></i> View EDI Ingestion & Segment Mapping
+                            <i class="fa-solid fa-network-wired"></i> View Architecture Diagram
                         </button>
                     </div>
                 </div>
@@ -416,28 +420,28 @@
                 <div class="project-item-card">
                     <div class="proj-header-box">
                         <div class="proj-icon"><i class="fa-solid fa-robot"></i></div>
-                        <span class="proj-status-tag award">INNOVATION & AI</span>
+                        <span class="proj-status-tag award">n8n AUTOMATION</span>
                     </div>
-                    <h3 class="proj-title">n8n Automation & Custom AI Agents</h3>
-                    <div class="proj-role"><i class="fa-solid fa-brain"></i> Automation Developer & Team Mentor</div>
+                    <h3 class="proj-title">n8n Dynamic Poller & 13-Month Backfill</h3>
+                    <div class="proj-role"><i class="fa-solid fa-brain"></i> Automation Lead & Integration Owner</div>
                     
                     <div class="proj-block">
-                        <strong>n8n:</strong> Automated off-peak dynamic polling for newly onboarded stores during low-traffic windows.
+                        <strong>Orchestration:</strong> Off-peak traffic window, GSheet store master feed, Connector Execute Command.
                     </div>
                     <div class="proj-block">
-                        <strong>AI:</strong> Deployed custom GPT agents for internal teams to guide task execution.
+                        <strong>Rate Limiting:</strong> JavaScript node enforcing 6 stores / 10 mins & 60s cooldown for LUCAS.
                     </div>
 
                     <div class="proj-tags-wrap">
-                        <span class="tag highlight">n8n Workflows</span>
-                        <span class="tag highlight">Custom GPT</span>
-                        <span class="tag">LLM Agents</span>
-                        <span class="tag">Off-Peak Poller</span>
+                        <span class="tag highlight">n8n Workflow</span>
+                        <span class="tag highlight">13-Month Backfill</span>
+                        <span class="tag">LUCAS API</span>
+                        <span class="tag">60s Cooldown</span>
                     </div>
 
                     <div class="proj-btn-footer">
-                        <button class="btn btn-proj" onclick="openModal('modal-automation')">
-                            <i class="fa-solid fa-microchip"></i> View Dynamic Pipeline & AI Flow
+                        <button class="btn btn-proj" onclick="openModal('modal-n8n')">
+                            <i class="fa-solid fa-microchip"></i> View Architecture Diagram
                         </button>
                     </div>
                 </div>
@@ -563,7 +567,7 @@
                     <div class="info-card">
                         <div class="info-icon"><i class="fa-brands fa-linkedin-in"></i></div>
                         <div class="info-title">LinkedIn</div>
-                        <a href="https://linkedin.com/in/rajeev-kumar-ojha" target="_blank" class="info-val">Connect on LinkedIn</a>
+                        <a href="https://linkedin.com/in/rajeev-kumar-ojha" target="_blank" class="info-val">in/rajeev-kumar-ojha</a>
                     </div>
                     <div class="info-card">
                         <div class="info-icon"><i class="fa-brands fa-github"></i></div>
@@ -611,485 +615,492 @@
     </button>
 
     <!-- ===================================================
-         HIGH-VISUAL DATA FLOW DIAGRAM MODALS (DFD CANVAS)
+         LIVE MERMAID ARCHITECTURAL BLUEPRINT MODALS
          =================================================== -->
 
-    <!-- MODAL 1: QUPOS & POS DATA FLOW DIAGRAM -->
+    <!-- MODAL 1: MULTI-TENANT POS PULL ENGINE -->
     <div id="modal-qupos" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-qupos')">
-        <div class="modal-content">
+        <div class="modal-content info-modal-theme">
             <button class="modal-close" onclick="closeModal('modal-qupos')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-diagram-project"></i> DATA FLOW DIAGRAM (DFD Level-2)</div>
-            <h3 class="modal-title">QUPOS Pull Engine & 10,000+ Store POS Architecture</h3>
-            <p class="modal-desc">Multi-tenant distributed data flow covering POS REST extraction, cron rate-controlled queues, schema splitting, deduplication, and 3-way financial reconciliation.</p>
-
-            <!-- High-Visual Interactive Vector Data Flow Diagram -->
-            <div class="dfd-canvas-wrap">
-                <svg viewBox="0 0 1020 380" class="dfd-svg-canvas">
-                    <defs>
-                        <!-- Gradient Definitions for Nodes -->
-                        <linearGradient id="grad-source" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25"/>
-                            <stop offset="100%" stop-color="#0284c7" stop-opacity="0.05"/>
-                        </linearGradient>
-                        <linearGradient id="grad-queue" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"/>
-                            <stop offset="100%" stop-color="#6366f1" stop-opacity="0.05"/>
-                        </linearGradient>
-                        <linearGradient id="grad-db" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
-                            <stop offset="100%" stop-color="#10b981" stop-opacity="0.05"/>
-                        </linearGradient>
-                        <linearGradient id="grad-bi" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
-                            <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.05"/>
-                        </linearGradient>
-                        <linearGradient id="grad-recon" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
-                            <stop offset="100%" stop-color="#6366f1" stop-opacity="0.15"/>
-                        </linearGradient>
-
-                        <!-- Marker Arrows -->
-                        <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                            <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
-                        </marker>
-                        <marker id="arrow-indigo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                            <path d="M 0 1 L 10 5 L 0 9 z" fill="#818cf8"/>
-                        </marker>
-                        <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                            <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
-                        </marker>
-                        <marker id="arrow-yellow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                            <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
-                        </marker>
-                    </defs>
-
-                    <!-- NODE 1: POS Source Layer -->
-                    <rect x="20" y="30" width="180" height="200" rx="12" fill="url(#grad-source)" stroke="#38bdf8" stroke-width="1.8"/>
-                    <rect x="35" y="42" width="150" height="24" rx="6" fill="#0284c7"/>
-                    <text x="110" y="58" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">1. POS SOURCE (QUPOS)</text>
-                    
-                    <text x="35" y="86" fill="#f1f5f9" font-size="9.5" font-weight="700">Payload Extraction:</text>
-                    <text x="35" y="105" fill="#94a3b8" font-size="8.5">• Cash & Sales JSON</text>
-                    <text x="35" y="123" fill="#94a3b8" font-size="8.5">• MenuMix Item Quantities</text>
-                    <text x="35" y="141" fill="#94a3b8" font-size="8.5">• Ideal Hours & Labor</text>
-                    <text x="35" y="159" fill="#94a3b8" font-size="8.5">• Cash Office Logs</text>
-                    
-                    <rect x="35" y="180" width="150" height="34" rx="6" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1"/>
-                    <text x="110" y="196" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Pull Poller & EXE Listener</text>
-                    <text x="110" y="207" fill="#94a3b8" font-size="7.5" text-anchor="middle">2,500+ Active Stores</text>
-
-                    <!-- Connector 1 -> 2 -->
-                    <path d="M 200 130 L 260 130" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
-                    <text x="230" y="122" fill="#38bdf8" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">REST Pull</text>
-
-                    <!-- NODE 2: Ingestion & Rate-Controlled Queue Engine -->
-                    <rect x="260" y="30" width="220" height="200" rx="12" fill="url(#grad-queue)" stroke="#818cf8" stroke-width="1.8"/>
-                    <rect x="275" y="42" width="190" height="24" rx="6" fill="#4f46e5"/>
-                    <text x="370" y="58" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">2. QUEUE & THROTTLER</text>
-
-                    <text x="275" y="86" fill="#f1f5f9" font-size="9.5" font-weight="700">Resilience & Batching:</text>
-                    <text x="275" y="105" fill="#94a3b8" font-size="8.5">• Cron Waves: 250 stores/batch</text>
-                    <text x="275" y="123" fill="#94a3b8" font-size="8.5">• SHA256 Deduplication Hash</text>
-                    <text x="275" y="141" fill="#94a3b8" font-size="8.5">• Schema Validation & Error DLQ</text>
-                    <text x="275" y="159" fill="#94a3b8" font-size="8.5">• Exponential Backoff (3 Retries)</text>
-
-                    <rect x="275" y="180" width="190" height="34" rx="6" fill="rgba(99, 102, 241, 0.15)" stroke="#818cf8" stroke-width="1"/>
-                    <text x="370" y="196" fill="#818cf8" font-size="8.5" font-weight="700" text-anchor="middle">Idempotent Pipeline</text>
-                    <text x="370" y="207" fill="#94a3b8" font-size="7.5" text-anchor="middle">Zero Duplicate Sales Postings</text>
-
-                    <!-- Split Connectors 2 -> 3A & 3B -->
-                    <path d="M 480 95 L 560 65" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
-                    <text x="520" y="70" fill="#10b981" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Core Stream</text>
-
-                    <path d="M 480 165 L 560 195" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrow-yellow)"/>
-                    <text x="520" y="190" fill="#f59e0b" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">BI KPI Cube</text>
-
-                    <!-- NODE 3A: Core Database & MinIO Attachments -->
-                    <rect x="560" y="20" width="200" height="100" rx="10" fill="url(#grad-db)" stroke="#10b981" stroke-width="1.8"/>
-                    <rect x="575" y="30" width="170" height="22" rx="5" fill="#059669"/>
-                    <text x="660" y="45" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">3A. ENTERPRISE CORE DB</text>
-                    <text x="575" y="72" fill="#94a3b8" font-size="8">• Normalized Master Tables</text>
-                    <text x="575" y="90" fill="#94a3b8" font-size="8">• MinIO URI S3 Attachments</text>
-                    <text x="575" y="108" fill="#10b981" font-size="8" font-weight="700">✓ 50% Reduced Disk Overhead</text>
-
-                    <!-- NODE 3B: BI & Cash Office Analytics -->
-                    <rect x="560" y="145" width="200" height="100" rx="10" fill="url(#grad-bi)" stroke="#f59e0b" stroke-width="1.8"/>
-                    <rect x="575" y="155" width="170" height="22" rx="5" fill="#d97706"/>
-                    <text x="660" y="170" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">3B. BI KPI ANALYTICS</text>
-                    <text x="575" y="197" fill="#94a3b8" font-size="8">• Real-Time Store Margin Cubes</text>
-                    <text x="575" y="215" fill="#94a3b8" font-size="8">• Cash Office Over/Short Audit</text>
-                    <text x="575" y="233" fill="#f59e0b" font-size="8" font-weight="700">✓ Sub-Second Dashboards</text>
-
-                    <!-- Connector 3A & 3B -> 4 (Recon Layer) -->
-                    <path d="M 760 70 L 830 70 L 830 115" stroke="#38bdf8" stroke-width="2" fill="none"/>
-                    <path d="M 760 195 L 830 195 L 830 155" stroke="#38bdf8" stroke-width="2" fill="none"/>
-                    <path d="M 830 135 L 870 135" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
-
-                    <!-- NODE 4: Canary Rollout & Observability -->
-                    <rect x="870" y="30" width="130" height="200" rx="12" fill="url(#grad-source)" stroke="#38bdf8" stroke-width="1.8"/>
-                    <rect x="880" y="42" width="110" height="24" rx="6" fill="#0284c7"/>
-                    <text x="935" y="58" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">4. ROLLOUT</text>
-                    <text x="880" y="90" fill="#94a3b8" font-size="8">• Postman UAT</text>
-                    <text x="880" y="112" fill="#94a3b8" font-size="8">• 10-Store Pilot</text>
-                    <text x="880" y="134" fill="#94a3b8" font-size="8">• Wave Cutover</text>
-                    <text x="880" y="156" fill="#94a3b8" font-size="8">• Grafana Alarms</text>
-                    <rect x="880" y="180" width="110" height="34" rx="6" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="1"/>
-                    <text x="935" y="196" fill="#10b981" font-size="8" font-weight="700" text-anchor="middle">100% Zero Bug</text>
-                    <text x="935" y="207" fill="#94a3b8" font-size="7" text-anchor="middle">10,000+ Stores</text>
-
-                    <!-- BOTTOM LAYER: 3-Way Financial Reconciliation Engine -->
-                    <rect x="20" y="260" width="980" height="100" rx="12" fill="url(#grad-recon)" stroke="#38bdf8" stroke-width="1.8"/>
-                    <rect x="35" y="272" width="280" height="24" rx="6" fill="#0369a1"/>
-                    <text x="175" y="288" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">5. EOD 3-WAY RECONCILIATION AUDIT</text>
-
-                    <!-- 3 Audit Pillars Inside Recon -->
-                    <g transform="translate(40, 308)">
-                        <!-- Pillar 1 -->
-                        <rect x="0" y="0" width="280" height="40" rx="6" fill="rgba(14, 20, 36, 0.7)" stroke="rgba(56, 189, 248, 0.3)"/>
-                        <text x="140" y="18" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">PILLAR 1: POS REGISTER TOTALS</text>
-                        <text x="140" y="32" fill="#94a3b8" font-size="7.5" text-anchor="middle">Z-Reports, Tax Breakdown, Promo Discounts</text>
-
-                        <text x="305" y="24" fill="#38bdf8" font-size="14" font-weight="800">↔</text>
-
-                        <!-- Pillar 2 -->
-                        <rect x="330" y="0" width="280" height="40" rx="6" fill="rgba(14, 20, 36, 0.7)" stroke="rgba(129, 140, 248, 0.3)"/>
-                        <text x="470" y="18" fill="#818cf8" font-size="8.5" font-weight="700" text-anchor="middle">PILLAR 2: CORE INGESTED LEDGER</text>
-                        <text x="470" y="32" fill="#94a3b8" font-size="7.5" text-anchor="middle">Deduplicated Line-Items & Cash Office DB</text>
-
-                        <text x="635" y="24" fill="#38bdf8" font-size="14" font-weight="800">↔</text>
-
-                        <!-- Pillar 3 -->
-                        <rect x="660" y="0" width="280" height="40" rx="6" fill="rgba(14, 20, 36, 0.7)" stroke="rgba(16, 185, 129, 0.3)"/>
-                        <text x="800" y="18" fill="#10b981" font-size="8.5" font-weight="700" text-anchor="middle">PILLAR 3: BANK & GATEWAY SETTLEMENT</text>
-                        <text x="800" y="32" fill="#94a3b8" font-size="7.5" text-anchor="middle">Physical Cash Drops & Card Batch Slips</text>
-                    </g>
-                </svg>
+            <div class="info-hero-header">
+                <div class="info-brand-pill"><i class="fa-solid fa-diagram-project"></i> PRODUCTION ARCHITECTURE BLUEPRINT</div>
+                <h2 class="info-title-main">MULTI-TENANT POS PULL & 2-CONSUMER ENGINE</h2>
+                <p class="info-subtitle-main">2,500+ Consolidated Stores | QUPOS (Jack in the Box 2k+), XENIAL (Denny's 300), LUCAS (Bojangles 200)</p>
             </div>
 
-            <!-- 2. Actual Production Schema Mapping Table -->
-            <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> POS JSON to Core DB Schema Mapping Specification</div>
-                <div class="table-responsive-box">
-                    <table class="blueprint-table">
-                        <thead>
-                            <tr>
-                                <th>Partner Source Key (QUPOS/POS)</th>
-                                <th>Enterprise Core DB Field</th>
-                                <th>Data Type</th>
-                                <th>Mandatory?</th>
-                                <th>Transformation & Business Logic</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>store_ref_num</code></td>
-                                <td><code>STORE_ID</code></td>
-                                <td><span class="dt-badge">VARCHAR(32)</span></td>
-                                <td><span class="req-badge yes">YES</span></td>
-                                <td>Cross-referenced against Store Registry; maps local store ID to Global Enterprise UUID.</td>
-                            </tr>
-                            <tr>
-                                <td><code>trans_dt_utc</code></td>
-                                <td><code>BUSINESS_DATE</code></td>
-                                <td><span class="dt-badge">DATE</span></td>
-                                <td><span class="req-badge yes">YES</span></td>
-                                <td>Adjusted for restaurant local timezone boundary & 4:00 AM trading day cutover.</td>
-                            </tr>
-                            <tr>
-                                <td><code>gross_sales_amt</code></td>
-                                <td><code>GROSS_SALES</code></td>
-                                <td><span class="dt-badge">DECIMAL(12,2)</span></td>
-                                <td><span class="req-badge yes">YES</span></td>
-                                <td>Normalized to 2 decimal places; checked against itemized line totals.</td>
-                            </tr>
-                            <tr>
-                                <td><code>tax_breakup[]</code></td>
-                                <td><code>TAX_STATE, TAX_LOCAL</code></td>
-                                <td><span class="dt-badge">JSON / SPLIT</span></td>
-                                <td><span class="req-badge yes">YES</span></td>
-                                <td>Schema split: Parsed and mapped into distinct State, County, and Municipal liability ledgers.</td>
-                            </tr>
-                            <tr>
-                                <td><code>payment_modes[].amt</code></td>
-                                <td><code>TENDER_CASH, TENDER_CARD</code></td>
-                                <td><span class="dt-badge">DECIMAL(12,2)</span></td>
-                                <td><span class="req-badge yes">YES</span></td>
-                                <td>Segregated into tender reconciliation buckets for Cash Office and Payment Gateway reconciliation.</td>
-                            </tr>
-                            <tr>
-                                <td><code>discount_reason_code</code></td>
-                                <td><code>PROMO_CODE_ID</code></td>
-                                <td><span class="dt-badge">VARCHAR(64)</span></td>
-                                <td><span class="req-badge no">OPTIONAL</span></td>
-                                <td>Defaulted to <code>'NO_DISCOUNT'</code> if null; mapped against active Marketing Promotion master.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <!-- Live Mermaid Diagram Container -->
+            <div class="mermaid-diagram-wrap">
+                <pre class="mermaid">
+flowchart TD
+    %% 1. Source Layer
+    subgraph S1["🌐 1. POS PARTNERS (PULL SOURCE)"]
+        direction LR
+        P1["🖥️ QUPOS<br/>Jack in the Box (2,000+ Stores)"]
+        P2["🖥️ XENIAL<br/>Denny's (300 Stores)"]
+        P3["🖥️ LUCAS<br/>Bojangles (200 Stores)"]
+    end
+
+    %% Security Gateway
+    Gate{"🔒 IP & URL Whitelist Security Gate"}
+    P1 & P2 & P3 -->|Scheduled HTTPS Pull| Gate
+
+    %% 2. Ingestion Layer
+    subgraph S2["⚡ 2. INGESTION LAYER (CONSUMER 1)"]
+        direction TB
+        C1["⚙️ Consumer 1: Ingestion Worker<br/>(Fetches Config & Transaction Stream)"]
+        DB_Rec[("🗄️ RECEIVER DB<br/>[Raw Landing / Staging Store]")]
+        C1 -->|Insert Raw Payload| DB_Rec
+    end
+
+    Gate -->|Token Auth Validated| C1
+
+    %% Level 1 Alert
+    Alert1>🚨 Level 1: Fetching Alarm<br/>• Timeout / 429 Rate Limit<br/>• Whitelist IP Drop]
+    C1 -.->|On Fetch Failure| Alert1
+
+    %% 3. Processing Layer
+    subgraph S3["⚙️ 3. PROCESSING & NORMALIZATION LAYER (CONSUMER 2)"]
+        direction TB
+        C2["⚙️ Consumer 2: Processing Engine"]
+        
+        subgraph S3_Pipeline["Normalizer & Rollup Flow"]
+            direction LR
+            DB_Child[("🗄️ CONNECTOR DB (Child Tables)<br/>• tbl_items (Prices/Mods)<br/>• tbl_discounts (Promo codes)<br/>• tbl_voids (Loss prevention)<br/>• tbl_surcharges (Delivery/Tip)<br/>• tbl_tenders (Cash/Card/Digital)")]
+            DB_Rollup[("🗄️ ROLLUP PARENT DB<br/>• Day-Level Business Totals<br/>• EOD Check-Level Summary")]
+            DB_Child -->|Aggregate Metrics| DB_Rollup
+        end
+
+        C2 -->|Normalize & Insert| DB_Child
+    end
+
+    DB_Rec -->|Read Raw Checks| C2
+
+    %% Level 2 Alert
+    Alert2>⚠️ Level 2: Processing Alarm<br/>• Schema Parsing Error<br/>• Unmapped Promo Code ➔ DLQ]
+    C2 -.->|On Parse/Write Failure| Alert2
+
+    %% 4. Transport Layer
+    subgraph S4["🚀 4. TRANSPORT & DISPATCH LAYER"]
+        direction TB
+        C2_Trans["📦 Outbound Transport Dispatcher<br/>(Applies Target Transport Mappings)"]
+        
+        subgraph S4_Targets["Enterprise Data Sinks"]
+            direction LR
+            DB_Core[("🗄️ ENTERPRISE CORE ERP DB<br/>• Financial Ledgers<br/>• Inventory Depletion<br/>• Store Master")]
+            DB_BI[("📊 BI REPORTING DATA MART<br/>• Real-Time Margin Cubes<br/>• Cash Office Reconciliation")]
+        end
+
+        C2_Trans -->|Sync Ledger Data| DB_Core
+        C2_Trans -->|Feed KPI Cubes| DB_BI
+    end
+
+    DB_Rollup -->|Trigger Dispatch| C2_Trans
+
+    %% Level 3 Alert
+    Alert3>🔔 Level 3: Transport Alarm<br/>• Rollup Dispatch Failure<br/>• Hold & Alert Slack]
+    C2_Trans -.->|On Delivery Failure| Alert3
+
+    %% Styling Configurations
+    classDef blueCard fill:#0d1b2a,stroke:#38bdf8,stroke-width:1.5px,color:#f1f5f9;
+    classDef orangeCard fill:#1f1606,stroke:#f59e0b,stroke-width:1.5px,color:#f1f5f9;
+    classDef purpleCard fill:#130e26,stroke:#818cf8,stroke-width:1.5px,color:#f1f5f9;
+    classDef greenCard fill:#061a14,stroke:#10b981,stroke-width:1.5px,color:#f1f5f9;
+    classDef alertRed fill:#3b0d0c,stroke:#ef4444,stroke-width:1.5px,color:#fca5a5;
+    classDef alertYellow fill:#362404,stroke:#f59e0b,stroke-width:1.5px,color:#fde68a;
+    classDef alertPurple fill:#2a0f3b,stroke:#c084fc,stroke-width:1.5px,color:#e9d5ff;
+
+    class P1,P2,P3,Gate blueCard;
+    class C1,DB_Rec orangeCard;
+    class C2,DB_Child,DB_Rollup purpleCard;
+    class C2_Trans,DB_Core,DB_BI greenCard;
+    class Alert1 alertRed;
+    class Alert2 alertYellow;
+    class Alert3 alertPurple;
+                </pre>
             </div>
 
-            <!-- 3. Technical Implementation & Idempotency Code Block -->
-            <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-code"></i> Ingestion Queue Throttling & Idempotency Rules</div>
-                <div class="code-snippet-box">
-                    <div class="code-title">Idempotency Key & Poller Queue Configuration:</div>
-                    <code>
-// Unique Idempotency Key Composite Construction:
-String idempotencyKey = SHA256(storeId + "_" + businessDate + "_" + registerId + "_" + transactionSeqNumber);
+            <!-- Lineage Table -->
+            <div class="info-section-title"><i class="fa-solid fa-table-columns"></i> 5-TIER DATA LINEAGE & SCHEMA SPECIFICATION</div>
+            <div class="table-responsive-box">
+                <table class="blueprint-table">
+                    <thead>
+                        <tr>
+                            <th>POS Check Payload Key</th>
+                            <th>Receiver DB (Raw Landing)</th>
+                            <th>Connector DB (Normalized Child)</th>
+                            <th>Rollup DB (Day Parent)</th>
+                            <th>Enterprise Core DB Target</th>
+                            <th>Data Type</th>
+                            <th>Req?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>check_header.store_num</code></td>
+                            <td><code>RAW_STORE_ID</code></td>
+                            <td><code>STORE_UUID</code></td>
+                            <td><code>PARENT_STORE_ID</code></td>
+                            <td><code>ENTERPRISE_STORE_ID</code></td>
+                            <td><span class="dt-badge">VARCHAR(32)</span></td>
+                            <td><span class="req-badge yes">YES</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>check_header.business_date</code></td>
+                            <td><code>RAW_TRANS_DATE</code></td>
+                            <td><code>ORDER_DATE_LOCAL</code></td>
+                            <td><code>DAY_ROLLUP_DATE</code></td>
+                            <td><code>FISCAL_POSTING_DATE</code></td>
+                            <td><span class="dt-badge">DATE</span></td>
+                            <td><span class="req-badge yes">YES</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>item_lines[].gross_amt</code></td>
+                            <td><code>RAW_ITEM_PAYLOAD</code></td>
+                            <td><code>CHILD_ITEM_SALES</code></td>
+                            <td><code>SUM_DAY_GROSS_SALES</code></td>
+                            <td><code>NET_REVENUE_LEDGER</code></td>
+                            <td><span class="dt-badge">DECIMAL(12,2)</span></td>
+                            <td><span class="req-badge yes">YES</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>check_discounts[].code</code></td>
+                            <td><code>RAW_PROMO_JSON</code></td>
+                            <td><code>CHILD_DISCOUNT_SPLIT</code></td>
+                            <td><code>TOTAL_DAY_DISCOUNTS</code></td>
+                            <td><code>MARKETING_PROMO_CUBE</code></td>
+                            <td><span class="dt-badge">VARCHAR(64)</span></td>
+                            <td><span class="req-badge no">OPT</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>void_records[].amt</code></td>
+                            <td><code>RAW_VOID_STREAM</code></td>
+                            <td><code>CHILD_VOID_AUDIT</code></td>
+                            <td><code>TOTAL_DAY_VOIDS</code></td>
+                            <td><code>LOSS_PREVENTION_DASH</code></td>
+                            <td><span class="dt-badge">DECIMAL(10,2)</span></td>
+                            <td><span class="req-badge yes">YES</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>tender_splits[].type_amt</code></td>
+                            <td><code>RAW_TENDER_JSON</code></td>
+                            <td><code>CHILD_PAYMENT_MODES</code></td>
+                            <td><code>DAY_CASH_CARD_TOTALS</code></td>
+                            <td><code>CASH_OFFICE_RECON_DB</code></td>
+                            <td><span class="dt-badge">DECIMAL(12,2)</span></td>
+                            <td><span class="req-badge yes">YES</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-// Queue Throttling Strategy:
-- Max Batch Window: 250 stores per cron execution wave.
-- Concurrency: 10 worker threads with adaptive sleep (200ms) on API 429 (Rate Limit).
-- Error Handling: Dead-Letter Queue (DLQ) with automated alert trigger after 3 failed retries.
-                    </code>
-                </div>
+            <div class="info-footer-punch">
+                <i class="fa-solid fa-rocket"></i> ARCHITECTED FOR MULTI-TENANT ROBUSTNESS & ZERO DEFECTS AT 10,000+ STORE SCALE.
             </div>
         </div>
     </div>
 
-    <!-- MODAL 2: MINIO STORAGE MIGRATION -->
+    <!-- MODAL 2: MINIO STORAGE OFFLOADING -->
     <div id="modal-minio" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-minio')">
-        <div class="modal-content">
+        <div class="modal-content info-modal-theme">
             <button class="modal-close" onclick="closeModal('modal-minio')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-server"></i> DATA FLOW & INFRASTRUCTURE CANVAS</div>
-            <h3 class="modal-title">MinIO S3 Offloading & 50% DB Load Reduction</h3>
-            <p class="modal-desc">Visual architecture decoupling heavy invoice/image BLOB attachments from transactional SQL tables into distributed MinIO clusters with MD5 hash validation.</p>
-
-            <!-- MinIO Vector DFD Diagram -->
-            <div class="dfd-canvas-wrap">
-                <svg viewBox="0 0 1000 240" class="dfd-svg-canvas">
-                    <!-- Before Block -->
-                    <rect x="20" y="30" width="240" height="180" rx="12" fill="rgba(239, 68, 68, 0.08)" stroke="#ef4444" stroke-width="1.8"/>
-                    <rect x="35" y="42" width="210" height="24" rx="6" fill="#b91c1c"/>
-                    <text x="140" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">LEGACY MONOLITHIC SQL</text>
-                    <text x="35" y="90" fill="#fca5a5" font-size="8.5">• SQL rows store massive BLOBs</text>
-                    <text x="35" y="110" fill="#fca5a5" font-size="8.5">• High CPU & memory starvation</text>
-                    <text x="35" y="130" fill="#fca5a5" font-size="8.5">• Slow 4-hour backup snapshots</text>
-                    <rect x="35" y="155" width="210" height="34" rx="6" fill="rgba(239, 68, 68, 0.2)" stroke="#ef4444"/>
-                    <text x="140" y="176" fill="#f87171" font-size="9" font-weight="700" text-anchor="middle">❌ Database Performance Bottleneck</text>
-
-                    <!-- Decoupling Arrow -->
-                    <path d="M 260 120 L 340 120" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrow-blue)"/>
-                    <text x="300" y="110" fill="#38bdf8" font-size="8" font-family="'JetBrains Mono', monospace" text-anchor="middle">Decouple</text>
-
-                    <!-- Migration Pipeline -->
-                    <rect x="340" y="30" width="280" height="180" rx="12" fill="url(#grad-queue)" stroke="#818cf8" stroke-width="1.8"/>
-                    <rect x="355" y="42" width="250" height="24" rx="6" fill="#4f46e5"/>
-                    <text x="480" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">MINIO MIGRATION LAYER</text>
-                    <text x="355" y="90" fill="#c7d2fe" font-size="8.5">• 10+ Enterprise Apps Refactored</text>
-                    <text x="355" y="110" fill="#c7d2fe" font-size="8.5">• MD5 Byte-by-Byte Hash Validation</text>
-                    <text x="355" y="130" fill="#c7d2fe" font-size="8.5">• Multi-Tenant S3 Bucket Policies</text>
-                    <rect x="355" y="155" width="250" height="34" rx="6" fill="rgba(99, 102, 241, 0.2)" stroke="#818cf8"/>
-                    <text x="480" y="176" fill="#818cf8" font-size="9" font-weight="700" text-anchor="middle">⚡ Dual-Write Zero Downtime Cutover</text>
-
-                    <!-- Split to Final State -->
-                    <path d="M 620 85 L 690 65" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
-                    <path d="M 620 155 L 690 175" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
-
-                    <!-- Lean DB -->
-                    <rect x="690" y="25" width="280" height="85" rx="10" fill="url(#grad-db)" stroke="#10b981" stroke-width="1.8"/>
-                    <text x="830" y="50" fill="#10b981" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">LEAN RELATIONAL SQL DB</text>
-                    <text x="705" y="72" fill="#94a3b8" font-size="8">• Holds pure relational metadata & IDs</text>
-                    <text x="705" y="90" fill="#10b981" font-size="8" font-weight="700">✓ 50% Disk Load Cut | Sub-Second Reads</text>
-
-                    <!-- MinIO Cluster -->
-                    <rect x="690" y="130" width="280" height="85" rx="10" fill="url(#grad-source)" stroke="#38bdf8" stroke-width="1.8"/>
-                    <text x="830" y="155" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">MINIO S3 OBJECT CLUSTER</text>
-                    <text x="705" y="177" fill="#94a3b8" font-size="8">• Distributed fast attachment bucket store</text>
-                    <text x="705" y="195" fill="#38bdf8" font-size="8" font-weight="700">✓ Sub-50ms Direct Document Retrieval</text>
-                </svg>
+            <div class="info-hero-header">
+                <div class="info-brand-pill"><i class="fa-solid fa-server"></i> INFRASTRUCTURE ARCHITECTURE</div>
+                <h2 class="info-title-main">MinIO S3 OBJECT STORAGE & DB OFFLOADING</h2>
+                <p class="info-subtitle-main">Decoupling Relational Tables from BLOB/TOAST Storage Across 15+ Core Enterprise Applications</p>
             </div>
 
-            <!-- Schema Pointer Transformation Table -->
-            <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> Database Schema Decoupling Transformation</div>
-                <div class="table-responsive-box">
-                    <table class="blueprint-table">
-                        <thead>
-                            <tr>
-                                <th>Legacy SQL Field</th>
-                                <th>Legacy Data Type</th>
-                                <th>Refactored Field (New)</th>
-                                <th>New Data Type</th>
-                                <th>Architectural Decoupling Impact</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>INVOICE_IMAGE_DATA</code></td>
-                                <td><span class="dt-badge danger">BLOB / BYTEA</span></td>
-                                <td><code>ATTACHMENT_S3_URI</code></td>
-                                <td><span class="dt-badge">VARCHAR(512)</span></td>
-                                <td>Offloaded from SQL row memory to S3 object key (e.g., <code>s3://invoices/2026/04/inv_90812.pdf</code>).</td>
-                            </tr>
-                            <tr>
-                                <td><code>DOC_CHECKSUM</code></td>
-                                <td><span class="dt-badge">VARCHAR(64)</span></td>
-                                <td><code>MD5_HASH_SIGNATURE</code></td>
-                                <td><span class="dt-badge">VARCHAR(64)</span></td>
-                                <td>Used for instant file integrity verification before and after cutover.</td>
-                            </tr>
-                            <tr>
-                                <td><code>STORAGE_LOCATION</code></td>
-                                <td><span class="dt-badge">VARCHAR(32)</span></td>
-                                <td><code>MINIO_BUCKET_ID</code></td>
-                                <td><span class="dt-badge">VARCHAR(64)</span></td>
-                                <td>Partitioned by tenant brand and fiscal year for optimized lifecycle archiving.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="mermaid-diagram-wrap">
+                <pre class="mermaid">
+flowchart TD
+    %% 1. Application Layer (15+ Apps)
+    subgraph S1["🖥️ 1. ENTERPRISE APPLICATION LAYER (15+ Core Apps)"]
+        direction LR
+        App1["App 1: POS Ingestion Engine"]
+        App2["App 2: Inventory & EDI"]
+        App3["App 3: Cash & Sales / Accounting"]
+        AppN["App 15+: Core Business Apps"]
+    end
+
+    %% Routing & Feature Flag Decision Gate
+    subgraph S2["⚙️ 2. STORAGE ROUTER & FEATURE FLAG ENGINE"]
+        Router{"Feature Flag Gate<br/>• use_minio_storage = TRUE<br/>• Dual-Write Mode"}
+    end
+
+    App1 & App2 & App3 & AppN -->|Store / Retrieve Attachment| Router
+
+    %% 3-Layer Storage Architecture
+    subgraph S3["🗄️ 3. MULTI-TIER RESILIENT STORAGE & HA LAYER"]
+        direction TB
+
+        subgraph Layer1["Layer 1: Primary Object Store"]
+            MinIO_Master[("⚡ MinIO Primary S3 Cluster<br/>• Multi-Tenant Buckets<br/>• Sub-50ms Attachment IO")]
+        end
+
+        subgraph Layer2["Layer 2: Real-Time High Availability"]
+            MinIO_Replica[("🔄 MinIO Standby Replica Cluster<br/>• Active Sync Replication<br/>• Instant Failover Node")]
+        end
+
+        subgraph Layer3["Layer 3: Zero-Loss Database Fallback"]
+            DB_Lean[("🗄️ Primary Relational SQL DB<br/>• Cleaned TOAST / No BLOBs<br/>• Lightweight Pointer: ATTACHMENT_S3_URI<br/>• Fallback BLOB Storage (If Flag False)")]
+        end
+
+        MinIO_Master <-->|Continuous Replication| MinIO_Replica
+    end
+
+    %% Routing Paths
+    Router -->|1. Upload File & Hash| MinIO_Master
+    MinIO_Master -->|2. Return S3 URI Key| Router
+    Router -->|3. Save Lean Pointer URI| DB_Lean
+    
+    %% Fallback Trigger
+    Router -.->|On Cluster Failure / Flag Off| Layer3
+
+    %% Telemetry & Alerting Engine
+    subgraph S4["🚨 4. OBSERVABILITY & TELEMETRY ENGINE"]
+        Alert_Node>🚨 Alert: MinIO Node Failure<br/>• Auto-switches to Replica Cluster]
+        Alert_Mem>⚠️ Alert: High Memory / Disk Usage<br/>• Triggers bucket auto-scaling]
+    end
+
+    MinIO_Master -.->|Node Unreachable| Alert_Node
+    MinIO_Master -.->|Memory > 85%| Alert_Mem
+    Alert_Node -.->|Failover Switch| MinIO_Replica
+
+    %% Database Impact & Results
+    subgraph S5["📊 5. OPERATIONAL IMPACT"]
+        direction LR
+        R1["⚡ 50% SQL Disk Load Cut"]
+        R2["⏱️ Backup Window: 4h ➔ 20m"]
+        R3["✅ Zero Unnecessary Cleanups"]
+    end
+
+    DB_Lean --> R1 & R2 & R3
+
+    %% Styling
+    classDef appBox fill:#0d1b2a,stroke:#38bdf8,stroke-width:1.5px,color:#f1f5f9;
+    classDef routerBox fill:#1f1606,stroke:#f59e0b,stroke-width:2px,color:#f1f5f9;
+    classDef minioBox fill:#130e26,stroke:#818cf8,stroke-width:2px,color:#f1f5f9;
+    classDef dbBox fill:#061a14,stroke:#10b981,stroke-width:2px,color:#f1f5f9;
+    classDef alertRed fill:#3b0d0c,stroke:#ef4444,stroke-width:1.5px,color:#fca5a5;
+    classDef alertYellow fill:#362404,stroke:#f59e0b,stroke-width:1.5px,color:#fde68a;
+    classDef impactBox fill:#0a192f,stroke:#38bdf8,stroke-width:1.5px,color:#38bdf8;
+
+    class App1,App2,App3,AppN appBox;
+    class Router routerBox;
+    class MinIO_Master,MinIO_Replica minioBox;
+    class DB_Lean dbBox;
+    class Alert_Node alertRed;
+    class Alert_Mem alertYellow;
+    class R1,R2,R3 impactBox;
+                </pre>
+            </div>
+
+            <div class="info-footer-punch">
+                <i class="fa-solid fa-trophy"></i> AWARDED EMPLOYEE OF THE MONTH FOR ZERO DATA LOSS EXECUTION ACROSS 15+ CORE APPS.
             </div>
         </div>
     </div>
 
-    <!-- MODAL 3: EDI SUPPLY CHAIN -->
+    <!-- MODAL 3: EDI SUPPLY CHAIN & ACK ENGINE -->
     <div id="modal-edi" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-edi')">
-        <div class="modal-content">
+        <div class="modal-content info-modal-theme">
             <button class="modal-close" onclick="closeModal('modal-edi')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-truck-ramp-box"></i> SUPPLY CHAIN DATA FLOW DIAGRAM</div>
-            <h3 class="modal-title">Supply Chain EDI Ingestion (GFS, PFS, GFS US)</h3>
-            <p class="modal-desc">Automated ingestion pipeline transforming EDI 850 (Purchase Orders), 810 (Invoices), and 832 (Price Catalogs) via SFTP into real-time margin analytics.</p>
-
-            <!-- EDI Vector DFD Diagram -->
-            <div class="dfd-canvas-wrap">
-                <svg viewBox="0 0 1000 220" class="dfd-svg-canvas">
-                    <!-- SFTP Server -->
-                    <rect x="20" y="30" width="220" height="160" rx="12" fill="url(#grad-source)" stroke="#38bdf8" stroke-width="1.8"/>
-                    <rect x="35" y="42" width="190" height="24" rx="6" fill="#0284c7"/>
-                    <text x="130" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">SUPPLIER SFTP SERVERS</text>
-                    <text x="35" y="90" fill="#94a3b8" font-size="8.5">• Gordon Food Service (GFS)</text>
-                    <text x="35" y="110" fill="#94a3b8" font-size="8.5">• Performance Food (PFS)</text>
-                    <text x="35" y="130" fill="#94a3b8" font-size="8.5">• GFS US Dedicated Host</text>
-                    <text x="35" y="165" fill="#38bdf8" font-size="8" font-weight="700">SSH-Key Secure Handshake</text>
-
-                    <path d="M 240 110 L 320 110" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
-                    <text x="280" y="100" fill="#38bdf8" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">15-Min Cron</text>
-
-                    <!-- EDI Parser -->
-                    <rect x="320" y="30" width="280" height="160" rx="12" fill="url(#grad-queue)" stroke="#818cf8" stroke-width="1.8"/>
-                    <rect x="335" y="42" width="250" height="24" rx="6" fill="#4f46e5"/>
-                    <text x="460" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">EDI PARSER & VALIDATOR</text>
-                    <text x="335" y="90" fill="#c7d2fe" font-size="8.5">• EDI 850: Purchase Orders</text>
-                    <text x="335" y="110" fill="#c7d2fe" font-size="8.5">• EDI 810: Line-Item Invoices</text>
-                    <text x="335" y="130" fill="#c7d2fe" font-size="8.5">• EDI 832: Daily Price Catalogs</text>
-                    <text x="335" y="165" fill="#818cf8" font-size="8" font-weight="700">Catch-Weight Variance Check</text>
-
-                    <path d="M 600 110 L 680 110" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
-                    <text x="640" y="100" fill="#10b981" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Normalized</text>
-
-                    <!-- Enterprise Inventory -->
-                    <rect x="680" y="30" width="300" height="160" rx="12" fill="url(#grad-db)" stroke="#10b981" stroke-width="1.8"/>
-                    <rect x="695" y="42" width="270" height="24" rx="6" fill="#059669"/>
-                    <text x="830" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">INVENTORY & MARGIN BI</text>
-                    <text x="695" y="90" fill="#a7f3d0" font-size="8.5">• Automated Purchase Order Match</text>
-                    <text x="695" y="110" fill="#a7f3d0" font-size="8.5">• Real-Time Store Margin KPI</text>
-                    <text x="695" y="130" fill="#a7f3d0" font-size="8.5">• Overcharge & Credit Alerts</text>
-                    <text x="695" y="165" fill="#10b981" font-size="8" font-weight="700">✓ 100% Elimination of Manual Typing</text>
-                </svg>
+            <div class="info-hero-header">
+                <div class="info-brand-pill"><i class="fa-solid fa-truck-ramp-box"></i> SUPPLY CHAIN SPECIFICATION</div>
+                <h2 class="info-title-main">SUPPLY CHAIN EDI INGESTION & ACK ENGINE</h2>
+                <p class="info-subtitle-main">Bidirectional SFTP Pipeline for EDI 850 (PO), 810 (Invoices), 832 (Catalogs) & 997 Return ACK</p>
             </div>
 
-            <!-- EDI Segment Mapping Table -->
-            <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> EDI 810 Invoice Segment to Core DB Mapping</div>
-                <div class="table-responsive-box">
-                    <table class="blueprint-table">
-                        <thead>
-                            <tr>
-                                <th>EDI X12 Segment / Element</th>
-                                <th>Enterprise Database Field</th>
-                                <th>Data Type</th>
-                                <th>Mandatory?</th>
-                                <th>Parsing & Reconciliation Rule</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>BIG02 (Invoice Number)</code></td>
-                                <td><code>VENDOR_INVOICE_NO</code></td>
-                                <td><span class="dt-badge">VARCHAR(64)</span></td>
-                                <td><span class="req-badge yes">YES</span></td>
-                                <td>Unique invoice identifier from Gordon Food Service (GFS) or PFS.</td>
-                            </tr>
-                            <tr>
-                                <td><code>BIG04 (Purchase Order No)</code></td>
-                                <td><code>ORIGINAL_PO_REF</code></td>
-                                <td><span class="dt-badge">VARCHAR(64)</span></td>
-                                <td><span class="req-badge yes">YES</span></td>
-                                <td>Matched against internal Purchase Order to detect price/qty variances.</td>
-                            </tr>
-                            <tr>
-                                <td><code>IT102 (Quantity Invoiced)</code></td>
-                                <td><code>BILLED_QUANTITY</code></td>
-                                <td><span class="dt-badge">DECIMAL(10,3)</span></td>
-                                <td><span class="req-badge yes">YES</span></td>
-                                <td>Normalized across unit types (Cases, Lbs, Bags, Each).</td>
-                            </tr>
-                            <tr>
-                                <td><code>IT104 (Unit Price)</code></td>
-                                <td><code>UNIT_COST</code></td>
-                                <td><span class="dt-badge">DECIMAL(10,4)</span></td>
-                                <td><span class="req-badge yes">YES</span></td>
-                                <td>Checked against daily synchronized EDI 832 Price Catalog master.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="mermaid-diagram-wrap">
+                <pre class="mermaid">
+flowchart TD
+    %% 1. Client / Vendor SFTP Layer
+    subgraph S1["📦 1. CLIENT / DISTRIBUTOR SFTP LAYER (GFS / PFS / GFS US)"]
+        direction LR
+        SFTP_In["📂 Inbound SFTP Directory<br/>• EDI 850 (Purchase Orders)<br/>• EDI 810 (Invoices)<br/>• EDI 832 (Catalogs)"]
+        SFTP_Out["📤 Outbound ACK Directory<br/>• EDI 997 Functional ACK<br/>• Delivery Receipt Logs"]
+    end
+
+    %% Security & Network Gateway
+    Gate{"🔒 IP & URL Whitelist / SSH Key Auth"}
+    SFTP_In <-->|Secure Encrypted SFTP Tunnel| Gate
+
+    %% 2. Scheduled Handler & Ingestion Layer
+    subgraph S2["⚙️ 2. INGESTION ENGINE (SFTP CONSUMER)"]
+        direction TB
+        Handler["⏱️ Scheduled Cron Handler / File Watcher<br/>(Polls Client SFTP at Configured Intervals)"]
+        Transformer["🔄 ISO / EDI Standard Parser<br/>(Transforms ISO Standard ➔ Internal Format)"]
+        DB_Rec[("🗄️ RECEIVER DB<br/>[Raw Staged Supply Chain Data]")]
+
+        Handler -->|Fetch Raw Files| Transformer
+        Transformer -->|Commit Formatted Records| DB_Rec
+    end
+
+    Gate -->|Scheduled File Pull| Handler
+
+    %% Level 1 Alert
+    Alert_SFTP>🚨 Alert: SFTP Handshake Drop / Auth Failure]
+    Handler -.->|On SFTP Drop| Alert_SFTP
+
+    %% 3. Connector & Transformation Layer
+    subgraph S3["🔄 3. CONNECTOR & DISPATCH ENGINE"]
+        direction TB
+        Connector["⚙️ Connector Engine<br/>• Normalization into Child Tables<br/>• Catch-Weight & Discrepancy Verification"]
+        DB_Connector[("🗄️ CONNECTOR DB<br/>• tbl_edi_invoices<br/>• tbl_edi_catalog_pricing<br/>• tbl_edi_orders")]
+
+        Connector -->|Write Normalized Data| DB_Connector
+    end
+
+    DB_Rec -->|Extract Staged Data| Connector
+
+    %% Level 2 Alert
+    Alert_Parse>⚠️ Alert: EDI Parsing / Schema Format Error]
+    Transformer -.->|On Corrupt File| Alert_Parse
+
+    %% 4. Partner Software Target Layer
+    subgraph S4["🏢 4. PARTNER & ENTERPRISE SOFTWARE"]
+        direction LR
+        Partner_App["🖥️ Partner / Enterprise Core Software<br/>• Real-Time Food Cost Analytics<br/>• Inventory Depletion & Margin Ledgers"]
+    end
+
+    DB_Connector -->|Deliver Invoices & Orders| Partner_App
+
+    %% 5. Bidirectional Return Path (Acknowledgment Engine)
+    subgraph S5["🔁 5. BIDIRECTIONAL ACKNOWLEDGMENT ENGINE"]
+        direction TB
+        ACK_Gen["✅ ACK Generator & Validator<br/>(Creates 997 Functional ACK / Status Payload)"]
+        ACK_Sender["📤 SFTP Outbound Dispatcher<br/>(Pushes ACK back to Client Outbox)"]
+
+        ACK_Gen -->|Forward ACK Payload| ACK_Sender
+    end
+
+    Partner_App -->|Confirm Ingestion Success| ACK_Gen
+    ACK_Sender -->|Write ACK File| Gate
+    Gate -->|Return Delivery Confirmed| SFTP_Out
+
+    %% Level 3 Alert
+    Alert_ACK>🔔 Alert: ACK Dispatch Failure / Client Outbox Drop]
+    ACK_Sender -.->|On Return ACK Fail| Alert_ACK
+
+    %% Styling
+    classDef sftpBox fill:#0d1b2a,stroke:#38bdf8,stroke-width:1.5px,color:#f1f5f9;
+    classDef ingestBox fill:#1f1606,stroke:#f59e0b,stroke-width:1.5px,color:#f1f5f9;
+    classDef connectorBox fill:#130e26,stroke:#818cf8,stroke-width:1.5px,color:#f1f5f9;
+    classDef partnerBox fill:#061a14,stroke:#10b981,stroke-width:2px,color:#f1f5f9;
+    classDef ackBox fill:#1e1b4b,stroke:#a855f7,stroke-width:2px,color:#f1f5f9;
+    classDef alertRed fill:#3b0d0c,stroke:#ef4444,stroke-width:1.5px,color:#fca5a5;
+    classDef alertYellow fill:#362404,stroke:#f59e0b,stroke-width:1.5px,color:#fde68a;
+    classDef alertPurple fill:#2a0f3b,stroke:#c084fc,stroke-width:1.5px,color:#e9d5ff;
+
+    class SFTP_In,SFTP_Out,Gate sftpBox;
+    class Handler,Transformer,DB_Rec ingestBox;
+    class Connector,DB_Connector connectorBox;
+    class Partner_App partnerBox;
+    class ACK_Gen,ACK_Sender ackBox;
+    class Alert_SFTP alertRed;
+    class Alert_Parse alertYellow;
+    class Alert_ACK alertPurple;
+                </pre>
             </div>
-        </div>
-    </div>
 
-    <!-- MODAL 4: N8N & AI AUTOMATION -->
-    <div id="modal-automation" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-automation')">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('modal-automation')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-robot"></i> DYNAMIC ORCHESTRATION CANVAS</div>
-            <h3 class="modal-title">n8n Dynamic Automation & Custom AI Knowledge Agents</h3>
-            <p class="modal-desc">Intelligent traffic-aware store synchronization and custom internal GPT assistants for rapid team delivery.</p>
-
-            <!-- n8n Vector DFD Diagram -->
-            <div class="dfd-canvas-wrap">
-                <svg viewBox="0 0 1000 220" class="dfd-svg-canvas">
-                    <!-- Store Onboarding -->
-                    <rect x="20" y="30" width="220" height="160" rx="12" fill="url(#grad-source)" stroke="#38bdf8" stroke-width="1.8"/>
-                    <rect x="35" y="42" width="190" height="24" rx="6" fill="#0284c7"/>
-                    <text x="130" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">NEW STORE ONBOARDING</text>
-                    <text x="35" y="90" fill="#94a3b8" font-size="8.5">• Store added to central registry</text>
-                    <text x="35" y="110" fill="#94a3b8" font-size="8.5">• Store timezone & hours logged</text>
-                    <text x="35" y="130" fill="#94a3b8" font-size="8.5">• Activation webhook emitted</text>
-                    <text x="35" y="165" fill="#38bdf8" font-size="8" font-weight="700">Dynamic Registry Event</text>
-
-                    <path d="M 240 110 L 320 110" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
-                    <text x="280" y="100" fill="#38bdf8" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Event Webhook</text>
-
-                    <!-- n8n Engine -->
-                    <rect x="320" y="30" width="280" height="160" rx="12" fill="url(#grad-queue)" stroke="#818cf8" stroke-width="1.8"/>
-                    <rect x="335" y="42" width="250" height="24" rx="6" fill="#4f46e5"/>
-                    <text x="460" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">n8n SCHEDULING ENGINE</text>
-                    <text x="335" y="90" fill="#c7d2fe" font-size="8.5">• Off-Peak Detector (12 AM - 5 AM)</text>
-                    <text x="335" y="110" fill="#c7d2fe" font-size="8.5">• Dynamic Batch Data Fetch</text>
-                    <text x="335" y="130" fill="#c7d2fe" font-size="8.5">• Slack Failure Telemetry Alerts</text>
-                    <text x="335" y="165" fill="#818cf8" font-size="8" font-weight="700">Zero Daytime Lock Incidents</text>
-
-                    <path d="M 600 110 L 680 110" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
-                    <text x="640" y="100" fill="#10b981" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Feed Spec</text>
-
-                    <!-- Custom GPT Assistant -->
-                    <rect x="680" y="30" width="300" height="160" rx="12" fill="url(#grad-db)" stroke="#10b981" stroke-width="1.8"/>
-                    <rect x="695" y="42" width="270" height="24" rx="6" fill="#059669"/>
-                    <text x="830" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">CUSTOM INTERNAL GPT</text>
-                    <text x="695" y="90" fill="#a7f3d0" font-size="8.5">• Instant Swagger/API Spec Lookup</text>
-                    <text x="695" y="110" fill="#a7f3d0" font-size="8.5">• Auto User Story & Test Generator</text>
-                    <text x="695" y="130" fill="#a7f3d0" font-size="8.5">• Team Mentorship & Knowledge Base</text>
-                    <text x="695" y="165" fill="#10b981" font-size="8" font-weight="700">✓ 40% Accelerated Team Delivery</text>
-                </svg>
+            <div class="info-footer-punch">
+                <i class="fa-solid fa-truck-fast"></i> 100% ELIMINATION OF MANUAL INVOICE ENTRY ACROSS RESTAURANT OPERATORS.
             </div>
         </div>
     </div>
 
-    <!-- Interactive Scripts -->
+    <!-- MODAL 4: n8n AUTOMATION & 13-MONTH BACKFILL -->
+    <div id="modal-n8n" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-n8n')">
+        <div class="modal-content info-modal-theme">
+            <button class="modal-close" onclick="closeModal('modal-n8n')">&times;</button>
+            <div class="info-hero-header">
+                <div class="info-brand-pill"><i class="fa-solid fa-robot"></i> n8n WORKFLOW ORCHESTRATION</div>
+                <h2 class="info-title-main">n8n DYNAMIC POLLER & 13-MONTH BACKFILL</h2>
+                <p class="info-subtitle-main">Rate-Controlled Historical Ingestion for LUCAS Stores (6 Stores / 10 Mins & 60s Cooldown)</p>
+            </div>
+
+            <div class="mermaid-diagram-wrap">
+                <pre class="mermaid">
+flowchart TD
+    %% 1. Trigger & Master Store Input
+    subgraph S1["📋 1. DYNAMIC STORE FEED & SCHEDULING"]
+        direction LR
+        Cron["⏱️ Off-Peak Cron Trigger<br/>(Low Traffic Window: Analyzed DB Load)"]
+        GSheet["📊 Google Sheet Store Master<br/>(Reads Store Primary Keys / IDs)"]
+    end
+
+    Cron --> GSheet
+
+    %% 2. n8n Intelligent Batching & Rate Limiter Engine
+    subgraph S2["⚡ 2. n8n WORKFLOW ORCHESTRATION ENGINE"]
+        direction TB
+        JS_Node["🧠 JavaScript Throttling & Batching Node<br/>• Batch Size: 6 Stores per 10-Minute Wave<br/>• Cooldown Engine: Strictly ≥ 60s per Store Request<br/>• Target: 13-Month Historical Back-Data Sync"]
+        Exec_Node["⚙️ Internal Connector Execute Command Trigger<br/>(Dispatches Command to Fetch Ingestion Pipeline)"]
+        
+        JS_Node -->|Validated Batch Load| Exec_Node
+    end
+
+    GSheet -->|Stream Store Primary Keys| JS_Node
+
+    %% Level 1 Alert
+    Alert_Throttler>🚨 Alert: Rate Limit Throttling Drop / GSheet Read Failure]
+    JS_Node -.->|On Rate Limit Error| Alert_Throttler
+
+    %% 3. Ingestion & Partner Integration
+    subgraph S3["🌐 3. PARTNER EXTRACTION LAYER (LUCAS)"]
+        LUCAS_API["🖥️ LUCAS Partner API<br/>(Rate Limited: Max 1 Req / 60s per Store)"]
+    end
+
+    Exec_Node -->|Execute Scheduled Ingestion| LUCAS_API
+
+    %% 4. Standard Enterprise Ingestion Pipeline
+    subgraph S4["🗄️ 4. DATA PROCESSING & NORMALIZATION PIPELINE"]
+        direction TB
+        DB_Rec[("🗄️ RECEIVER DB<br/>[Raw Staged Historical Check Payload]")]
+        DB_Child[("🗄️ CONNECTOR DB (Child Tables)<br/>• tbl_items • tbl_discounts • tbl_voids • tbl_tenders")]
+        DB_Rollup[("🗄️ ROLLUP PARENT DB<br/>• 13-Month Day-Level Aggregated History")]
+
+        DB_Rec -->|Normalize & Parse| DB_Child
+        DB_Child -->|Rollup Day Metrics| DB_Rollup
+    end
+
+    LUCAS_API -->|Stream Historical 13-Month Data| DB_Rec
+
+    %% 5. Enterprise Target & Outcomes
+    subgraph S5["📊 5. OPERATIONAL OUTCOME & PRODUCTION IMPACT"]
+        direction LR
+        Out1["✅ Zero Daytime Database Overload"]
+        Out2["✅ 100% Zero 429 Rate Limit Hits"]
+        Out3["✅ Automated 13-Month Historical Onboarding"]
+    end
+
+    DB_Rollup --> Out1 & Out2 & Out3
+
+    %% Styling
+    classDef sheetBox fill:#0d1b2a,stroke:#38bdf8,stroke-width:1.5px,color:#f1f5f9;
+    classDef n8nBox fill:#1f1606,stroke:#f59e0b,stroke-width:2px,color:#f1f5f9;
+    classDef partnerBox fill:#130e26,stroke:#818cf8,stroke-width:1.5px,color:#f1f5f9;
+    classDef pipeBox fill:#061a14,stroke:#10b981,stroke-width:1.5px,color:#f1f5f9;
+    classDef outBox fill:#0a192f,stroke:#38bdf8,stroke-width:1.5px,color:#38bdf8;
+    classDef alertRed fill:#3b0d0c,stroke:#ef4444,stroke-width:1.5px,color:#fca5a5;
+
+    class Cron,GSheet sheetBox;
+    class JS_Node,Exec_Node n8nBox;
+    class LUCAS_API partnerBox;
+    class DB_Rec,DB_Child,DB_Rollup pipeBox;
+    class Out1,Out2,Out3 outBox;
+    class Alert_Throttler alertRed;
+                </pre>
+            </div>
+
+            <div class="info-footer-punch">
+                <i class="fa-solid fa-bolt"></i> 100% SUCCESSFUL 13-MONTH HISTORICAL BACKFILL WITH ZERO 429 RATE LIMIT CONTENTION.
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script>
-        // 1. Mobile Menu Toggle
+        // 1. Mobile Menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
         const menuIcon = document.getElementById('menuIcon');
@@ -1097,21 +1108,18 @@ String idempotencyKey = SHA256(storeId + "_" + businessDate + "_" + registerId +
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('mobile-open');
             if (navLinks.classList.contains('mobile-open')) {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
+                menuIcon.classList.replace('fa-bars', 'fa-xmark');
             } else {
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.replace('fa-xmark', 'fa-bars');
             }
         });
 
         function closeMobileNav() {
             navLinks.classList.remove('mobile-open');
-            menuIcon.classList.remove('fa-xmark');
-            menuIcon.classList.add('fa-bars');
+            menuIcon.classList.replace('fa-xmark', 'fa-bars');
         }
 
-        // 2. Theme Toggle (Dark / Light)
+        // 2. Theme Toggle
         const themeToggleBtn = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         const htmlElement = document.documentElement;
@@ -1130,11 +1138,9 @@ String idempotencyKey = SHA256(storeId + "_" + businessDate + "_" + registerId +
 
         function updateThemeIcon(theme) {
             if (theme === 'light') {
-                themeIcon.classList.remove('fa-moon');
-                themeIcon.classList.add('fa-sun');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
             } else {
-                themeIcon.classList.remove('fa-sun');
-                themeIcon.classList.add('fa-moon');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
             }
         }
 
@@ -1168,11 +1174,7 @@ String idempotencyKey = SHA256(storeId + "_" + businessDate + "_" + registerId +
                     word.pop();
                     document.getElementById('typewriter').innerHTML = word.join("");
                 } else {
-                    if (words.length > (i + 1)) {
-                        i++;
-                    } else {
-                        i = 0;
-                    }
+                    i = (i + 1) % words.length;
                     setTimeout(typingEffect, 350);
                     return false;
                 }
@@ -1195,12 +1197,19 @@ String idempotencyKey = SHA256(storeId + "_" + businessDate + "_" + registerId +
             window.scrollTo({ top: 0, behavior: 'smooth' });
         };
 
-        // 5. Modal Popup Logic
+        // 5. Modal Popup Logic (With Mermaid Dynamic Rendering)
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
+                
+                // Re-run mermaid parser when modal is opened
+                if (window.mermaid) {
+                    window.mermaid.run({
+                        nodes: modal.querySelectorAll('.mermaid')
+                    });
+                }
             }
         }
 
@@ -1225,63 +1234,42 @@ String idempotencyKey = SHA256(storeId + "_" + businessDate + "_" + registerId +
             }
         });
 
-        // 6. Profile Search Engine
+        // 6. Search Engine
         const profileKnowledgeBase = [
             {
-                title: "Multi-Brand POS Integration Engine",
+                title: "Multi-Tenant POS Pull Engine (2,500+ Stores)",
                 category: "Project / Architecture",
-                keywords: "pos qupos par brink aloha ncr silver toast revel taskpos pull exe queue configuration cash sales menumix timekeeping ideal hours 10000 2500 stores",
-                snippet: "Pull-based API engine & on-premise EXE listeners serving 10,000+ total stores with 2,500+ new QUPOS onboardings.",
+                keywords: "pos qupos jack in the box 2000 xenial dennys 300 lucas bojangles 200 receiver db connector db child tables day rollup pull whitelisting alarms",
+                snippet: "Pull-based API integration & application consolidation across 2,500+ stores with 2-consumer architecture and tri-tier alarms.",
                 link: "#projects"
             },
             {
                 title: "MinIO Object Storage & 50% DB Load Reduction",
                 category: "Project / Infrastructure",
-                keywords: "minio s3 object storage database offloading 50% load sql aws zero data loss hibernate migration employee of the month award",
-                snippet: "Migrated 10+ core enterprise apps to MinIO object storage, cutting database disk load by 50% with zero data loss.",
+                keywords: "minio s3 object storage database offloading 50% load sql 15 apps replica fallback toast blob cleanup employee of the month",
+                snippet: "Led MinIO S3 object storage migration across 15+ core enterprise apps with 3-layer security and 50% database offloading.",
                 link: "#projects"
             },
             {
                 title: "Supply Chain EDI Ingestion (GFS, PFS, GFS US)",
                 category: "Project / Integration",
-                keywords: "edi gfs pfs gfs us sftp filezilla purchase order 850 invoices 810 catalog calendar 832 supply chain bi reporting",
-                snippet: "Automated SFTP pipeline fetching supplier invoices, purchase orders, and daily pricing catalog syncs directly into BI.",
+                keywords: "edi gfs pfs gfs us sftp handler cron receiver connector acknowledgment 997 return ack purchase orders 850 invoices 810",
+                snippet: "Automated bidirectional SFTP pipeline fetching supplier invoices/orders and returning delivery acknowledgments (ACK 997).",
                 link: "#projects"
             },
             {
-                title: "n8n Data Automation & Custom AI Agents",
-                category: "Project / Innovation",
-                keywords: "n8n automation dynamic fetch off peak schedule low traffic window custom gpt ai agent team knowledge assistant",
-                snippet: "Engineered automated off-peak data sync pipelines using n8n and deployed custom GPT assistants for internal engineering acceleration.",
+                title: "n8n Dynamic Poller & 13-Month Backfill",
+                category: "Project / Automation",
+                keywords: "n8n automation dynamic fetch off peak schedule gsheet lucas rate limit 60s cooldown 6 stores 10 mins 13 months back data",
+                snippet: "Engineered n8n off-peak automation syncing 13 months of historical data for LUCAS with strict 60s cooldown rate limiting.",
                 link: "#projects"
-            },
-            {
-                title: "Client Brands (Inspire Brands, Steak 'n Shake, etc.)",
-                category: "Clients / Enterprise",
-                keywords: "inspire brands chicken salad chick 400 steak n shake 250 golden chick 50 rubios tmad qsr enterprise sme 10000 stores",
-                snippet: "Managed technical onboarding and continuous integration operations for Tier-1 enterprise QSR brands across 10,000+ stores.",
-                link: "#experience"
             },
             {
                 title: "CA Intermediate & Financial Acumen",
                 category: "Education / Qualifications",
-                keywords: "ca intermediate icai institute of chartered accountants of india financial audit reconciliation bcom b.com ledger compliance tax audit punjab national bank",
-                snippet: "CA Intermediate qualified through ICAI with 3 years full-time articleship in statutory audits including Punjab National Bank.",
+                keywords: "ca intermediate icai financial audit reconciliation bcom ledger compliance tax audit punjab national bank",
+                snippet: "CA Intermediate qualified through ICAI with 3 years full-time articleship in corporate audits including Punjab National Bank.",
                 link: "#education"
-            },
-            {
-                title: "Awards, Honors & Newsletter Recognitions",
-                category: "Honors & Achievements",
-                keywords: "awards employee of the month eom 2x newsletter appreciation recognition august 2024 may 2025 zero bugs",
-                snippet: "2x Employee of the Month award winner & 2x Corporate Newsletter recognition for zero-bug Hibernate & AWS rollouts.",
-                link: "#about"
-            },
-            {
-                title: "Technical & BA Toolbox (Jira, Postman, SQL)",
-                category: "Tools & Skills",
-                keywords: "jira confluence postman sql jpql swagger drawio visio figma minio aws grafana filezilla sftp git github",
-                snippet: "Comprehensive proficiency across Jira, Confluence, Postman automated assertion testing, SQL/JPQL, and cloud monitoring.",
-                link: "#tools"
             },
             {
                 title: "Resume Download (Official PDF)",
@@ -1335,7 +1323,7 @@ String idempotencyKey = SHA256(storeId + "_" + businessDate + "_" + registerId +
                 searchResultsBox.innerHTML = `
                     <div class="no-search-results">
                         <i class="fa-regular fa-face-frown"></i>
-                        <p>No exact match found for "<strong>${escapeHtml(query)}</strong>". Try <em>QUPOS, MinIO, Inspire Brands, n8n, CA Inter</em>.</p>
+                        <p>No exact match found for "<strong>${escapeHtml(query)}</strong>". Try <em>QUPOS, MinIO, Jack in the Box, n8n, CA Inter</em>.</p>
                     </div>
                 `;
                 searchResultsBox.style.display = 'block';
