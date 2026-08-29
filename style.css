@@ -369,7 +369,7 @@ ul {
     transform: translateY(-2px);
 }
 
-/* Mouse Scroll */
+/* Scroll Indicator */
 .scroll-indicator {
     display: flex;
     flex-direction: column;
@@ -1237,7 +1237,7 @@ footer {
 }
 
 /* ===================================================
-   7-STAGE SDLC & TECHNO-FUNCTIONAL MODALS
+   SYSTEM DESIGN BLUEPRINT & SCHEMA MODALS
    =================================================== */
 .modal-overlay {
     position: fixed;
@@ -1318,93 +1318,143 @@ footer {
     line-height: 1.55;
 }
 
-/* 7-STAGE FLOW GRID */
-.sdlc-flow-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 14px;
-}
-
-.sdlc-stage-card {
+/* BLUEPRINT SECTIONS */
+.blueprint-section {
     background-color: var(--bg-alt);
     border: 1px solid var(--border-subtle);
     border-radius: 12px;
-    padding: 16px;
-    position: relative;
-    transition: all 0.25s ease;
-    display: flex;
-    flex-direction: column;
+    padding: 18px;
+    margin-bottom: 18px;
 }
 
-.sdlc-stage-card:hover {
-    border-color: var(--primary-blue);
-    transform: translateY(-2px);
-}
-
-.sdlc-stage-card.highlight-recon {
-    grid-column: 1 / -1;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(56, 189, 248, 0.08));
-    border: 1px solid rgba(56, 189, 248, 0.35);
-}
-
-.sdlc-stage-header {
+.bp-header {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 14px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid var(--border-subtle);
-    padding-bottom: 10px;
-}
-
-.stage-num {
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #ffffff;
-    background: linear-gradient(135deg, #0284c7, #38bdf8);
-    padding: 4px 8px;
-    border-radius: 6px;
-    line-height: 1;
-}
-
-.stage-title-box h4 {
-    font-size: 0.95rem;
-    color: var(--text-pure);
-    margin-bottom: 2px;
-}
-
-.stage-tag {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--primary-indigo);
-    text-transform: uppercase;
-}
-
-.sdlc-list {
-    padding-left: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
     gap: 8px;
 }
 
-.sdlc-list li {
-    font-size: 0.82rem;
+/* ASCII DIAGRAM CANVAS */
+.ascii-diagram-wrap {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 14px;
+    overflow-x: auto;
+}
+
+.ascii-art {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--text-primary);
+    line-height: 1.35;
+    margin: 0;
+    white-space: pre;
+}
+
+/* PRODUCTION SCHEMA TABLES */
+.table-responsive-box {
+    overflow-x: auto;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+}
+
+.blueprint-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    text-align: left;
+    min-width: 650px;
+}
+
+.blueprint-table th {
+    background-color: var(--bg-surface);
+    color: var(--text-pure);
+    padding: 10px 12px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.blueprint-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    vertical-align: top;
+}
+
+.blueprint-table tr:last-child td {
+    border-bottom: none;
+}
+
+.blueprint-table tr:hover td {
+    background-color: rgba(56, 189, 248, 0.03);
+}
+
+.blueprint-table code {
+    font-family: var(--font-mono);
+    color: var(--primary-blue);
+    font-size: 0.78rem;
+}
+
+.dt-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-subtle);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--primary-indigo);
+}
+
+.dt-badge.danger {
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+.req-badge {
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.req-badge.yes {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.req-badge.no {
+    background-color: rgba(100, 116, 139, 0.15);
+    color: #94a3b8;
+}
+
+/* CODE BOX */
+.code-snippet-box {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.code-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.code-snippet-box code {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
     color: var(--text-primary);
     line-height: 1.45;
-    position: relative;
-    padding-left: 14px;
-}
-
-.sdlc-list li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: var(--primary-blue);
-}
-
-.sdlc-list li strong {
-    color: var(--text-pure);
+    white-space: pre-wrap;
+    display: block;
 }
 
 /* RESPONSIVE */
@@ -1467,10 +1517,6 @@ footer {
 
     .tools-toolbox-grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .sdlc-flow-container {
-        grid-template-columns: 1fr;
     }
 }
 
