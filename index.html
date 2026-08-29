@@ -7,7 +7,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -53,19 +53,16 @@
     <!-- 1. HERO SECTION -->
     <section id="home" class="hero-section">
         <div class="container hero-container">
-            <!-- Avatar Ring -->
             <div class="hero-avatar-box">
                 <div class="avatar-glow-ring">
                     <img src="images/profile.jpg" alt="Rajeev Kumar Ojha" class="hero-img">
                 </div>
             </div>
 
-            <!-- Content Area -->
             <div class="hero-text-box">
                 <span class="hero-greeting">Hello, I'm</span>
                 <h1 class="hero-name">Rajeev Kumar Ojha</h1>
                 
-                <!-- Dynamic Typewriter -->
                 <div class="typewriter-wrap">
                     <span id="typewriter"></span><span class="cursor">|</span>
                 </div>
@@ -130,7 +127,6 @@
             <h2 class="section-heading">Professional Summary</h2>
             <div class="heading-line"></div>
 
-            <!-- KPI Cards -->
             <div class="kpi-grid">
                 <div class="kpi-card">
                     <div class="kpi-icon-wrap"><i class="fa-solid fa-store"></i></div>
@@ -154,7 +150,6 @@
                 </div>
             </div>
 
-            <!-- Details Grid -->
             <div class="about-content-grid">
                 <div class="about-text-card">
                     <div class="card-subtitle"><i class="fa-solid fa-network-wired highlight-icon"></i> System Architecture & Scale</div>
@@ -188,7 +183,6 @@
             <div class="heading-line"></div>
 
             <div class="skills-columns-grid">
-                <!-- BA Column -->
                 <div class="skill-category-card">
                     <div class="category-header">
                         <div class="cat-icon"><i class="fa-solid fa-clipboard-list"></i></div>
@@ -212,7 +206,6 @@
                     </div>
                 </div>
 
-                <!-- Tech Column -->
                 <div class="skill-category-card">
                     <div class="category-header">
                         <div class="cat-icon"><i class="fa-solid fa-gears"></i></div>
@@ -247,7 +240,6 @@
             <div class="heading-line"></div>
 
             <div class="timeline-container">
-                <!-- Role 1 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
@@ -286,7 +278,6 @@
                     </div>
                 </div>
 
-                <!-- Role 2 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-card">
@@ -314,7 +305,7 @@
         </div>
     </section>
 
-    <!-- 5. FEATURED PROJECTS (WITH 7-STAGE SDLC MODALS) -->
+    <!-- 5. FEATURED PROJECTS (INTERACTIVE DEEP-DIVE BLUEPRINT MODALS) -->
     <section id="projects" class="section bg-alt">
         <div class="container">
             <div class="section-badge-wrap"><span class="pill-badge">PORTFOLIO</span></div>
@@ -352,7 +343,7 @@
 
                     <div class="proj-btn-footer">
                         <button class="btn btn-proj" onclick="openModal('modal-qupos')">
-                            <i class="fa-solid fa-diagram-project"></i> View Architecture Breakdown
+                            <i class="fa-solid fa-diagram-project"></i> View Architecture & Schema Blueprint
                         </button>
                     </div>
                 </div>
@@ -386,7 +377,7 @@
 
                     <div class="proj-btn-footer">
                         <button class="btn btn-proj" onclick="openModal('modal-minio')">
-                            <i class="fa-solid fa-shield-halved"></i> View Migration Case Study
+                            <i class="fa-solid fa-shield-halved"></i> View Migration Case Study & Hash Logic
                         </button>
                     </div>
                 </div>
@@ -416,7 +407,7 @@
 
                     <div class="proj-btn-footer">
                         <button class="btn btn-proj" onclick="openModal('modal-edi')">
-                            <i class="fa-solid fa-network-wired"></i> View EDI Data Flow
+                            <i class="fa-solid fa-network-wired"></i> View EDI Ingestion & Segment Mapping
                         </button>
                     </div>
                 </div>
@@ -446,7 +437,7 @@
 
                     <div class="proj-btn-footer">
                         <button class="btn btn-proj" onclick="openModal('modal-automation')">
-                            <i class="fa-solid fa-microchip"></i> View Automation Flow
+                            <i class="fa-solid fa-microchip"></i> View Dynamic Pipeline & AI Blueprint
                         </button>
                     </div>
                 </div>
@@ -620,115 +611,120 @@
     </button>
 
     <!-- ===================================================
-         END-TO-END 7-STAGE SDLC & ARCHITECTURE MODALS
+         INTERACTIVE ARCHITECTURE & SCHEMA BLUEPRINT MODALS
          =================================================== -->
 
     <!-- MODAL 1: QUPOS & POS ARCHITECTURE -->
     <div id="modal-qupos" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-qupos')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-qupos')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-diagram-project"></i> END-TO-END DELIVERY LIFECYCLE</div>
-            <h3 class="modal-title">QUPOS Pull Engine & 10,000+ Store POS Lifecycle</h3>
-            <p class="modal-desc">Comprehensive Techno-Functional lifecycle from BRD scoping to API mapping, queue batching, and 3-way financial reconciliation across 2,500+ QUPOS stores.</p>
+            <div class="modal-badge"><i class="fa-solid fa-diagram-project"></i> PRODUCTION SYSTEM DESIGN CANVAS</div>
+            <h3 class="modal-title">QUPOS Pull Engine & 10,000+ Store POS Architecture</h3>
+            <p class="modal-desc">End-to-end Techno-Functional blueprint covering the 7-stage delivery lifecycle, actual POS JSON to Enterprise DB Schema Mapping, and 3-Way EOD Reconciliation.</p>
 
-            <!-- 7-Stage Interactive Flow Canvas -->
-            <div class="sdlc-flow-container">
-                <div class="sdlc-stage-card stage-1">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">01</span>
-                        <div class="stage-title-box">
-                            <h4>Inception & Scope</h4>
-                            <span class="stage-tag">BRD & Scope Matrix</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Stakeholder Alignment:</strong> Led technical discovery calls with US client stakeholders (Inspire Brands, Steak 'n Shake, Chicken Salad Chick).</li>
-                        <li><strong>Scope Matrix:</strong> Defined boundary requirements for Cash & Sales, Menu Mix, Ideal Hours, and Timekeeping payloads.</li>
-                    </ul>
+            <!-- 1. Interactive Visual Flowchart (Pipeline Diagram) -->
+            <div class="blueprint-section">
+                <div class="bp-header"><i class="fa-solid fa-network-wired"></i> 1. End-to-End System Design Pipeline</div>
+                <div class="ascii-diagram-wrap">
+<pre class="ascii-art">
+┌─────────────────────────┐      ┌──────────────────────────┐      ┌─────────────────────────────┐
+│ 1. Inception & Scope    │ ───► │ 2. Analysis & Specs      │ ───► │ 3. Data & API Architecture  │
+│  • US Client Alignment  │      │  • FSD & Swagger Spec    │      │  • Dual-Key Data Mapping    │
+│  • BRD & Scope Matrix   │      │  • Offline Edge Cases    │      │  • Deduplication Hash Logic │
+└─────────────────────────┘      └──────────────────────────┘      └─────────────────────────────┘
+                                                                                  │
+                                                                                  ▼
+┌─────────────────────────┐      ┌──────────────────────────┐      ┌─────────────────────────────┐
+│ 6. CI/CD & Deployment   │ ◄─── │ 5. QA, UAT & Simulation  │ ◄─── │ 4. Dev & Queue Engine       │
+│  • 10-Store Canary Pilot│      │  • 500+ Store Mock Tests │      │  • Cron Throttling Batches  │
+│  • Zero-Lock Migration  │      │  • Corrupt Payload Assert│      │  • Exponential Backoff Retries
+└─────────────────────────┘      └──────────────────────────┘      └─────────────────────────────┘
+             │
+             ▼
+┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ 7. Go-Live, Observability & 3-Way Financial Reconciliation Audit Matrix                        │
+│  • Grafana Live Telemetry (Queue Lag & TPS)  • EOD Audit: POS Gross ↔ Core DB ↔ Bank Settlement│
+└────────────────────────────────────────────────────────────────────────────────────────────────┘
+</pre>
                 </div>
+            </div>
 
-                <div class="sdlc-stage-card stage-2">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">02</span>
-                        <div class="stage-title-box">
-                            <h4>Analysis & Specs</h4>
-                            <span class="stage-tag">FSD & Swagger/OpenAPI</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>API Contract Definition:</strong> Authored Swagger/OpenAPI specifications for REST pull endpoints & webhook receivers.</li>
-                        <li><strong>Edge Case Analysis:</strong> Documented mid-shift register cutover, offline store fallback, and multi-tax splits.</li>
-                    </ul>
+            <!-- 2. Actual Production Schema Mapping Table -->
+            <div class="blueprint-section">
+                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> 2. POS JSON to Core DB Schema Mapping Specification</div>
+                <div class="table-responsive-box">
+                    <table class="blueprint-table">
+                        <thead>
+                            <tr>
+                                <th>Partner Source Key (QUPOS/POS)</th>
+                                <th>Enterprise Core DB Field</th>
+                                <th>Data Type</th>
+                                <th>Mandatory?</th>
+                                <th>Transformation & Business Logic</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>store_ref_num</code></td>
+                                <td><code>STORE_ID</code></td>
+                                <td><span class="dt-badge">VARCHAR(32)</span></td>
+                                <td><span class="req-badge yes">YES</span></td>
+                                <td>Cross-referenced against Store Registry; maps local store ID to Global Enterprise UUID.</td>
+                            </tr>
+                            <tr>
+                                <td><code>trans_dt_utc</code></td>
+                                <td><code>BUSINESS_DATE</code></td>
+                                <td><span class="dt-badge">DATE</span></td>
+                                <td><span class="req-badge yes">YES</span></td>
+                                <td>Adjusted for restaurant local timezone boundary & 4:00 AM trading day cutover.</td>
+                            </tr>
+                            <tr>
+                                <td><code>gross_sales_amt</code></td>
+                                <td><code>GROSS_SALES</code></td>
+                                <td><span class="dt-badge">DECIMAL(12,2)</span></td>
+                                <td><span class="req-badge yes">YES</span></td>
+                                <td>Normalized to 2 decimal places; checked against itemized line totals.</td>
+                            </tr>
+                            <tr>
+                                <td><code>tax_breakup[]</code></td>
+                                <td><code>TAX_STATE, TAX_LOCAL</code></td>
+                                <td><span class="dt-badge">JSON / SPLIT</span></td>
+                                <td><span class="req-badge yes">YES</span></td>
+                                <td>Schema split: Parsed and mapped into distinct State, County, and Municipal liability ledgers.</td>
+                            </tr>
+                            <tr>
+                                <td><code>payment_modes[].amt</code></td>
+                                <td><code>TENDER_CASH, TENDER_CARD</code></td>
+                                <td><span class="dt-badge">DECIMAL(12,2)</span></td>
+                                <td><span class="req-badge yes">YES</span></td>
+                                <td>Segregated into tender reconciliation buckets for Cash Office and Payment Gateway reconciliation.</td>
+                            </tr>
+                            <tr>
+                                <td><code>discount_reason_code</code></td>
+                                <td><code>PROMO_CODE_ID</code></td>
+                                <td><span class="dt-badge">VARCHAR(64)</span></td>
+                                <td><span class="req-badge no">OPTIONAL</span></td>
+                                <td>Defaulted to <code>'NO_DISCOUNT'</code> if null; mapped against active Marketing Promotion master.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
 
-                <div class="sdlc-stage-card stage-3">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">03</span>
-                        <div class="stage-title-box">
-                            <h4>Data & API Architecture</h4>
-                            <span class="stage-tag">Mapping & Idempotency</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Data Mapping Sheet:</strong> Built bidirectional field mappings between POS JSON schemas and Enterprise Core tables.</li>
-                        <li><strong>Idempotency & Deduplication:</strong> Enforced unique transactional hash keys `(Store_ID + Business_Date + Register_ID + Trans_Seq)` to prevent duplicate cash postings.</li>
-                    </ul>
-                </div>
+            <!-- 3. Technical Implementation & Idempotency Code Block -->
+            <div class="blueprint-section">
+                <div class="bp-header"><i class="fa-solid fa-code"></i> 3. Ingestion Queue Throttling & Idempotency Rules</div>
+                <div class="code-snippet-box">
+                    <div class="code-title">Idempotency Key & Poller Queue Configuration:</div>
+                    <code>
+// Unique Idempotency Key Composite Construction:
+String idempotencyKey = SHA256(storeId + "_" + businessDate + "_" + registerId + "_" + transactionSeqNumber);
 
-                <div class="sdlc-stage-card stage-4">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">04</span>
-                        <div class="stage-title-box">
-                            <h4>Dev & Queue Engine</h4>
-                            <span class="stage-tag">Batching & Transforms</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Queue Configuration:</strong> Designed rate-controlled poller queues throttling 2,500+ store requests into configurable cron batches.</li>
-                        <li><strong>Resilience & Backoff:</strong> Configured exponential retry backoffs for store-level network drops and timeout handling.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-5">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">05</span>
-                        <div class="stage-title-box">
-                            <h4>QA, UAT & Simulation</h4>
-                            <span class="stage-tag">Mocks & Scale Tests</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Postman Test Suites:</strong> Created automated assertion test suites simulating 500+ high-volume store payloads simultaneously.</li>
-                        <li><strong>Non-Happy Path Testing:</strong> Validated partial payload corruptions, missing header tokens, and leap-second clock drifts.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-6">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">06</span>
-                        <div class="stage-title-box">
-                            <h4>CI/CD & Deployment</h4>
-                            <span class="stage-tag">Canary Rollout</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Phased Deployment:</strong> Executed 10-store pilot deployment, followed by 250-store wave, scaling to full 2,500+ stores.</li>
-                        <li><strong>DB Migration Scripts:</strong> Ran zero-lock schema migration scripts across production clusters with automated rollback triggers.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-7 highlight-recon">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">07</span>
-                        <div class="stage-title-box">
-                            <h4>Observability & Recon</h4>
-                            <span class="stage-tag">Grafana & EOD 3-Way</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Live Monitoring:</strong> Built Grafana telemetry dashboards tracking real-time API response times and queue lag.</li>
-                        <li><strong>3-Way Financial Reconciliation:</strong> Implemented EOD audit script matching POS Gross Sales ↔ Ingested Core DB ↔ Bank Deposit Slips.</li>
-                    </ul>
+// Queue Throttling Strategy:
+- Max Batch Window: 250 stores per cron execution wave.
+- Concurrency: 10 worker threads with adaptive sleep (200ms) on API 429 (Rate Limit).
+- Error Handling: Dead-Letter Queue (DLQ) with automated alert trigger after 3 failed retries.
+                    </code>
                 </div>
             </div>
         </div>
@@ -738,107 +734,69 @@
     <div id="modal-minio" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-minio')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-minio')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-server"></i> INFRASTRUCTURE MIGRATION LIFECYCLE</div>
+            <div class="modal-badge"><i class="fa-solid fa-server"></i> INFRASTRUCTURE MIGRATION BLUEPRINT</div>
             <h3 class="modal-title">MinIO S3 Offloading & 50% DB Load Reduction</h3>
-            <p class="modal-desc">Architectural decoupling of relational databases from document blobs across 10+ enterprise applications with zero data loss.</p>
+            <p class="modal-desc">Decoupling relational databases from heavy BLOB attachments, cutting SQL storage overhead by 50% with zero data loss.</p>
 
-            <div class="sdlc-flow-container">
-                <div class="sdlc-stage-card stage-1">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">01</span>
-                        <div class="stage-title-box">
-                            <h4>Inception & Scope</h4>
-                            <span class="stage-tag">Storage Scoping</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Root Cause Identification:</strong> Identified SQL database bottleneck caused by storing multi-gigabyte invoice PDFs & images directly in BLOB columns.</li>
-                        <li><strong>Business Justification:</strong> Formulated ROI matrix showing 50% storage cost reduction and faster query read latencies.</li>
-                    </ul>
+            <!-- 1. Pipeline Diagram -->
+            <div class="blueprint-section">
+                <div class="bp-header"><i class="fa-solid fa-network-wired"></i> 1. Decoupling & Migration Pipeline</div>
+                <div class="ascii-diagram-wrap">
+<pre class="ascii-art">
+[ BEFORE: LEGACY SQL DB ] ────► Holds Relational Data + Huge Invoices & Image BLOBs (High Disk I/O, Slow Queries)
+                                              │
+                                              ▼ (Decoupling Migration Engine)
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│  • Extract BLOB ➔ Upload to MinIO S3 Multi-Tenant Bucket ➔ Calculate MD5 Hash ➔ Update SQL Pointer URI │
+│  • Verification: Dual-Write validation with 100% hash parity comparison                                │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                              │
+                                              ▼
+[ AFTER: OPTIMIZED LEAN SQL ] ───────────────┬────────────────► [ MINIO DISTRIBUTED S3 OBJECT CLUSTER ]
+Holds Relational Metadata & Document Pointer │                  Stores High-Performance Document Attachments
+(50% Reduced DB Disk Load, Sub-Second Read)  │                  (Sub-50ms Direct Attachment Retrieval)
+</pre>
                 </div>
+            </div>
 
-                <div class="sdlc-stage-card stage-2">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">02</span>
-                        <div class="stage-title-box">
-                            <h4>Analysis & Specs</h4>
-                            <span class="stage-tag">MinIO S3 Spec</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Bucket Architecture:</strong> Designed multi-tenant S3 bucket policies, access keys, and retention lifecycles.</li>
-                        <li><strong>Pointer Schema:</strong> Defined database schema updates to replace heavy BLOB columns with lightweight URI pointers.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-3">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">03</span>
-                        <div class="stage-title-box">
-                            <h4>Data & Hash Architecture</h4>
-                            <span class="stage-tag">Integrity & Dual-Write</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>MD5 Hash Verification:</strong> Built automated hash validation scripts ensuring every migrated file matches original source byte-for-byte.</li>
-                        <li><strong>Dual-Write Strategy:</strong> Architected dual-write pipeline ensuring zero downtime during the migration window.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-4">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">04</span>
-                        <div class="stage-title-box">
-                            <h4>App Refactoring</h4>
-                            <span class="stage-tag">10+ Enterprise Apps</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Hibernate & S3 SDK Integration:</strong> Updated persistence layers across 10+ core apps to read/write attachments via MinIO SDK.</li>
-                        <li><strong>Connection Pooling:</strong> Tuned S3 client connection pools to prevent socket exhaustion during peak meal-time traffic.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-5">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">05</span>
-                        <div class="stage-title-box">
-                            <h4>QA & Chaos Simulation</h4>
-                            <span class="stage-tag">Disaster Recovery</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Failover Testing:</strong> Simulated sudden MinIO cluster node outages to verify seamless failover to secondary replica.</li>
-                        <li><strong>Latency Benchmarks:</strong> Confirmed sub-50ms attachment retrieval across millions of legacy transaction records.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-6">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">06</span>
-                        <div class="stage-title-box">
-                            <h4>Cutover & AWS Migration</h4>
-                            <span class="stage-tag">Zero Data Loss</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Zero-Downtime Cutover:</strong> Executed live DNS switchboard cutover with zero application downtime.</li>
-                        <li><strong>Database Vacuuming:</strong> Reclaimed hundreds of gigabytes of disk space, reducing backup snapshot windows from 4 hours to 20 minutes.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-7 highlight-recon">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">07</span>
-                        <div class="stage-title-box">
-                            <h4>Results & Honors</h4>
-                            <span class="stage-tag">50% Load Cut & Award</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Performance Win:</strong> Achieved official <strong>50% database CPU/Disk load reduction</strong> and sub-second report generation.</li>
-                        <li><strong>Recognition:</strong> Awarded <strong>Employee of the Month</strong> for seamless zero-defect execution.</li>
-                    </ul>
+            <!-- 2. Schema Pointer Transformation Table -->
+            <div class="blueprint-section">
+                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> 2. Database Schema Decoupling Transformation</div>
+                <div class="table-responsive-box">
+                    <table class="blueprint-table">
+                        <thead>
+                            <tr>
+                                <th>Legacy SQL Field</th>
+                                <th>Legacy Data Type</th>
+                                <th>Refactored Field (New)</th>
+                                <th>New Data Type</th>
+                                <th>Architectural Decoupling Impact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>INVOICE_IMAGE_DATA</code></td>
+                                <td><span class="dt-badge danger">BLOB / BYTEA</span></td>
+                                <td><code>ATTACHMENT_S3_URI</code></td>
+                                <td><span class="dt-badge">VARCHAR(512)</span></td>
+                                <td>Offloaded from SQL row memory to S3 object key (e.g., <code>s3://invoices/2026/04/inv_90812.pdf</code>).</td>
+                            </tr>
+                            <tr>
+                                <td><code>DOC_CHECKSUM</code></td>
+                                <td><span class="dt-badge">VARCHAR(64)</span></td>
+                                <td><code>MD5_HASH_SIGNATURE</code></td>
+                                <td><span class="dt-badge">VARCHAR(64)</span></td>
+                                <td>Used for instant file integrity verification before and after cutover.</td>
+                            </tr>
+                            <tr>
+                                <td><code>STORAGE_LOCATION</code></td>
+                                <td><span class="dt-badge">VARCHAR(32)</span></td>
+                                <td><code>MINIO_BUCKET_ID</code></td>
+                                <td><span class="dt-badge">VARCHAR(64)</span></td>
+                                <td>Partitioned by tenant brand and fiscal year for optimized lifecycle archiving.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -848,107 +806,75 @@
     <div id="modal-edi" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-edi')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-edi')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-truck-ramp-box"></i> SUPPLY CHAIN EDI LIFECYCLE</div>
+            <div class="modal-badge"><i class="fa-solid fa-truck-ramp-box"></i> SUPPLY CHAIN SPECIFICATION</div>
             <h3 class="modal-title">Supply Chain EDI Ingestion (GFS, PFS, GFS US)</h3>
-            <p class="modal-desc">Automated ingestion pipeline transforming EDI 850 (Purchase Orders), 810 (Invoices), and 832 (Catalogs) into real-time margin analytics.</p>
+            <p class="modal-desc">Automated ingestion pipeline transforming EDI 850 (Purchase Orders), 810 (Invoices), and 832 (Price Catalogs) via SFTP into real-time margin analytics.</p>
 
-            <div class="sdlc-flow-container">
-                <div class="sdlc-stage-card stage-1">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">01</span>
-                        <div class="stage-title-box">
-                            <h4>Inception & Vendor Scope</h4>
-                            <span class="stage-tag">Vendor Agreements</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Distributor Scoping:</strong> Defined communication specifications for Gordon Food Service (GFS), Performance Foodservice (PFS), and GFS US.</li>
-                        <li><strong>Document Types:</strong> Scoped automated processing for EDI 850, 810 invoices, and 832 catalog calendars.</li>
-                    </ul>
+            <!-- 1. Pipeline Diagram -->
+            <div class="blueprint-section">
+                <div class="bp-header"><i class="fa-solid fa-network-wired"></i> 1. Multi-Vendor EDI Ingestion Pipeline</div>
+                <div class="ascii-diagram-wrap">
+<pre class="ascii-art">
+[ SUPPLIER SFTP (GFS / PFS) ] ───► [ 15-Min Automated SFTP Poller ] ───► [ EDI X12 Parser & Validator ]
+                                                                                   │
+                                                                                   ▼
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│  • Segment Extraction: BIG (Invoice Date/Num) | IT1 (Item & Quantity) | SAC (Allowances & Taxes)       │
+│  • Catch-Weight Normalization & Discrepancy Rule Engine (PO vs Invoice Matching)                       │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                                                                   │
+                                                                                   ▼
+[ EXECUTIVE BI & INVENTORY ] ◄────────────────────────────────────────── [ STORE FOOD COST LEDGER ]
+Real-Time Store Margin & Food Cost KPI Dashboards                         Automated 3-Way Reconciliation
+</pre>
                 </div>
+            </div>
 
-                <div class="sdlc-stage-card stage-2">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">02</span>
-                        <div class="stage-title-box">
-                            <h4>Specs & File Protocols</h4>
-                            <span class="stage-tag">SFTP & Trading Partner</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>SFTP Key Handshake:</strong> Established secure SSH-key authenticated SFTP endpoints and FileZilla routing structures.</li>
-                        <li><strong>Mapping Specs:</strong> Documented X12 segment mappings (BIG, IT1, SAC, CTT) to enterprise inventory schemas.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-3">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">03</span>
-                        <div class="stage-title-box">
-                            <h4>Parser & Transform</h4>
-                            <span class="stage-tag">Schema Normalization</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Catalog Synchronization:</strong> Engineered automated daily sync for distributor pricing, catch-weight adjustments, and packaging units.</li>
-                        <li><strong>Discrepancy Engine:</strong> Configured automated flag triggers for unit price variances between PO and Invoice.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-4">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">04</span>
-                        <div class="stage-title-box">
-                            <h4>Automated Ingestion</h4>
-                            <span class="stage-tag">Cron & File Watchers</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Scheduled SFTP Poller:</strong> Built high-frequency cron workers polling vendor outboxes every 15 minutes.</li>
-                        <li><strong>Archive & Dead Letter:</strong> Implemented auto-archival of processed EDI files and dead-letter routing for malformed payloads.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-5">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">05</span>
-                        <div class="stage-title-box">
-                            <h4>UAT & EDI Certification</h4>
-                            <span class="stage-tag">Vendor Testing</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>End-to-End Simulation:</strong> Processed 1,000+ mock distributor files verifying quantity discrepancies and tax rounding.</li>
-                        <li><strong>Partner Sign-Off:</strong> Achieved 100% compliance certification from distributor EDI teams.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-6">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">06</span>
-                        <div class="stage-title-box">
-                            <h4>Production Rollout</h4>
-                            <span class="stage-tag">Zero Manual Entry</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Store Chain Cutover:</strong> Rolled out automated ingestion across all corporate and franchise store chains.</li>
-                        <li><strong>Labor Savings:</strong> Eliminated 100% of manual invoice typing for restaurant store managers.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-7 highlight-recon">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">07</span>
-                        <div class="stage-title-box">
-                            <h4>Recon & BI Feeds</h4>
-                            <span class="stage-tag">Food Cost KPI</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Real-Time Food Cost:</strong> Fed daily normalized invoice data into executive BI dashboards for store margin analytics.</li>
-                        <li><strong>Supplier Discrepancy Alerts:</strong> Automated email notifications for vendor overcharges and credit memo tracking.</li>
-                    </ul>
+            <!-- 2. EDI Segment Mapping Table -->
+            <div class="blueprint-section">
+                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> 2. EDI 810 Invoice Segment to Core DB Mapping</div>
+                <div class="table-responsive-box">
+                    <table class="blueprint-table">
+                        <thead>
+                            <tr>
+                                <th>EDI X12 Segment / Element</th>
+                                <th>Enterprise Database Field</th>
+                                <th>Data Type</th>
+                                <th>Mandatory?</th>
+                                <th>Parsing & Reconciliation Rule</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>BIG02 (Invoice Number)</code></td>
+                                <td><code>VENDOR_INVOICE_NO</code></td>
+                                <td><span class="dt-badge">VARCHAR(64)</span></td>
+                                <td><span class="req-badge yes">YES</span></td>
+                                <td>Unique invoice identifier from Gordon Food Service (GFS) or PFS.</td>
+                            </tr>
+                            <tr>
+                                <td><code>BIG04 (Purchase Order No)</code></td>
+                                <td><code>ORIGINAL_PO_REF</code></td>
+                                <td><span class="dt-badge">VARCHAR(64)</span></td>
+                                <td><span class="req-badge yes">YES</span></td>
+                                <td>Matched against internal Purchase Order to detect price/qty variances.</td>
+                            </tr>
+                            <tr>
+                                <td><code>IT102 (Quantity Invoiced)</code></td>
+                                <td><code>BILLED_QUANTITY</code></td>
+                                <td><span class="dt-badge">DECIMAL(10,3)</span></td>
+                                <td><span class="req-badge yes">YES</span></td>
+                                <td>Normalized across unit types (Cases, Lbs, Bags, Each).</td>
+                            </tr>
+                            <tr>
+                                <td><code>IT104 (Unit Price)</code></td>
+                                <td><code>UNIT_COST</code></td>
+                                <td><span class="dt-badge">DECIMAL(10,4)</span></td>
+                                <td><span class="req-badge yes">YES</span></td>
+                                <td>Checked against daily synchronized EDI 832 Price Catalog master.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -962,103 +888,22 @@
             <h3 class="modal-title">n8n Dynamic Automation & Custom AI Knowledge Agents</h3>
             <p class="modal-desc">Intelligent traffic-aware store synchronization and custom internal GPT assistants for rapid team delivery.</p>
 
-            <div class="sdlc-flow-container">
-                <div class="sdlc-stage-card stage-1">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">01</span>
-                        <div class="stage-title-box">
-                            <h4>Inception & Bottleneck</h4>
-                            <span class="stage-tag">Traffic Bottleneck</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Problem Analysis:</strong> Peak daytime polling for newly onboarded stores was causing high API throttling and database lock contention.</li>
-                        <li><strong>Automation Scope:</strong> Designed dynamic off-peak scheduling and AI-assisted requirement lookups.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-2">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">02</span>
-                        <div class="stage-title-box">
-                            <h4>Workflow Architecture</h4>
-                            <span class="stage-tag">n8n Node Orchestration</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Dynamic Window Detection:</strong> Designed workflows identifying store closure hours (12 AM - 5 AM local time) for batch synchronization.</li>
-                        <li><strong>Webhook Routing:</strong> Triggered automated ingestion sequences upon store activation in the central registry.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-3">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">03</span>
-                        <div class="stage-title-box">
-                            <h4>Custom GPT & AI Agents</h4>
-                            <span class="stage-tag">Internal Knowledge Base</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Knowledge Agent Architecture:</strong> Vectorized enterprise API specifications, BRDs, and error troubleshooting codes into a private internal GPT agent.</li>
-                        <li><strong>Automated Story Generation:</strong> Enabled rapid user story and acceptance criteria drafting for QA and development teams.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-4">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">04</span>
-                        <div class="stage-title-box">
-                            <h4>Execution & Telemetry</h4>
-                            <span class="stage-tag">Slack & Alert Triggers</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Failure Telemetry:</strong> Connected n8n error outputs directly to engineering Slack channels with exact error stack traces.</li>
-                        <li><strong>Dynamic Throttling:</strong> Automated self-adjusting request concurrency based on server CPU telemetry.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-5">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">05</span>
-                        <div class="stage-title-box">
-                            <h4>Validation & QA</h4>
-                            <span class="stage-tag">Autonomous Testing</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Continuous Health Checks:</strong> Automated hourly heartbeat pings across POS listening services with auto-restart triggers.</li>
-                        <li><strong>Data Verification:</strong> Validated that 100% of newly onboarded store transactions synced before morning store open.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-6">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">06</span>
-                        <div class="stage-title-box">
-                            <h4>Team Enablement</h4>
-                            <span class="stage-tag">Team Mentorship</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Team Training:</strong> Trained cross-functional BA and QA team members on utilizing custom AI agents for rapid requirement lookup.</li>
-                        <li><strong>Productivity Boost:</strong> Reduced onboarding specification drafting time by <strong>40%</strong>.</li>
-                    </ul>
-                </div>
-
-                <div class="sdlc-stage-card stage-7 highlight-recon">
-                    <div class="sdlc-stage-header">
-                        <span class="stage-num">07</span>
-                        <div class="stage-title-box">
-                            <h4>Impact & Stability</h4>
-                            <span class="stage-tag">24/7 Zero Latency</span>
-                        </div>
-                    </div>
-                    <ul class="sdlc-list">
-                        <li><strong>Production Stability:</strong> Zero peak-hour database lock incidents following off-peak dynamic migration.</li>
-                        <li><strong>Continuous Evolution:</strong> Ongoing expansion of automated AI test-case generators for new partner integrations.</li>
-                    </ul>
+            <div class="blueprint-section">
+                <div class="bp-header"><i class="fa-solid fa-network-wired"></i> 1. Dynamic Off-Peak Sync & AI Assistant Pipeline</div>
+                <div class="ascii-diagram-wrap">
+<pre class="ascii-art">
+[ NEW STORE ONBOARDING ] ───► [ Store Registry Webhook ] ───► [ n8n Off-Peak Traffic Detector ]
+                                                                             │
+                                                                             ▼ (Executes between 12 AM - 5 AM Local)
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│  • Dynamic Batching: Syncs newly active stores during low-traffic windows without daytime DB locks     │
+│  • Telemetry: Real-time execution alerts routed to Engineering Slack channels                          │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                                                             │
+                                                                             ▼
+[ INTERNAL CUSTOM GPT ] ◄─────────────────────────────────────── [ ACCELERATED DELIVERY ]
+Vectorized BRD, API Specs & Error Code Lookup for Teams          40% Faster Onboarding & Spec Drafting
+</pre>
                 </div>
             </div>
         </div>
