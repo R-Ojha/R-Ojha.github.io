@@ -305,7 +305,7 @@
         </div>
     </section>
 
-    <!-- 5. FEATURED PROJECTS (INTERACTIVE DEEP-DIVE BLUEPRINT MODALS) -->
+    <!-- 5. FEATURED PROJECTS (INTERACTIVE DATA FLOW DIAGRAM MODALS) -->
     <section id="projects" class="section bg-alt">
         <div class="container">
             <div class="section-badge-wrap"><span class="pill-badge">PORTFOLIO</span></div>
@@ -343,7 +343,7 @@
 
                     <div class="proj-btn-footer">
                         <button class="btn btn-proj" onclick="openModal('modal-qupos')">
-                            <i class="fa-solid fa-diagram-project"></i> View Architecture & Schema Blueprint
+                            <i class="fa-solid fa-diagram-project"></i> View Architecture & Data Flow Diagram
                         </button>
                     </div>
                 </div>
@@ -377,7 +377,7 @@
 
                     <div class="proj-btn-footer">
                         <button class="btn btn-proj" onclick="openModal('modal-minio')">
-                            <i class="fa-solid fa-shield-halved"></i> View Migration Case Study & Hash Logic
+                            <i class="fa-solid fa-shield-halved"></i> View Migration Flow & Hash Logic
                         </button>
                     </div>
                 </div>
@@ -437,7 +437,7 @@
 
                     <div class="proj-btn-footer">
                         <button class="btn btn-proj" onclick="openModal('modal-automation')">
-                            <i class="fa-solid fa-microchip"></i> View Dynamic Pipeline & AI Blueprint
+                            <i class="fa-solid fa-microchip"></i> View Dynamic Pipeline & AI Flow
                         </button>
                     </div>
                 </div>
@@ -611,47 +611,164 @@
     </button>
 
     <!-- ===================================================
-         INTERACTIVE ARCHITECTURE & SCHEMA BLUEPRINT MODALS
+         HIGH-VISUAL DATA FLOW DIAGRAM MODALS (DFD CANVAS)
          =================================================== -->
 
-    <!-- MODAL 1: QUPOS & POS ARCHITECTURE -->
+    <!-- MODAL 1: QUPOS & POS DATA FLOW DIAGRAM -->
     <div id="modal-qupos" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-qupos')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-qupos')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-diagram-project"></i> PRODUCTION SYSTEM DESIGN CANVAS</div>
+            <div class="modal-badge"><i class="fa-solid fa-diagram-project"></i> DATA FLOW DIAGRAM (DFD Level-2)</div>
             <h3 class="modal-title">QUPOS Pull Engine & 10,000+ Store POS Architecture</h3>
-            <p class="modal-desc">End-to-end Techno-Functional blueprint covering the 7-stage delivery lifecycle, actual POS JSON to Enterprise DB Schema Mapping, and 3-Way EOD Reconciliation.</p>
+            <p class="modal-desc">Multi-tenant distributed data flow covering POS REST extraction, cron rate-controlled queues, schema splitting, deduplication, and 3-way financial reconciliation.</p>
 
-            <!-- 1. Interactive Visual Flowchart (Pipeline Diagram) -->
-            <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-network-wired"></i> 1. End-to-End System Design Pipeline</div>
-                <div class="ascii-diagram-wrap">
-<pre class="ascii-art">
-┌─────────────────────────┐      ┌──────────────────────────┐      ┌─────────────────────────────┐
-│ 1. Inception & Scope    │ ───► │ 2. Analysis & Specs      │ ───► │ 3. Data & API Architecture  │
-│  • US Client Alignment  │      │  • FSD & Swagger Spec    │      │  • Dual-Key Data Mapping    │
-│  • BRD & Scope Matrix   │      │  • Offline Edge Cases    │      │  • Deduplication Hash Logic │
-└─────────────────────────┘      └──────────────────────────┘      └─────────────────────────────┘
-                                                                                  │
-                                                                                  ▼
-┌─────────────────────────┐      ┌──────────────────────────┐      ┌─────────────────────────────┐
-│ 6. CI/CD & Deployment   │ ◄─── │ 5. QA, UAT & Simulation  │ ◄─── │ 4. Dev & Queue Engine       │
-│  • 10-Store Canary Pilot│      │  • 500+ Store Mock Tests │      │  • Cron Throttling Batches  │
-│  • Zero-Lock Migration  │      │  • Corrupt Payload Assert│      │  • Exponential Backoff Retries
-└─────────────────────────┘      └──────────────────────────┘      └─────────────────────────────┘
-             │
-             ▼
-┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ 7. Go-Live, Observability & 3-Way Financial Reconciliation Audit Matrix                        │
-│  • Grafana Live Telemetry (Queue Lag & TPS)  • EOD Audit: POS Gross ↔ Core DB ↔ Bank Settlement│
-└────────────────────────────────────────────────────────────────────────────────────────────────┘
-</pre>
-                </div>
+            <!-- High-Visual Interactive Vector Data Flow Diagram -->
+            <div class="dfd-canvas-wrap">
+                <svg viewBox="0 0 1020 380" class="dfd-svg-canvas">
+                    <defs>
+                        <!-- Gradient Definitions for Nodes -->
+                        <linearGradient id="grad-source" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25"/>
+                            <stop offset="100%" stop-color="#0284c7" stop-opacity="0.05"/>
+                        </linearGradient>
+                        <linearGradient id="grad-queue" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"/>
+                            <stop offset="100%" stop-color="#6366f1" stop-opacity="0.05"/>
+                        </linearGradient>
+                        <linearGradient id="grad-db" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+                            <stop offset="100%" stop-color="#10b981" stop-opacity="0.05"/>
+                        </linearGradient>
+                        <linearGradient id="grad-bi" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+                            <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.05"/>
+                        </linearGradient>
+                        <linearGradient id="grad-recon" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+                            <stop offset="100%" stop-color="#6366f1" stop-opacity="0.15"/>
+                        </linearGradient>
+
+                        <!-- Marker Arrows -->
+                        <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+                        </marker>
+                        <marker id="arrow-indigo" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 1 L 10 5 L 0 9 z" fill="#818cf8"/>
+                        </marker>
+                        <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+                        </marker>
+                        <marker id="arrow-yellow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+                        </marker>
+                    </defs>
+
+                    <!-- NODE 1: POS Source Layer -->
+                    <rect x="20" y="30" width="180" height="200" rx="12" fill="url(#grad-source)" stroke="#38bdf8" stroke-width="1.8"/>
+                    <rect x="35" y="42" width="150" height="24" rx="6" fill="#0284c7"/>
+                    <text x="110" y="58" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">1. POS SOURCE (QUPOS)</text>
+                    
+                    <text x="35" y="86" fill="#f1f5f9" font-size="9.5" font-weight="700">Payload Extraction:</text>
+                    <text x="35" y="105" fill="#94a3b8" font-size="8.5">• Cash & Sales JSON</text>
+                    <text x="35" y="123" fill="#94a3b8" font-size="8.5">• MenuMix Item Quantities</text>
+                    <text x="35" y="141" fill="#94a3b8" font-size="8.5">• Ideal Hours & Labor</text>
+                    <text x="35" y="159" fill="#94a3b8" font-size="8.5">• Cash Office Logs</text>
+                    
+                    <rect x="35" y="180" width="150" height="34" rx="6" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1"/>
+                    <text x="110" y="196" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Pull Poller & EXE Listener</text>
+                    <text x="110" y="207" fill="#94a3b8" font-size="7.5" text-anchor="middle">2,500+ Active Stores</text>
+
+                    <!-- Connector 1 -> 2 -->
+                    <path d="M 200 130 L 260 130" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+                    <text x="230" y="122" fill="#38bdf8" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">REST Pull</text>
+
+                    <!-- NODE 2: Ingestion & Rate-Controlled Queue Engine -->
+                    <rect x="260" y="30" width="220" height="200" rx="12" fill="url(#grad-queue)" stroke="#818cf8" stroke-width="1.8"/>
+                    <rect x="275" y="42" width="190" height="24" rx="6" fill="#4f46e5"/>
+                    <text x="370" y="58" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">2. QUEUE & THROTTLER</text>
+
+                    <text x="275" y="86" fill="#f1f5f9" font-size="9.5" font-weight="700">Resilience & Batching:</text>
+                    <text x="275" y="105" fill="#94a3b8" font-size="8.5">• Cron Waves: 250 stores/batch</text>
+                    <text x="275" y="123" fill="#94a3b8" font-size="8.5">• SHA256 Deduplication Hash</text>
+                    <text x="275" y="141" fill="#94a3b8" font-size="8.5">• Schema Validation & Error DLQ</text>
+                    <text x="275" y="159" fill="#94a3b8" font-size="8.5">• Exponential Backoff (3 Retries)</text>
+
+                    <rect x="275" y="180" width="190" height="34" rx="6" fill="rgba(99, 102, 241, 0.15)" stroke="#818cf8" stroke-width="1"/>
+                    <text x="370" y="196" fill="#818cf8" font-size="8.5" font-weight="700" text-anchor="middle">Idempotent Pipeline</text>
+                    <text x="370" y="207" fill="#94a3b8" font-size="7.5" text-anchor="middle">Zero Duplicate Sales Postings</text>
+
+                    <!-- Split Connectors 2 -> 3A & 3B -->
+                    <path d="M 480 95 L 560 65" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+                    <text x="520" y="70" fill="#10b981" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Core Stream</text>
+
+                    <path d="M 480 165 L 560 195" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrow-yellow)"/>
+                    <text x="520" y="190" fill="#f59e0b" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">BI KPI Cube</text>
+
+                    <!-- NODE 3A: Core Database & MinIO Attachments -->
+                    <rect x="560" y="20" width="200" height="100" rx="10" fill="url(#grad-db)" stroke="#10b981" stroke-width="1.8"/>
+                    <rect x="575" y="30" width="170" height="22" rx="5" fill="#059669"/>
+                    <text x="660" y="45" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">3A. ENTERPRISE CORE DB</text>
+                    <text x="575" y="72" fill="#94a3b8" font-size="8">• Normalized Master Tables</text>
+                    <text x="575" y="90" fill="#94a3b8" font-size="8">• MinIO URI S3 Attachments</text>
+                    <text x="575" y="108" fill="#10b981" font-size="8" font-weight="700">✓ 50% Reduced Disk Overhead</text>
+
+                    <!-- NODE 3B: BI & Cash Office Analytics -->
+                    <rect x="560" y="145" width="200" height="100" rx="10" fill="url(#grad-bi)" stroke="#f59e0b" stroke-width="1.8"/>
+                    <rect x="575" y="155" width="170" height="22" rx="5" fill="#d97706"/>
+                    <text x="660" y="170" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">3B. BI KPI ANALYTICS</text>
+                    <text x="575" y="197" fill="#94a3b8" font-size="8">• Real-Time Store Margin Cubes</text>
+                    <text x="575" y="215" fill="#94a3b8" font-size="8">• Cash Office Over/Short Audit</text>
+                    <text x="575" y="233" fill="#f59e0b" font-size="8" font-weight="700">✓ Sub-Second Dashboards</text>
+
+                    <!-- Connector 3A & 3B -> 4 (Recon Layer) -->
+                    <path d="M 760 70 L 830 70 L 830 115" stroke="#38bdf8" stroke-width="2" fill="none"/>
+                    <path d="M 760 195 L 830 195 L 830 155" stroke="#38bdf8" stroke-width="2" fill="none"/>
+                    <path d="M 830 135 L 870 135" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+
+                    <!-- NODE 4: Canary Rollout & Observability -->
+                    <rect x="870" y="30" width="130" height="200" rx="12" fill="url(#grad-source)" stroke="#38bdf8" stroke-width="1.8"/>
+                    <rect x="880" y="42" width="110" height="24" rx="6" fill="#0284c7"/>
+                    <text x="935" y="58" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">4. ROLLOUT</text>
+                    <text x="880" y="90" fill="#94a3b8" font-size="8">• Postman UAT</text>
+                    <text x="880" y="112" fill="#94a3b8" font-size="8">• 10-Store Pilot</text>
+                    <text x="880" y="134" fill="#94a3b8" font-size="8">• Wave Cutover</text>
+                    <text x="880" y="156" fill="#94a3b8" font-size="8">• Grafana Alarms</text>
+                    <rect x="880" y="180" width="110" height="34" rx="6" fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" stroke-width="1"/>
+                    <text x="935" y="196" fill="#10b981" font-size="8" font-weight="700" text-anchor="middle">100% Zero Bug</text>
+                    <text x="935" y="207" fill="#94a3b8" font-size="7" text-anchor="middle">10,000+ Stores</text>
+
+                    <!-- BOTTOM LAYER: 3-Way Financial Reconciliation Engine -->
+                    <rect x="20" y="260" width="980" height="100" rx="12" fill="url(#grad-recon)" stroke="#38bdf8" stroke-width="1.8"/>
+                    <rect x="35" y="272" width="280" height="24" rx="6" fill="#0369a1"/>
+                    <text x="175" y="288" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">5. EOD 3-WAY RECONCILIATION AUDIT</text>
+
+                    <!-- 3 Audit Pillars Inside Recon -->
+                    <g transform="translate(40, 308)">
+                        <!-- Pillar 1 -->
+                        <rect x="0" y="0" width="280" height="40" rx="6" fill="rgba(14, 20, 36, 0.7)" stroke="rgba(56, 189, 248, 0.3)"/>
+                        <text x="140" y="18" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">PILLAR 1: POS REGISTER TOTALS</text>
+                        <text x="140" y="32" fill="#94a3b8" font-size="7.5" text-anchor="middle">Z-Reports, Tax Breakdown, Promo Discounts</text>
+
+                        <text x="305" y="24" fill="#38bdf8" font-size="14" font-weight="800">↔</text>
+
+                        <!-- Pillar 2 -->
+                        <rect x="330" y="0" width="280" height="40" rx="6" fill="rgba(14, 20, 36, 0.7)" stroke="rgba(129, 140, 248, 0.3)"/>
+                        <text x="470" y="18" fill="#818cf8" font-size="8.5" font-weight="700" text-anchor="middle">PILLAR 2: CORE INGESTED LEDGER</text>
+                        <text x="470" y="32" fill="#94a3b8" font-size="7.5" text-anchor="middle">Deduplicated Line-Items & Cash Office DB</text>
+
+                        <text x="635" y="24" fill="#38bdf8" font-size="14" font-weight="800">↔</text>
+
+                        <!-- Pillar 3 -->
+                        <rect x="660" y="0" width="280" height="40" rx="6" fill="rgba(14, 20, 36, 0.7)" stroke="rgba(16, 185, 129, 0.3)"/>
+                        <text x="800" y="18" fill="#10b981" font-size="8.5" font-weight="700" text-anchor="middle">PILLAR 3: BANK & GATEWAY SETTLEMENT</text>
+                        <text x="800" y="32" fill="#94a3b8" font-size="7.5" text-anchor="middle">Physical Cash Drops & Card Batch Slips</text>
+                    </g>
+                </svg>
             </div>
 
             <!-- 2. Actual Production Schema Mapping Table -->
             <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> 2. POS JSON to Core DB Schema Mapping Specification</div>
+                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> POS JSON to Core DB Schema Mapping Specification</div>
                 <div class="table-responsive-box">
                     <table class="blueprint-table">
                         <thead>
@@ -713,7 +830,7 @@
 
             <!-- 3. Technical Implementation & Idempotency Code Block -->
             <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-code"></i> 3. Ingestion Queue Throttling & Idempotency Rules</div>
+                <div class="bp-header"><i class="fa-solid fa-code"></i> Ingestion Queue Throttling & Idempotency Rules</div>
                 <div class="code-snippet-box">
                     <div class="code-title">Idempotency Key & Poller Queue Configuration:</div>
                     <code>
@@ -734,34 +851,58 @@ String idempotencyKey = SHA256(storeId + "_" + businessDate + "_" + registerId +
     <div id="modal-minio" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-minio')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-minio')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-server"></i> INFRASTRUCTURE MIGRATION BLUEPRINT</div>
+            <div class="modal-badge"><i class="fa-solid fa-server"></i> DATA FLOW & INFRASTRUCTURE CANVAS</div>
             <h3 class="modal-title">MinIO S3 Offloading & 50% DB Load Reduction</h3>
-            <p class="modal-desc">Decoupling relational databases from heavy BLOB attachments, cutting SQL storage overhead by 50% with zero data loss.</p>
+            <p class="modal-desc">Visual architecture decoupling heavy invoice/image BLOB attachments from transactional SQL tables into distributed MinIO clusters with MD5 hash validation.</p>
 
-            <!-- 1. Pipeline Diagram -->
-            <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-network-wired"></i> 1. Decoupling & Migration Pipeline</div>
-                <div class="ascii-diagram-wrap">
-<pre class="ascii-art">
-[ BEFORE: LEGACY SQL DB ] ────► Holds Relational Data + Huge Invoices & Image BLOBs (High Disk I/O, Slow Queries)
-                                              │
-                                              ▼ (Decoupling Migration Engine)
-┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│  • Extract BLOB ➔ Upload to MinIO S3 Multi-Tenant Bucket ➔ Calculate MD5 Hash ➔ Update SQL Pointer URI │
-│  • Verification: Dual-Write validation with 100% hash parity comparison                                │
-└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-                                              │
-                                              ▼
-[ AFTER: OPTIMIZED LEAN SQL ] ───────────────┬────────────────► [ MINIO DISTRIBUTED S3 OBJECT CLUSTER ]
-Holds Relational Metadata & Document Pointer │                  Stores High-Performance Document Attachments
-(50% Reduced DB Disk Load, Sub-Second Read)  │                  (Sub-50ms Direct Attachment Retrieval)
-</pre>
-                </div>
+            <!-- MinIO Vector DFD Diagram -->
+            <div class="dfd-canvas-wrap">
+                <svg viewBox="0 0 1000 240" class="dfd-svg-canvas">
+                    <!-- Before Block -->
+                    <rect x="20" y="30" width="240" height="180" rx="12" fill="rgba(239, 68, 68, 0.08)" stroke="#ef4444" stroke-width="1.8"/>
+                    <rect x="35" y="42" width="210" height="24" rx="6" fill="#b91c1c"/>
+                    <text x="140" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">LEGACY MONOLITHIC SQL</text>
+                    <text x="35" y="90" fill="#fca5a5" font-size="8.5">• SQL rows store massive BLOBs</text>
+                    <text x="35" y="110" fill="#fca5a5" font-size="8.5">• High CPU & memory starvation</text>
+                    <text x="35" y="130" fill="#fca5a5" font-size="8.5">• Slow 4-hour backup snapshots</text>
+                    <rect x="35" y="155" width="210" height="34" rx="6" fill="rgba(239, 68, 68, 0.2)" stroke="#ef4444"/>
+                    <text x="140" y="176" fill="#f87171" font-size="9" font-weight="700" text-anchor="middle">❌ Database Performance Bottleneck</text>
+
+                    <!-- Decoupling Arrow -->
+                    <path d="M 260 120 L 340 120" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrow-blue)"/>
+                    <text x="300" y="110" fill="#38bdf8" font-size="8" font-family="'JetBrains Mono', monospace" text-anchor="middle">Decouple</text>
+
+                    <!-- Migration Pipeline -->
+                    <rect x="340" y="30" width="280" height="180" rx="12" fill="url(#grad-queue)" stroke="#818cf8" stroke-width="1.8"/>
+                    <rect x="355" y="42" width="250" height="24" rx="6" fill="#4f46e5"/>
+                    <text x="480" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">MINIO MIGRATION LAYER</text>
+                    <text x="355" y="90" fill="#c7d2fe" font-size="8.5">• 10+ Enterprise Apps Refactored</text>
+                    <text x="355" y="110" fill="#c7d2fe" font-size="8.5">• MD5 Byte-by-Byte Hash Validation</text>
+                    <text x="355" y="130" fill="#c7d2fe" font-size="8.5">• Multi-Tenant S3 Bucket Policies</text>
+                    <rect x="355" y="155" width="250" height="34" rx="6" fill="rgba(99, 102, 241, 0.2)" stroke="#818cf8"/>
+                    <text x="480" y="176" fill="#818cf8" font-size="9" font-weight="700" text-anchor="middle">⚡ Dual-Write Zero Downtime Cutover</text>
+
+                    <!-- Split to Final State -->
+                    <path d="M 620 85 L 690 65" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+                    <path d="M 620 155 L 690 175" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+
+                    <!-- Lean DB -->
+                    <rect x="690" y="25" width="280" height="85" rx="10" fill="url(#grad-db)" stroke="#10b981" stroke-width="1.8"/>
+                    <text x="830" y="50" fill="#10b981" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">LEAN RELATIONAL SQL DB</text>
+                    <text x="705" y="72" fill="#94a3b8" font-size="8">• Holds pure relational metadata & IDs</text>
+                    <text x="705" y="90" fill="#10b981" font-size="8" font-weight="700">✓ 50% Disk Load Cut | Sub-Second Reads</text>
+
+                    <!-- MinIO Cluster -->
+                    <rect x="690" y="130" width="280" height="85" rx="10" fill="url(#grad-source)" stroke="#38bdf8" stroke-width="1.8"/>
+                    <text x="830" y="155" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">MINIO S3 OBJECT CLUSTER</text>
+                    <text x="705" y="177" fill="#94a3b8" font-size="8">• Distributed fast attachment bucket store</text>
+                    <text x="705" y="195" fill="#38bdf8" font-size="8" font-weight="700">✓ Sub-50ms Direct Document Retrieval</text>
+                </svg>
             </div>
 
-            <!-- 2. Schema Pointer Transformation Table -->
+            <!-- Schema Pointer Transformation Table -->
             <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> 2. Database Schema Decoupling Transformation</div>
+                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> Database Schema Decoupling Transformation</div>
                 <div class="table-responsive-box">
                     <table class="blueprint-table">
                         <thead>
@@ -806,33 +947,51 @@ Holds Relational Metadata & Document Pointer │                  Stores High-Pe
     <div id="modal-edi" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-edi')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-edi')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-truck-ramp-box"></i> SUPPLY CHAIN SPECIFICATION</div>
+            <div class="modal-badge"><i class="fa-solid fa-truck-ramp-box"></i> SUPPLY CHAIN DATA FLOW DIAGRAM</div>
             <h3 class="modal-title">Supply Chain EDI Ingestion (GFS, PFS, GFS US)</h3>
             <p class="modal-desc">Automated ingestion pipeline transforming EDI 850 (Purchase Orders), 810 (Invoices), and 832 (Price Catalogs) via SFTP into real-time margin analytics.</p>
 
-            <!-- 1. Pipeline Diagram -->
-            <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-network-wired"></i> 1. Multi-Vendor EDI Ingestion Pipeline</div>
-                <div class="ascii-diagram-wrap">
-<pre class="ascii-art">
-[ SUPPLIER SFTP (GFS / PFS) ] ───► [ 15-Min Automated SFTP Poller ] ───► [ EDI X12 Parser & Validator ]
-                                                                                   │
-                                                                                   ▼
-┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│  • Segment Extraction: BIG (Invoice Date/Num) | IT1 (Item & Quantity) | SAC (Allowances & Taxes)       │
-│  • Catch-Weight Normalization & Discrepancy Rule Engine (PO vs Invoice Matching)                       │
-└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-                                                                                   │
-                                                                                   ▼
-[ EXECUTIVE BI & INVENTORY ] ◄────────────────────────────────────────── [ STORE FOOD COST LEDGER ]
-Real-Time Store Margin & Food Cost KPI Dashboards                         Automated 3-Way Reconciliation
-</pre>
-                </div>
+            <!-- EDI Vector DFD Diagram -->
+            <div class="dfd-canvas-wrap">
+                <svg viewBox="0 0 1000 220" class="dfd-svg-canvas">
+                    <!-- SFTP Server -->
+                    <rect x="20" y="30" width="220" height="160" rx="12" fill="url(#grad-source)" stroke="#38bdf8" stroke-width="1.8"/>
+                    <rect x="35" y="42" width="190" height="24" rx="6" fill="#0284c7"/>
+                    <text x="130" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">SUPPLIER SFTP SERVERS</text>
+                    <text x="35" y="90" fill="#94a3b8" font-size="8.5">• Gordon Food Service (GFS)</text>
+                    <text x="35" y="110" fill="#94a3b8" font-size="8.5">• Performance Food (PFS)</text>
+                    <text x="35" y="130" fill="#94a3b8" font-size="8.5">• GFS US Dedicated Host</text>
+                    <text x="35" y="165" fill="#38bdf8" font-size="8" font-weight="700">SSH-Key Secure Handshake</text>
+
+                    <path d="M 240 110 L 320 110" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+                    <text x="280" y="100" fill="#38bdf8" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">15-Min Cron</text>
+
+                    <!-- EDI Parser -->
+                    <rect x="320" y="30" width="280" height="160" rx="12" fill="url(#grad-queue)" stroke="#818cf8" stroke-width="1.8"/>
+                    <rect x="335" y="42" width="250" height="24" rx="6" fill="#4f46e5"/>
+                    <text x="460" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">EDI PARSER & VALIDATOR</text>
+                    <text x="335" y="90" fill="#c7d2fe" font-size="8.5">• EDI 850: Purchase Orders</text>
+                    <text x="335" y="110" fill="#c7d2fe" font-size="8.5">• EDI 810: Line-Item Invoices</text>
+                    <text x="335" y="130" fill="#c7d2fe" font-size="8.5">• EDI 832: Daily Price Catalogs</text>
+                    <text x="335" y="165" fill="#818cf8" font-size="8" font-weight="700">Catch-Weight Variance Check</text>
+
+                    <path d="M 600 110 L 680 110" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+                    <text x="640" y="100" fill="#10b981" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Normalized</text>
+
+                    <!-- Enterprise Inventory -->
+                    <rect x="680" y="30" width="300" height="160" rx="12" fill="url(#grad-db)" stroke="#10b981" stroke-width="1.8"/>
+                    <rect x="695" y="42" width="270" height="24" rx="6" fill="#059669"/>
+                    <text x="830" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">INVENTORY & MARGIN BI</text>
+                    <text x="695" y="90" fill="#a7f3d0" font-size="8.5">• Automated Purchase Order Match</text>
+                    <text x="695" y="110" fill="#a7f3d0" font-size="8.5">• Real-Time Store Margin KPI</text>
+                    <text x="695" y="130" fill="#a7f3d0" font-size="8.5">• Overcharge & Credit Alerts</text>
+                    <text x="695" y="165" fill="#10b981" font-size="8" font-weight="700">✓ 100% Elimination of Manual Typing</text>
+                </svg>
             </div>
 
-            <!-- 2. EDI Segment Mapping Table -->
+            <!-- EDI Segment Mapping Table -->
             <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> 2. EDI 810 Invoice Segment to Core DB Mapping</div>
+                <div class="bp-header"><i class="fa-solid fa-table-columns"></i> EDI 810 Invoice Segment to Core DB Mapping</div>
                 <div class="table-responsive-box">
                     <table class="blueprint-table">
                         <thead>
@@ -884,27 +1043,46 @@ Real-Time Store Margin & Food Cost KPI Dashboards                         Automa
     <div id="modal-automation" class="modal-overlay" onclick="closeModalOnOutside(event, 'modal-automation')">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modal-automation')">&times;</button>
-            <div class="modal-badge"><i class="fa-solid fa-robot"></i> AUTOMATION & AI PIPELINE</div>
+            <div class="modal-badge"><i class="fa-solid fa-robot"></i> DYNAMIC ORCHESTRATION CANVAS</div>
             <h3 class="modal-title">n8n Dynamic Automation & Custom AI Knowledge Agents</h3>
             <p class="modal-desc">Intelligent traffic-aware store synchronization and custom internal GPT assistants for rapid team delivery.</p>
 
-            <div class="blueprint-section">
-                <div class="bp-header"><i class="fa-solid fa-network-wired"></i> 1. Dynamic Off-Peak Sync & AI Assistant Pipeline</div>
-                <div class="ascii-diagram-wrap">
-<pre class="ascii-art">
-[ NEW STORE ONBOARDING ] ───► [ Store Registry Webhook ] ───► [ n8n Off-Peak Traffic Detector ]
-                                                                             │
-                                                                             ▼ (Executes between 12 AM - 5 AM Local)
-┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│  • Dynamic Batching: Syncs newly active stores during low-traffic windows without daytime DB locks     │
-│  • Telemetry: Real-time execution alerts routed to Engineering Slack channels                          │
-└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-                                                                             │
-                                                                             ▼
-[ INTERNAL CUSTOM GPT ] ◄─────────────────────────────────────── [ ACCELERATED DELIVERY ]
-Vectorized BRD, API Specs & Error Code Lookup for Teams          40% Faster Onboarding & Spec Drafting
-</pre>
-                </div>
+            <!-- n8n Vector DFD Diagram -->
+            <div class="dfd-canvas-wrap">
+                <svg viewBox="0 0 1000 220" class="dfd-svg-canvas">
+                    <!-- Store Onboarding -->
+                    <rect x="20" y="30" width="220" height="160" rx="12" fill="url(#grad-source)" stroke="#38bdf8" stroke-width="1.8"/>
+                    <rect x="35" y="42" width="190" height="24" rx="6" fill="#0284c7"/>
+                    <text x="130" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">NEW STORE ONBOARDING</text>
+                    <text x="35" y="90" fill="#94a3b8" font-size="8.5">• Store added to central registry</text>
+                    <text x="35" y="110" fill="#94a3b8" font-size="8.5">• Store timezone & hours logged</text>
+                    <text x="35" y="130" fill="#94a3b8" font-size="8.5">• Activation webhook emitted</text>
+                    <text x="35" y="165" fill="#38bdf8" font-size="8" font-weight="700">Dynamic Registry Event</text>
+
+                    <path d="M 240 110 L 320 110" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#arrow-blue)"/>
+                    <text x="280" y="100" fill="#38bdf8" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Event Webhook</text>
+
+                    <!-- n8n Engine -->
+                    <rect x="320" y="30" width="280" height="160" rx="12" fill="url(#grad-queue)" stroke="#818cf8" stroke-width="1.8"/>
+                    <rect x="335" y="42" width="250" height="24" rx="6" fill="#4f46e5"/>
+                    <text x="460" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">n8n SCHEDULING ENGINE</text>
+                    <text x="335" y="90" fill="#c7d2fe" font-size="8.5">• Off-Peak Detector (12 AM - 5 AM)</text>
+                    <text x="335" y="110" fill="#c7d2fe" font-size="8.5">• Dynamic Batch Data Fetch</text>
+                    <text x="335" y="130" fill="#c7d2fe" font-size="8.5">• Slack Failure Telemetry Alerts</text>
+                    <text x="335" y="165" fill="#818cf8" font-size="8" font-weight="700">Zero Daytime Lock Incidents</text>
+
+                    <path d="M 600 110 L 680 110" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)"/>
+                    <text x="640" y="100" fill="#10b981" font-size="7.5" font-family="'JetBrains Mono', monospace" text-anchor="middle">Feed Spec</text>
+
+                    <!-- Custom GPT Assistant -->
+                    <rect x="680" y="30" width="300" height="160" rx="12" fill="url(#grad-db)" stroke="#10b981" stroke-width="1.8"/>
+                    <rect x="695" y="42" width="270" height="24" rx="6" fill="#059669"/>
+                    <text x="830" y="58" fill="#ffffff" font-size="9.5" font-weight="800" text-anchor="middle" font-family="'JetBrains Mono', monospace">CUSTOM INTERNAL GPT</text>
+                    <text x="695" y="90" fill="#a7f3d0" font-size="8.5">• Instant Swagger/API Spec Lookup</text>
+                    <text x="695" y="110" fill="#a7f3d0" font-size="8.5">• Auto User Story & Test Generator</text>
+                    <text x="695" y="130" fill="#a7f3d0" font-size="8.5">• Team Mentorship & Knowledge Base</text>
+                    <text x="695" y="165" fill="#10b981" font-size="8" font-weight="700">✓ 40% Accelerated Team Delivery</text>
+                </svg>
             </div>
         </div>
     </div>
