@@ -369,7 +369,7 @@ ul {
     transform: translateY(-2px);
 }
 
-/* Scroll Indicator */
+/* Mouse Scroll */
 .scroll-indicator {
     display: flex;
     flex-direction: column;
@@ -1237,7 +1237,7 @@ footer {
 }
 
 /* ===================================================
-   SYSTEM DESIGN BLUEPRINT & SCHEMA MODALS
+   HIGH-VISUAL DATA FLOW DIAGRAM MODALS (DFD CANVAS)
    =================================================== */
 .modal-overlay {
     position: fixed;
@@ -1318,6 +1318,24 @@ footer {
     line-height: 1.55;
 }
 
+/* VECTOR DFD CANVAS WRAPPER */
+.dfd-canvas-wrap {
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dfd-svg-canvas {
+    width: 100%;
+    min-width: 820px;
+    height: auto;
+    display: block;
+}
+
 /* BLUEPRINT SECTIONS */
 .blueprint-section {
     background-color: var(--bg-alt);
@@ -1335,24 +1353,6 @@ footer {
     display: flex;
     align-items: center;
     gap: 8px;
-}
-
-/* ASCII DIAGRAM CANVAS */
-.ascii-diagram-wrap {
-    background-color: var(--bg-main);
-    border: 1px solid var(--border-subtle);
-    border-radius: 8px;
-    padding: 14px;
-    overflow-x: auto;
-}
-
-.ascii-art {
-    font-family: var(--font-mono);
-    font-size: 0.74rem;
-    color: var(--text-primary);
-    line-height: 1.35;
-    margin: 0;
-    white-space: pre;
 }
 
 /* PRODUCTION SCHEMA TABLES */
